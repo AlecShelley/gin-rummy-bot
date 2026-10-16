@@ -1,13 +1,13 @@
 # Gin Rummy Bot — Handoff (v3 → v4: the road to superhuman)
 
-> **CURRENT HANDOFF: `HANDOFF_V13.md`** (repo + Downloads,
+> **CURRENT HANDOFF: `docs/HANDOFF_V13.md`** (repo + Downloads,
 > 2026-09-09) — the champion is **v10home**; **THE HOME VARIANT IS
 > THE DEFAULT GAME (user decision 2026-09-04)**: all new work
 > targets v10home and home rules unless the user says otherwise.
 > Binding since 2026-09-08: every promotion runs the FULL regression
 > ladder (v8home/teacher/knocker), not just the predecessor gate.
 > Campaign evidence: `results/v9..v12_gates.log` (registrations
-> first). `HANDOFF_V8.md` covers the v8home era. This file remains
+> first). `docs/HANDOFF_V8.md` covers the v8home era. Repo restructured 2026-10-15 (see the V13 layout addendum): bot + standing gates at root; studies/, gates/, legacy/, examples/, docs/. This file remains
 > the project history and the numbered lessons, which all still
 > bind.
 

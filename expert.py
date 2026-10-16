@@ -280,7 +280,7 @@ def _play_chunk(job):
      opp_model, uniform_worlds, classes, truncate, z, rules) = job
     import sim as _sim
     _sim.set_rules(rules)
-    from train_gin_rummy import make_env
+    from legacy.train_gin_rummy import make_env
 
     class _Args:
         reward = "points"

@@ -237,7 +237,7 @@ def _pf_marginals(name, sc, filters=4, seed=0, pf_cfg=None):
     set, under pf_cfg (default: the champion DEFAULT_PF)."""
     from evaluate import (FilterEnsemble, build_particle_belief,
                           build_state, history_check, parse_position)
-    from home_examples import pos_text
+    from studies.home_examples import pos_text
     from read_regress import ensemble_marginal
     from particle import DEFAULT_PF
     cfg = dict(DEFAULT_PF, **(pf_cfg or {}))
@@ -261,7 +261,7 @@ def _pf_marginals(name, sc, filters=4, seed=0, pf_cfg=None):
 # ---------------------------------------------------------------- report
 
 def _tok(i):
-    from home_examples import card_tok
+    from studies.home_examples import card_tok
     return card_tok(i)
 
 

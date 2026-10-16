@@ -852,7 +852,7 @@ def verify(num_hands=250, seed=1234):
     """
     from shaping import _min_deadwood as slow_dw
     from teacher import StrongTeacher
-    from train_gin_rummy import real_points_payoff
+    from legacy.train_gin_rummy import real_points_payoff
 
     slow = StrongTeacher()
     fast = FastTeacher()

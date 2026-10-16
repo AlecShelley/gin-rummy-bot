@@ -54,7 +54,7 @@ from rlcard.games.gin_rummy.utils.action_event import (
 import sim
 from belief import Belief, build_obs
 from expert import RolloutExpert
-from qnet import QNet
+from legacy.qnet import QNet
 from sim import (DECK, FastTeacher, apply_world, cid, fast_legal_actions,
                  ids_of, leaf_value, make_scratch, min_deadwood_ids, playout,
                  restore, snapshot, step_fast)

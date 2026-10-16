@@ -196,6 +196,21 @@ some refuted, and the refutations are kept too.
 - Every promotion runs the full regression ladder (prior champions +
   fixed baselines), because self-play ties hide symmetric gains.
 
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `*.py` (root) | The bot itself and its standing gates/instruments: engine kernel (`sim.py`, `fullrules.py`), belief (`belief.py`, `particle.py`), search (`expert.py`, `adaptive.py`, `pf_expert.py`, `endgame.py`), the home champion (`home_variant.py`), evaluator (`evaluate.py`, `viz.py`, `explain.py`), match registry (`meta.py`), and the documented regression gates (`ladder.py`, `read_regress.py`, `post_sweep.py`, `posterior_check.py`, `poison.py`). |
+| `studies/` | The measurement studies and probes — forced-arm opening/turn studies, naturally-conditioned rejection sampling, posterior instruments, oracle bounds, Monte Carlo surveys. |
+| `gates/` | Paired promotion gates and historical gate runners. |
+| `legacy/` | The v1/v2 era: RL experiments, behavior cloning, value/Q networks — kept because the negative results are part of the record. |
+| `examples/` | `positions/` — analyzable position files for the evaluator; `reports/` — their rendered HTML analyses. |
+| `docs/` | Generation handoffs (`HANDOFF_V13.md` = current) and historical results summaries. |
+| `results/` | The registered campaign logs (`v*_gates.log`) and small raw study rows. |
+
+Run everything from the repo root (scripts in subfolders carry a path
+shim, so `python studies/opening_study.py ...` works directly).
+
 ## Running it
 
 ```bash
@@ -209,7 +224,7 @@ python -m venv .venv
 ```
 
 Deep documentation: [`CLAUDE.md`](CLAUDE.md) (project history + the
-numbered hard-won lessons), [`HANDOFF_V13.md`](HANDOFF_V13.md) (current
-state), `results/v*_gates.log` (the registered evidence for every claim
-here). Large raw datasets (self-play harvests, posterior benchmark rows,
+numbered hard-won lessons), [`docs/HANDOFF_V13.md`](docs/HANDOFF_V13.md)
+(current state), `results/v*_gates.log` (the registered evidence for
+every claim here). Large raw datasets (self-play harvests, posterior benchmark rows,
 network checkpoints) are excluded from the repo for size.

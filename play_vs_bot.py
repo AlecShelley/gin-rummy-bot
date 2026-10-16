@@ -22,7 +22,7 @@ from rlcard.games.gin_rummy.utils import utils as gr_utils
 from rlcard.games.gin_rummy.utils.action_event import ActionEvent
 
 from gin_rummy_bot import GinRummyBot
-from train_gin_rummy import make_env, classify_outcome
+from legacy.train_gin_rummy import make_env, classify_outcome
 
 SUIT_ORDER = {"S": 0, "H": 1, "D": 2, "C": 3}
 

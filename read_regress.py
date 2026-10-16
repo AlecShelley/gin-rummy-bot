@@ -27,13 +27,13 @@ from sim import CARD_ID
 
 # (file, true hidden hand BEFORE removing opp-known, headline cards)
 CASES = [
-    ("pos_hard3_minus1.txt",
+    ("examples/positions/pos_hard3_minus1.txt",
      "4S 5S 6S 7S AH 7H 8H 9H TH AD",
      ["5S", "6S"]),
-    ("pos_home10_noknock.txt",
+    ("examples/positions/pos_home10_noknock.txt",
      "2S 5S 6S 7S KS KH AD KD AC KC",
      ["KS", "KH", "KD", "KC"]),
-    ("pos_hard1_blocker.txt",
+    ("examples/positions/pos_hard1_blocker.txt",
      "AS 3S 4S 5S QS QH 2D 3D QD 2C",
      ["QS", "QH", "QD"]),
 ]
