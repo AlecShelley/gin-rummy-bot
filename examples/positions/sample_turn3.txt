@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/sample_turn3.html
 # Turn 3 -- we just drew and can KNOCK at deadwood 9 (discard 9H,
 # keeping A-3-5 of loose cards). Nearly every human knocks here.
 # ENGINE VERDICT (re-audited 2026-08-29): KNOCK, decisively (+8.6 +/-

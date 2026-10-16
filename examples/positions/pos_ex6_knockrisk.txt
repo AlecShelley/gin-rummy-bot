@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_ex6_knockrisk.html
 # Example 6 -- KNOCK NOW OR PRESS ON (seven game: flip 7D -> threshold
 # 7). Full transcript: turn 1 we drew 6C (a brick against our hand --
 # our loose cards are all aces and low cards) and shed it; the opponent

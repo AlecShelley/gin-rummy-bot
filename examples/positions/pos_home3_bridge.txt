@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home3_bridge.html
 # HOME 3 -- THE BRIDGE CARD (K-game, mid-early). The pile offers the
 # 8H, which BRIDGES our two heart pieces (6H 7H + 9H TH JH) into a
 # six-card run. Textbook take -- the engine prices declining it as a

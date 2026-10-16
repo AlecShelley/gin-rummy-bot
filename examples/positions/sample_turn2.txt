@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/sample_turn2.html
 # Turn 2 showcase -- hand-reading. Full transcript: WE dumped two kings
 # early (standard human play: shed high deadwood); the opponent took BOTH.
 # Now we drew 8D and must discard. Deadwood logic says pitch KD -- but

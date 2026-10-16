@@ -64,13 +64,14 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 <h1>Gin rummy evaluator</h1>
 <div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 1 or less</div>
 <div class="banner"><div class="card red big"><span>A</span><span class="s">♥</span></div><div><div class="btitle">HOME VARIANT</div><div class="bsub">first card flipped: <b>A♥</b> (bottom of the pile) &nbsp;&rarr;&nbsp; knocking allowed at deadwood &le; <b>1</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 2 known,
 8 hidden</div>
 <div class="row"><div class="card  "><span>Q</span><span class="s">♠</span></div><div class="card red "><span>8</span><span class="s">♥</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
 <div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
-<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: Q♦&nbsp;(45%), Q♣&nbsp;(41%), Q♥&nbsp;(34%), 4♣&nbsp;(30%), 2♦&nbsp;(29%), 7♥&nbsp;(29%), 6♦&nbsp;(28%), 5♥&nbsp;(28%) <span class="muted">(chance level 22%)</span></div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: Q♣&nbsp;(64%), Q♦&nbsp;(63%), Q♥&nbsp;(54%), 5♥&nbsp;(33%), 5♦&nbsp;(30%), 8♣&nbsp;(29%), 2♦&nbsp;(29%), 9♦&nbsp;(28%) <span class="muted">(chance level 22%)</span></div>
 </div>
 
 <div class="panel">
@@ -94,7 +95,7 @@ deadwood 18</div>
 
 <div class="panel">
 <div class="label">Verdict</div>
-<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 9♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+23.46</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♦</td><td><div class='bar ' style='width:59%'></div></td><td style='width:70px; text-align:right'>+21.01</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♦</td><td><div class='bar ' style='width:56%'></div></td><td style='width:70px; text-align:right'>+20.80</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard K♠</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+18.97</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 9♥</b><br>best by 2.4 points. With good play on both sides this hand is worth about <b>+23.5</b> points to us.</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 9♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+17.74</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♦</td><td><div class='bar ' style='width:46%'></div></td><td style='width:70px; text-align:right'>+16.04</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard K♠</td><td><div class='bar ' style='width:37%'></div></td><td style='width:70px; text-align:right'>+15.76</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♦</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+15.39</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 9♥</b><br>best by 1.7 points. With good play on both sides this hand is worth about <b>+17.7</b> points to us.</div>
 </div>
 
 <div class="muted">Highlighted card / pile / stock = the recommended

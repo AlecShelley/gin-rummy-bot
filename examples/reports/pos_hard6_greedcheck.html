@@ -64,13 +64,14 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 <h1>Gin rummy evaluator</h1>
 <div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 10 or less</div>
 <div class="banner"><div class="card  big"><span>K</span><span class="s">♣</span></div><div><div class="btitle">HOME VARIANT</div><div class="bsub">first card flipped: <b>K♣</b> (bottom of the pile) &nbsp;&rarr;&nbsp; knocking allowed at deadwood &le; <b>10</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 2 known,
 8 hidden</div>
 <div class="row"><div class="card red "><span>8</span><span class="s">♥</span></div><div class="card  "><span>8</span><span class="s">♣</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
 <div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
-<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 6♦&nbsp;(40%), 7♣&nbsp;(39%), 4♦&nbsp;(38%), 5♠&nbsp;(36%), 5♥&nbsp;(36%), 3♠&nbsp;(35%), 7♦&nbsp;(35%), 8♠&nbsp;(35%) <span class="muted">(chance level 25%)</span></div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 3♠&nbsp;(47%), 6♦&nbsp;(43%), 5♦&nbsp;(41%), 8♠&nbsp;(36%), 7♥&nbsp;(36%), 5♣&nbsp;(35%), 5♠&nbsp;(34%), 7♦&nbsp;(33%) <span class="muted">(chance level 25%)</span></div>
 </div>
 
 <div class="panel">
@@ -94,7 +95,7 @@ deadwood 7</div>
 
 <div class="panel">
 <div class="label">Verdict</div>
-<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>KNOCK, discarding 6♣</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+26.31</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 6♣</td><td><div class='bar ' style='width:63%'></div></td><td style='width:70px; text-align:right'>+20.37</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 2♥</td><td><div class='bar bad' style='width:43%'></div></td><td style='width:70px; text-align:right'>+17.23</td><td style='width:110px'> <span class="badge">costly</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♣</td><td><div class='bar bad' style='width:32%'></div></td><td style='width:70px; text-align:right'>+15.46</td><td style='width:110px'> <span class="badge">costly</span></td></tr><tr><td style='width:200px; font-weight:400'>discard A♠</td><td><div class='bar bad' style='width:25%'></div></td><td style='width:70px; text-align:right'>+14.27</td><td style='width:110px'> <span class="badge">costly</span></td></tr></table><div class="rec">Recommended: <b>KNOCK, discarding 6♣</b><br>clearly the best line (5.9 points ahead). With good play on both sides this hand is worth about <b>+26.3</b> points to us.</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>KNOCK, discarding 6♣</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+22.21</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 6♣</td><td><div class='bar ' style='width:76%'></div></td><td style='width:70px; text-align:right'>+19.69</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♣</td><td><div class='bar ' style='width:44%'></div></td><td style='width:70px; text-align:right'>+16.46</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 2♥</td><td><div class='bar ' style='width:38%'></div></td><td style='width:70px; text-align:right'>+15.78</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard A♠</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+14.47</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>KNOCK, discarding 6♣</b><br>best by 2.5 points. With good play on both sides this hand is worth about <b>+22.2</b> points to us.</div>
 </div>
 
 <div class="muted">Highlighted card / pile / stock = the recommended

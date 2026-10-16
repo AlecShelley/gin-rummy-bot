@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard5_baittake.html
 # HARD 5 -- THE TEMPTING TWO-WAY TAKE, REFUSED (5-game, early). The
 # pile offers the 8C next to our 6C and 9C -- a classic "connects
 # twice" speculation (7C fills either way) most players grab. The

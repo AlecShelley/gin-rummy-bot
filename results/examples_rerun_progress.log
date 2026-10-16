@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\alecs\AppData\Local\Temp\claude\C--Users-alecs-Downloads-files\2310d55f-d628-498b-9b1e-a1c43312456d\scratchpad\rerun_examples.py", line 62, in <module>
+    print(f"[{i}/{len(files)}] {line}", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2665' in position 54: character maps to <undefined>

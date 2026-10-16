@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home9_knock.html
 # HOME 9 -- KNOCK: GET IN FIRST (J-game, our 4th turn). We hit JJJ +
 # 888 early; knocking at 9 is legal. The opponent has taken one card
 # and is still unformed -- no lay-off wall, no undercut threat, and

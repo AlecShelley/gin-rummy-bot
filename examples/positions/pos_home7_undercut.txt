@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home7_undercut.html
 # HOME 7 -- THE KNOCK THAT LOSES TO THE LAY-OFF (J-game, stock 4). We
 # hold a six-card heart run + three aces and could knock at deadwood 2
 # (drop TS, keep 2D). But the opponent has taken SEVEN cards -- the

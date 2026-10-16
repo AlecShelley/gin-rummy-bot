@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_take4_acegame.html
 # Close call 4 -- the SAME two-way speculation as close call 1, but in
 # an ACE game (flip AS -> knock threshold 1): knocking is effectively
 # off the table for both sides, the hand will run long, and the whole

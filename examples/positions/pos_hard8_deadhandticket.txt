@@ -1,3 +1,5 @@
+# RETIRED (2026-08-30): this position cannot arise under the standard
+# dead-hand rule (stock <= 2 ends the hand); kept for history only.
 # RETIRED (2026-08-30). This example depended on the old rlcard
 # dead-hand variant, where a player facing a dead stock could still
 # take the discard and knock ("the dead-hand ticket"). Under the

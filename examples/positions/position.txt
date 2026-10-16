@@ -1,4 +1,5 @@
-﻿# Gin rummy position -- edit and run: python evaluate.py position.txt
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/position.html
+# Gin rummy position -- edit and run: python evaluate.py position.txt
 me: AS 2S 3S 7H 8H 9H KD KC 5C 2D
 opp-known: 5H 6H
 pile: 4C 7C QD

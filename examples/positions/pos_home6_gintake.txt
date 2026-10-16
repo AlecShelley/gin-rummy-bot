@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home6_gintake.html
 # HOME 6 -- ENDGAME, THE PILE OFFERS GIN (ace-game, stock 5). Pure gin
 # race (threshold 1, knocking is out of reach for both sides all
 # game). The 3S on the pile completes A-2-3 of spades PLUS frees the

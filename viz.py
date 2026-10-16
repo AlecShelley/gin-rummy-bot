@@ -541,6 +541,9 @@ def render_html(pos, game, belief, info, cfg):
     stock_html = (f'<div class="stock{" hot" if hot_stock else ""}">'
                   f"{len(rnd.dealer.stock_pile)}</div>")
 
+    ver = cfg.get("engine_version")
+    stamp = (f'<div class="sub">analyzed by <b>{ver}</b></div>'
+             if ver else "")
     return f"""<!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <title>Gin rummy evaluator</title><style>{CSS}</style></head><body>
@@ -548,6 +551,7 @@ def render_html(pos, game, belief, info, cfg):
 <h1>Gin rummy evaluator</h1>
 <div class="sub">{phase} &nbsp;&middot;&nbsp; {opp_line}</div>
 {banner}
+{stamp}
 
 <div class="panel">
 <div class="label">Opponent &mdash; {len(opp.known_cards)} known,

@@ -766,6 +766,9 @@ def evaluate_position(pos, worlds=192, truncate=16, z=1.5, seed=0,
     else:
         print("Opp model : NONE (opponent never knocks in rollouts -- "
               "explicit opt-out)")
+    from home_variant import CHAMPION
+    print(f"Engine    : {CHAMPION} (champion engine + belief -- "
+          f"evaluator lockstep)")
     print(f"Belief    : {pos.get('belief_note', 'classic weights')}")
     print(f"            {belief_read(belief, game)}")
     if pos["history_status"] == "complete":
@@ -982,7 +985,12 @@ def main():
         import os
         from viz import render_html
         out = args.html or os.path.splitext(args.position)[0] + ".html"
-        cfg = {"worlds": args.worlds, "truncate": args.truncate, "z": args.z}
+        from home_variant import CHAMPION
+        import datetime
+        cfg = {"worlds": args.worlds, "truncate": args.truncate,
+               "z": args.z,
+               "engine_version": f"{CHAMPION} evaluator, "
+               f"{datetime.date.today().isoformat()}"}
         with open(out, "w", encoding="utf-8") as fh:
             fh.write(render_html(pos, game, belief, info, cfg))
         print(f"visual report -> {out}")

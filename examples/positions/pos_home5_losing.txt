@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home5_losing.html
 # HOME 5 -- LOSING SEAT, DAMAGE CONTROL (2-game, late-ish). A grabby
 # opponent has taken four cards and we are still 19 deadwood with one
 # meld. Every candidate EV is NEGATIVE -- the evaluator says this seat

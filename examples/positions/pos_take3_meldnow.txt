@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_take3_meldnow.html
 # Close call 3 -- MELD NOW vs IMPROVE LATER (ten game, mid-late:
 # four full rounds played, full transcript). Our hand is fully
 # structured -- two melds, the 9C-9D pair, the TC-JC run draw -- so

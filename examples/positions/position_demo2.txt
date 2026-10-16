@@ -1,4 +1,5 @@
-﻿# We drew 10D from stock; now the 11-card discard decision.
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/position_demo2.html
+# We drew 10D from stock; now the 11-card discard decision.
 me: 5S 6S 7S 2H 2C 9H 9D TD QD 4D KC
 opp-known:
 pile: JD

@@ -1,0 +1,41 @@
+Example library re-analysis under v10home (2026-10-16); old = committed report verdicts (mixed v7/v8-era)
+myhand                         | old: discard 6♥                   | new: discard 8♦  << CHANGED
+pos_ex5_takeplan               | old: take 9♠ from pile            | new: take 9♠ from pile
+pos_ex6_knockrisk              | old: KNOCK, discarding Q♦         | new: KNOCK (discarding Q♦)  << CHANGED
+pos_ex7_feeddanger             | old: discard 9♥                   | new: discard 9♥
+pos_hard1_blocker              | old: discard A♣                   | new: discard A♣
+pos_hard2_whichpoison          | old: discard 3♥                   | new: discard 3♦  << CHANGED
+pos_hard3_lastdiscard          | old: KNOCK, discarding A♠         | new: KNOCK (discarding A♠)  << CHANGED
+pos_hard3_minus1               | old: discard 2♣                   | new: discard 2♣
+pos_hard4_razorknock           | old: discard K♥                   | new: discard K♥
+pos_hard5_baittake             | old: draw from stock              | new: draw from stock
+pos_hard6_greedcheck           | old: KNOCK, discarding 6♣         | new: KNOCK (discarding 6♣)  << CHANGED
+pos_hard7_lastknock            | old: discard 8♠                   | new: discard 8♠
+pos_hard8_deadhandticket       | old: (no prior report)            | new: FAILED (unknown error)
+pos_hard9_richtie              | old: take 5♥ from pile            | new: take 5♥ from pile
+pos_home10_noknock             | old: discard 2♦                   | new: discard 2♦
+pos_home1_fliptake             | old: take 3♥ from pile            | new: take the flip (3♥)  << CHANGED
+pos_home2_timing               | old: discard 6♥                   | new: discard 9♦  << CHANGED
+pos_home3_bridge               | old: take 8♥ from pile            | new: take 8♥ from pile
+pos_home4_reading              | old: discard 8♣                   | new: discard 8♣
+pos_home5_losing               | old: discard 5♥                   | new: discard 5♥
+pos_home6_gintake              | old: take 3♠ from pile            | new: take 3♠ from pile
+pos_home7_undercut             | old: discard 10♠                  | new: discard 10♠
+pos_home8_acegrind             | old: discard 6♣                   | new: discard 8♠  << CHANGED
+pos_home9_knock                | old: KNOCK, discarding 4♠         | new: KNOCK (discarding 4♠)  << CHANGED
+pos_take1_spec                 | old: take 7♥ from pile            | new: take 7♥ from pile
+pos_take2_swap                 | old: draw from stock              | new: draw from stock
+pos_take3_meldnow              | old: draw from stock              | new: draw from stock
+pos_take4_acegame              | old: take 7♥ from pile            | new: take 7♥ from pile
+position                       | old: (no prior report)            | new: draw from stock
+position2                      | old: (no prior report)            | new: discard 5♣
+position_demo                  | old: (no prior report)            | new: draw from stock
+position_demo2                 | old: discard 10♦                  | new: discard 10♦
+sample_feed                    | old: discard J♥                   | new: discard J♥
+sample_home_ten                | old: KNOCK, discarding Q♠         | new: KNOCK (discarding Q♠)  << CHANGED
+sample_knock4                  | old: KNOCK, discarding 9♥         | new: KNOCK (discarding 9♥)  << CHANGED
+sample_take                    | old: take 6♦ from pile            | new: take 6♦ from pile
+sample_turn1                   | old: take 7♥ from pile            | new: take 7♥ from pile
+sample_turn1_noboost           | old: (no prior report)            | new: take 7♥ from pile
+sample_turn2                   | old: discard 9♥                   | new: discard 9♥
+sample_turn3                   | old: KNOCK, discarding 9♥         | new: KNOCK (discarding 9♥)  << CHANGED

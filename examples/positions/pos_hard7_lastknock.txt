@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard7_lastknock.html
 # HARD 7 -- STOCK 4: KNOCK, OR ONE MORE DRAW? (3-game endgame). We
 # can knock at 2-3 by shedding the 8S; the hand dies (0-0) in two
 # more turns. The knock-vs-play gap is a measured COIN-FLIP (-0.7 /

@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home2_timing.html
 # HOME 2 -- DISCARD TIMING BEATS DEADWOOD ARITHMETIC (K-game, our very
 # first discard; the opponent has not moved yet). Deadwood logic says
 # pitch KH or QD (43 vs 47 after the alternatives). The engine PAYS 4

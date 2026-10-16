@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home1_fliptake.html
 # HOME 1 -- TURN-1 FLIP TAKE (3-game). First decision of the hand: the
 # flip is the 3H and taking it is our option. It slots into BOTH of our
 # low pairs (3S 3D and 4H 4D 4C are one card each from sets) -- but it

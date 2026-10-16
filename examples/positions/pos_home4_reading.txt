@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home4_reading.html
 # HOME 4 -- FIVE PICKUPS CHANGE THE DISCARD MAP (7-game). The opponent
 # (a knocker) has taken FIVE cards off the pile; we just drew the 8C.
 # Our melds are locked (555 + 5D-8D). The engine keeps the teacher's

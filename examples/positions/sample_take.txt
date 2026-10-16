@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/sample_take.html
 # C: speculative take. Two melds already made. The upcard 6D is a
 # double-duty card (pairs our 6S, combos our 7D) but costs 6 deadwood
 # and the opponent just threw it -- take it or draw?

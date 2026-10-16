@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard9_richtie.html
 # HARD 9 -- A 30-POINT HAND, A 0.4-POINT DECISION (7-game, early).
 # Seven cards melded (6-7-8 hearts, 6-7-8-9 clubs); the pile offers
 # the 5H, stretching the heart run to four. Take the sure extension,

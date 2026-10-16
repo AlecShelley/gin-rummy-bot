@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/position_demo.html
 # Opening position: opponent led by discarding JD; our first move.
 me: 5S 6S 7S 2H 2C 9H 9D QD 4D KC
 opp-known:

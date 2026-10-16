@@ -64,13 +64,14 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 <h1>Gin rummy evaluator</h1>
 <div class="sub">to move: take the upcard, or draw from stock? &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 10 or less</div>
 <div class="banner"><div><div class="btitle">STANDARD GAME</div><div class="bsub">knocking allowed at deadwood &le; <b>10</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 0 known,
 10 hidden</div>
 <div class="row"><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
 
-<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 3♠&nbsp;(32%), 4♦&nbsp;(30%), 5♣&nbsp;(28%), 8♣&nbsp;(28%), 4♣&nbsp;(28%), 6♣&nbsp;(28%), 5♦&nbsp;(27%), 6♠&nbsp;(27%) <span class="muted">(chance level 24%)</span></div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 3♠&nbsp;(31%), 4♦&nbsp;(29%), 8♣&nbsp;(29%), 5♣&nbsp;(28%), 5♦&nbsp;(28%), 4♣&nbsp;(27%), 6♣&nbsp;(27%), A♠&nbsp;(27%) <span class="muted">(chance level 24%)</span></div>
 </div>
 
 <div class="panel">
@@ -94,7 +95,7 @@ deadwood 56</div>
 
 <div class="panel">
 <div class="label">Verdict</div>
-<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>take 7♥ from pile</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+9.36</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>draw from stock</td><td><div class='bar bad' style='width:25%'></div></td><td style='width:70px; text-align:right'>-1.25</td><td style='width:110px'> <span class="badge">costly</span></td></tr></table><div class="rec">Recommended: <b>take 7♥ from pile</b> &mdash; then <b>discard K♠ &mdash; or discard 8♦; effectively tied</b><br>clearly the best line (10.6 points ahead). With good play on both sides this hand is worth about <b>+9.4</b> points to us.</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>take 7♥ from pile</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+9.55</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>draw from stock</td><td><div class='bar bad' style='width:25%'></div></td><td style='width:70px; text-align:right'>-0.56</td><td style='width:110px'> <span class="badge">costly</span></td></tr></table><div class="rec">Recommended: <b>take 7♥ from pile</b> &mdash; then <b>discard K♠ &mdash; or discard 8♦; effectively tied</b><br>clearly the best line (10.1 points ahead). With good play on both sides this hand is worth about <b>+9.5</b> points to us.</div>
 </div>
 
 <div class="muted">Highlighted card / pile / stock = the recommended

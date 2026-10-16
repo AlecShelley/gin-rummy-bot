@@ -64,13 +64,14 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 <h1>Gin rummy evaluator</h1>
 <div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 7 or less</div>
 <div class="banner"><div class="card  big"><span>7</span><span class="s">♠</span></div><div><div class="btitle">HOME VARIANT</div><div class="bsub">first card flipped: <b>7♠</b> (since picked up) &nbsp;&rarr;&nbsp; knocking allowed at deadwood &le; <b>7</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 4 known,
 6 hidden</div>
 <div class="row"><div class="card  "><span>7</span><span class="s">♠</span></div><div class="card red "><span>6</span><span class="s">♥</span></div><div class="card red "><span>4</span><span class="s">♦</span></div><div class="card red "><span>K</span><span class="s">♦</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
 <div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
-<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: J♦&nbsp;(75%), Q♦&nbsp;(75%), 4♥&nbsp;(40%), 2♠&nbsp;(35%), 2♦&nbsp;(33%), A♥&nbsp;(31%), 2♣&nbsp;(30%), A♠&nbsp;(27%) <span class="muted">(chance level 21%)</span></div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; <b>almost certainly holding</b>: Q♦&nbsp;(92%), J♦&nbsp;(92%); likely: 4♥&nbsp;(36%), A♠&nbsp;(33%), 2♦&nbsp;(26%), 4♣&nbsp;(25%), A♥&nbsp;(24%), 5♣&nbsp;(23%) <span class="muted">(chance level 21%)</span></div>
 </div>
 
 <div class="panel">
@@ -94,7 +95,7 @@ deadwood 12</div>
 
 <div class="panel">
 <div class="label">Verdict</div>
-<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 8♣</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+16.58</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♣</td><td><div class='bar ' style='width:65%'></div></td><td style='width:70px; text-align:right'>+14.23</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♠</td><td><div class='bar ' style='width:56%'></div></td><td style='width:70px; text-align:right'>+13.57</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♥</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+11.50</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 8♣</b><br>best by 2.3 points. With good play on both sides this hand is worth about <b>+16.6</b> points to us.</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 8♣</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+14.42</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♣</td><td><div class='bar ' style='width:94%'></div></td><td style='width:70px; text-align:right'>+14.13</td><td style='width:110px'> <span class="badge">nearly equal</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♥</td><td><div class='bar ' style='width:33%'></div></td><td style='width:70px; text-align:right'>+11.31</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♠</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+10.93</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 8♣</b><br>a close call: discard 3♣ is only 0.3 points behind. With good play on both sides this hand is worth about <b>+14.4</b> points to us.</div>
 </div>
 
 <div class="muted">Highlighted card / pile / stock = the recommended

@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard3_minus1.html
 # HARD 3, ONE TURN EARLIER (9-game, stock 4) -- the same hand as
 # pos_hard3_lastdiscard, backed up one full turn for both players.
 # Deadwood 1 after the best discard, knock legal, and the stock

@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/sample_turn1.html
 # Turn 1 -- the obvious one. Opponent opened by discarding 7H.
 # We hold 5H 6H: the upcard completes a heart run.
 me: 5H 6H 2S 2D 9C TC KS 8D 3C AH

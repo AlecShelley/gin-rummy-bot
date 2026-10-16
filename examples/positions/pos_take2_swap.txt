@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_take2_swap.html
 # Close call 2 -- SMALL VALUE SWAP (ten game). The 6C connects to
 # nothing we hold; taking it only upgrades the 9S brick (deadwood 16 ->
 # 13). Worth it? The costs: the take is public, and it forfeits a blind

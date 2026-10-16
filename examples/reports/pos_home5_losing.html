@@ -64,13 +64,14 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 <h1>Gin rummy evaluator</h1>
 <div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 2 or less</div>
 <div class="banner"><div class="card  big"><span>2</span><span class="s">♣</span></div><div><div class="btitle">HOME VARIANT</div><div class="bsub">first card flipped: <b>2♣</b> (since picked up) &nbsp;&rarr;&nbsp; knocking allowed at deadwood &le; <b>2</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 4 known,
 6 hidden</div>
 <div class="row"><div class="card red "><span>6</span><span class="s">♥</span></div><div class="card red "><span>6</span><span class="s">♦</span></div><div class="card  "><span>2</span><span class="s">♣</span></div><div class="card  "><span>6</span><span class="s">♣</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
 <div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
-<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 6♠&nbsp;(71%), 4♦&nbsp;(54%), 5♦&nbsp;(51%), 2♠&nbsp;(50%), 3♣&nbsp;(50%), 3♥&nbsp;(49%), 2♦&nbsp;(48%), 4♣&nbsp;(47%) <span class="muted">(chance level 35%)</span></div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: 3♣&nbsp;(71%), 6♠&nbsp;(64%), 2♦&nbsp;(64%), 2♠&nbsp;(60%), 4♣&nbsp;(51%), A♣&nbsp;(48%), 4♠&nbsp;(41%), A♥&nbsp;(40%) <span class="muted">(chance level 35%)</span></div>
 </div>
 
 <div class="panel">
@@ -94,7 +95,7 @@ deadwood 19</div>
 
 <div class="panel">
 <div class="label">Verdict</div>
-<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 5♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>-3.58</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 5♠</td><td><div class='bar ' style='width:84%'></div></td><td style='width:70px; text-align:right'>-4.19</td><td style='width:110px'> <span class="badge">nearly equal</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♠</td><td><div class='bar ' style='width:32%'></div></td><td style='width:70px; text-align:right'>-6.11</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♥</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>-6.39</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 5♥</b><br>a close call: discard 5♠ is only 0.6 points behind. With good play on both sides this hand is worth about <b>-3.6</b> points to us.</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 5♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>-8.16</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 5♠</td><td><div class='bar ' style='width:53%'></div></td><td style='width:70px; text-align:right'>-9.99</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♠</td><td><div class='bar ' style='width:52%'></div></td><td style='width:70px; text-align:right'>-10.03</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♥</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>-11.08</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 5♥</b><br>best by 1.8 points. With good play on both sides this hand is worth about <b>-8.2</b> points to us.</div>
 </div>
 
 <div class="muted">Highlighted card / pile / stock = the recommended

@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/sample_home_ten.html
 # HOME VARIANT showcase -- ten game. The flip was TD (bottom of the
 # pile), so this hand's knock threshold is 10 and the opponent is
 # modeled as knocking the moment they legally can. We hold seven melded

@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard4_razorknock.html
 # HARD 4 -- A GENUINE COIN-FLIP KNOCK (J-game, early-mid). Deadwood 6
 # (drop KH): 999 set + 6-9 diamond run, vs a knock-when-legal player
 # who has taken one card. Knock now, or play for more? The engine's

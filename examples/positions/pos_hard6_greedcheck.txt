@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard6_greedcheck.html
 # HARD 6 -- SEVEN CARDS MELDED: CASH OR PUSH? (T-game, early, stock
 # 24). Four tens plus a 3-set on turn five -- the kind of hand humans
 # fall in love with and ride toward gin. The engine KNOCKS at 7

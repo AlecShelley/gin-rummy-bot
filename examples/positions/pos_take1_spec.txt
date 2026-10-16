@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_take1_spec.html
 # Close call 1 -- TWO-WAY SPECULATION (ten game). The opponent lets go
 # of 7H. We hold 7D (pair combo) and 8H (run combo): the 7H connects
 # twice but completes nothing, costs 7 deadwood while unmelded, and is

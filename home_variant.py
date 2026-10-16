@@ -98,6 +98,11 @@ def run_stats(hands=30000, workers=12, seed=61000):
 # Strength matches: v4home vs teacher / knock-whenever-legal.
 # ---------------------------------------------------------------------------
 
+# The promoted champion's NAME -- update on every promotion (the
+# evaluator stamps its reports with it).
+CHAMPION = "v10home"
+
+
 class HomeV8Policy:
     """v8home -- THE HOME-VARIANT CHAMPION (named 2026-09-02).
 

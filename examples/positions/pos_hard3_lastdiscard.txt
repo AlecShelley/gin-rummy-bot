@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard3_lastdiscard.html
 # HARD 3 -- KNOCK OR THE HAND DIES (9-game, stock 2). The stock is
 # down to 2 cards, so under standard rules THIS discard ends the hand:
 # knock (or gin), or it scores 0-0. We hold deadwood 1. Nearly every

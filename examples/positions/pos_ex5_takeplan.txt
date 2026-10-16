@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_ex5_takeplan.html
 # Example 5 -- TAKE WITH A PLAN (ten game, shows the follow-up
 # recommendation). Full transcript: turn 1 we drew KC -- with our JD-JC
 # pair worth keeping, the lone KC (10 deadwood, only a weak K-J club

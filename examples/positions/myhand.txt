@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/myhand.html
 # User's real hand, 2026-08-24. History partially unknown -- only certain
 # facts encoded (pickups both ways, current pile). Assumed stock draw this
 # turn and a knock-at-10 opponent.

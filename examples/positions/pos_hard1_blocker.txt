@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard1_blocker.html
 # HARD 1 -- THE BLOCKER (6-game, mid). Nine cards melded (9-10-J
 # spades, 6-J hearts) and two loose: AC and QC. Every human instinct
 # says pitch the 10-point queen, keep the 1-point ace -- and with

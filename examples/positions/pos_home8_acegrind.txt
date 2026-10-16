@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home8_acegrind.html
 # HOME 8 -- ACE-GAME GRIND (threshold 1: nobody will knock; deadwood
 # is nearly irrelevant and only meld OUTS matter). Early discard from
 # a rough hand holding a JJJ set. Teacher sheds 8S; the engine mildly

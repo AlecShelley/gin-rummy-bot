@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_home10_noknock.html
 # HOME 10 -- DON'T KNOCK: THE HAND IS TOO GOOD (8-game). Deadwood 1
 # after the best discard -- the cheapest knock of all time -- and the
 # engine REFUSES it (-12.8 vs playing on). Why: with A-2-3-4 shapes in

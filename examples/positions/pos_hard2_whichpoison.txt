@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/pos_hard2_whichpoison.html
 # HARD 2 -- WHICH POISON? (K-game, stock 9). Late hand, opponent has
 # shown QD QH 6D 2D from the pile. Deadwood says shed 3D or the ace.
 # Every remaining discard helps them somewhere -- the question is

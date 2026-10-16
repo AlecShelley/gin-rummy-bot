@@ -1,3 +1,4 @@
+# analyzed-with: v10home evaluator (2026-10-16); report: examples/reports/position2.html
 # 11-card discard decision: knock available (deadwood 5-8), knock or play on?
 me: AS 2S 3S 4S 5S 7H 8H 9H 5C 2D 3D
 opp-known: KD KC

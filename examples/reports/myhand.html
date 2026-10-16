@@ -5,7 +5,13 @@ body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
        background: #f4f3ef; color: #1a1a1a; margin: 0; padding: 24px; }
 .wrap { max-width: 760px; margin: 0 auto; }
 h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
-.sub { color: #6b6b6b; font-size: 13px; margin-bottom: 20px; }
+.sub { color: #6b6b6b; font-size: 13.5px; margin-bottom: 14px; }
+.banner { display: flex; gap: 16px; align-items: center;
+          background: #f7ede3; border: 2px solid #c76d33;
+          border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; }
+.banner .btitle { font-weight: 700; font-size: 16px;
+                  letter-spacing: .05em; color: #a4551f; }
+.banner .bsub { font-size: 14.5px; margin-top: 2px; }
 .panel { background: #fff; border: 1px solid #ddd9d0; border-radius: 12px;
          padding: 18px 20px; margin-bottom: 16px; }
 .label { font-size: 12px; color: #6b6b6b; text-transform: uppercase;
@@ -21,6 +27,12 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
              font-weight: 400; font-size: 13px; }
 .card.hot { border: 3px solid #c76d33; }
 .card.dim { opacity: .8; }
+.card.seen { border: 2px dashed #6a5bd0; }
+.card.mine { border: 2px solid #3a7d44; }
+.card.theirs { border: 2px solid #b3372f; }
+.card.pickedme { outline: 2px dashed #3a7d44; outline-offset: -6px; }
+.card.pickedopp { outline: 2px dashed #b3372f; outline-offset: -6px; }
+.card.big { width: 56px; height: 78px; font-size: 19px; }
 .group { display: inline-flex; gap: 4px; padding: 5px; border-radius: 9px;
          margin-right: 8px; margin-bottom: 4px; }
 .group.meld { background: #e8f0e4; border: 1px solid #b9d0ae; }
@@ -42,46 +54,51 @@ h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
 .rec { background: #f7ede3; border: 1px solid #e3c9ad; border-radius: 9px;
        padding: 12px 16px; font-size: 14.5px; margin-top: 14px; }
 .rec b { color: #a4551f; }
-.badge { display: inline-block; background: #eef; background: #ece9f5;
+.badge { display: inline-block; background: #ece9f5;
          color: #4a3d7a; font-size: 12px; border-radius: 6px;
          padding: 2px 10px; margin-left: 8px; }
 .muted { color: #8a857a; font-size: 12.5px; }
+.seennote { color: #6a5bd0; font-size: 12.5px; margin-top: 6px; }
 </style></head><body>
 <div class="wrap">
 <h1>Gin rummy evaluator</h1>
-<div class="sub">discard decision — which card do we let go? &nbsp;&middot;&nbsp; opponent modeled: knocks at deadwood ≤ 10 with p=1.0 &nbsp;&middot;&nbsp;
-3072 worlds, T=16, z=1.5, boost=auto</div>
+<div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 10 or less</div>
+<div class="banner"><div><div class="btitle">STANDARD GAME</div><div class="bsub">knocking allowed at deadwood &le; <b>10</b></div></div></div>
+<div class="sub">analyzed by <b>v10home evaluator, 2026-10-16</b></div>
 
 <div class="panel">
 <div class="label">Opponent &mdash; 1 known,
 9 hidden</div>
 <div class="row"><div class="card red "><span>J</span><span class="s">♥</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
-<div class="muted">belief, likely holdings: J♠ 1.4x, 9♥ 1.4x, 10♥ 1.4x, Q♥ 1.4x, K♥ 1.4x</div>
+<div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: J♠&nbsp;(33%), 9♥&nbsp;(33%), 10♥&nbsp;(33%), Q♥&nbsp;(33%), K♥&nbsp;(33%) <span class="muted">(chance level 24%)</span></div>
 </div>
 
-<div class="panel"><div class="cols">
-<div style="flex:1.2">
+<div class="panel">
 <div class="label">Discard pile (bottom &rarr; top) &nbsp;/&nbsp; stock</div>
 <div class="row"><div class="card  dim"><span>K</span><span class="s">♠</span></div><div class="card  "><span>J</span><span class="s">♣</span></div>
 <span style="width:14px"></span><div class="stock">29</div></div>
+
 </div>
-<div style="flex:1">
-<div class="label">Turn history</div>
-<div class="hist">1. opponent <b>took J♥</b> from the pile<br>2. we <b>took 8♦</b> from the pile<br>3. we <b>took Q♦</b> from the pile<br>4. we <b>drew from stock</b> (this turn)</div>
-</div>
-</div></div>
 
 <div class="panel">
 <div class="label">Our hand &mdash; 11 cards,
 deadwood 28</div>
-<div style="display:flex; align-items:flex-start; flex-wrap:wrap;"><span><span class="group meld"><div class="card red "><span>10</span><span class="s">♦</span></div><div class="card red "><span>J</span><span class="s">♦</span></div><div class="card red "><span>Q</span><span class="s">♦</span></div></span><div class="gcap">run</div></span><span><span class="group loose"><div class="card  "><span>2</span><span class="s">♣</span></div><div class="card  "><span>8</span><span class="s">♣</span></div><div class="card red "><span>A</span><span class="s">♦</span></div><div class="card red "><span>5</span><span class="s">♦</span></div><div class="card red "><span>8</span><span class="s">♦</span></div><div class="card red "><span>5</span><span class="s">♥</span></div><div class="card red hot"><span>6</span><span class="s">♥</span></div><div class="card  "><span>A</span><span class="s">♠</span></div></span><div class="gcap">unmelded</div></span></div>
+<div style="display:flex; align-items:flex-start; flex-wrap:wrap;"><span><span class="group meld"><div class="card red "><span>10</span><span class="s">♦</span></div><div class="card red "><span>J</span><span class="s">♦</span></div><div class="card red seen"><span>Q</span><span class="s">♦</span></div></span><div class="gcap">run</div></span><span><span class="group loose"><div class="card  "><span>2</span><span class="s">♣</span></div><div class="card  "><span>8</span><span class="s">♣</span></div><div class="card red "><span>A</span><span class="s">♦</span></div><div class="card red "><span>5</span><span class="s">♦</span></div><div class="card red hot seen"><span>8</span><span class="s">♦</span></div><div class="card red "><span>5</span><span class="s">♥</span></div><div class="card red "><span>6</span><span class="s">♥</span></div><div class="card  "><span>A</span><span class="s">♠</span></div></span><div class="gcap">unmelded</div></span></div>
+<div class="seennote">dashed cards (8♦, Q♦): picked up in view of the opponent, who will avoid discarding into those melds</div>
 </div>
 
 <div class="panel">
-<div class="label">Evaluator verdict</div>
-<table class='ev'><tr class='muted'><td>action</td><td>EV (final points, our view)</td><td style='text-align:right'>EV</td><td style='text-align:right'>vs prior</td><td></td></tr><tr><td style='width:190px; font-weight:600'>discard 6♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+9.02</td><td style='width:120px; text-align:right' class='muted'>+1.19 &plusmn; 0.26</td><td style='width:80px'> <span class="badge">chosen</span></td></tr><tr><td style='width:190px; font-weight:400'>discard 5♦</td><td><div class='bar ' style='width:96%'></div></td><td style='width:70px; text-align:right'>+8.96</td><td style='width:120px; text-align:right' class='muted'>+1.14 &plusmn; 0.29</td><td style='width:80px'></td></tr><tr><td style='width:190px; font-weight:400'>discard 8♣</td><td><div class='bar ' style='width:26%'></div></td><td style='width:70px; text-align:right'>+7.84</td><td style='width:120px; text-align:right' class='muted'>+0.02 &plusmn; 0.11</td><td style='width:80px'></td></tr><tr><td style='width:190px; font-weight:400'>discard 8♦ (prior)</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+7.83</td><td style='width:120px; text-align:right' class='muted'>&mdash;</td><td style='width:80px'></td></tr></table><div class="rec">Recommended: <b>discard 6♥</b> &mdash; the paired evidence clears the z-test, so the search deviates from its prior. Hand EV: we +9.02 points, opponent -9.02.</div>
+<div class="label">Turn history</div>
+<div class="hist">1. opponent <b>took J♥</b> from the pile<br>2. we <b>took 8♦</b> from the pile<br>3. we <b>took Q♦</b> from the pile<br>4. we <b>drew from stock</b> (this turn)</div><div style="margin-top:6px;color:#c0392b;font-size:12px">&#9888; the recorded history is incomplete or inconsistent &mdash; take the verdict with care. opp-pickup J♥: replayed pile is empty; my-pickup 8♦: replayed pile is empty; my-pickup Q♦: replayed pile is empty; replayed pile [] != declared [K♠ J♣] -- transcript is missing discards or misordered</div>
 </div>
-<div class="muted">Highlighted card/pile/stock = the recommended move.
-EV = expected final score of this hand under the bot's search
-(belief-weighted worlds, full rules). Generated by evaluate.py.</div>
+
+<div class="panel">
+<div class="label">Verdict</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:400'>discard 6♥</td><td><div class='bar ' style='width:100%'></div></td><td style='width:70px; text-align:right'>+15.93</td><td style='width:110px'> <span class="badge">nearly equal</span></td></tr><tr><td style='width:200px; font-weight:600'>discard 8♦</td><td><div class='bar best' style='width:40%'></div></td><td style='width:70px; text-align:right'>+14.84</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 5♦</td><td><div class='bar ' style='width:34%'></div></td><td style='width:70px; text-align:right'>+14.73</td><td style='width:110px'> <span class="badge">nearly equal</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 8♣</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+14.57</td><td style='width:110px'> <span class="badge">nearly equal</span></td></tr></table><div class="rec">Recommended: <b>discard 8♦</b><br>effectively a tie with discard 6♥: its average is 1.1 higher, within noise. With good play on both sides this hand is worth about <b>+14.8</b> points to us.</div>
+</div>
+
+<div class="muted">Highlighted card / pile / stock = the recommended
+move. EV = the expected final score of this hand for us, in
+points.</div>
 </div></body></html>
