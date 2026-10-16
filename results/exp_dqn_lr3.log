@@ -1,0 +1,109 @@
+--> Running on the GPU
+[dqn_lr3] agent=dqn opp=random reward=shaped lr=0.001 sl_lr=0.0001 train_every=4 gamma=0.99 anticipatory=0.1
+    ep    reward   dead%  knock%   gin%  eps/s
+     0   -0.4891  91.0%   7.0%  2.0%   0.12
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+   500   -0.5200  93.5%   6.0%  0.5%   8.41
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  1000   -0.5751  92.5%   6.0%  1.5%   8.36
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  1500   -0.5139  92.0%   7.5%  0.5%   7.63
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  2000   -0.4657  90.0%   9.5%  0.5%   7.25
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  2500   -0.4886  91.5%   8.5%  0.0%   6.98

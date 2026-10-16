@@ -1,0 +1,83 @@
+# HARD 3, ONE TURN EARLIER (9-game, stock 4) -- the same hand as
+# pos_hard3_lastdiscard, backed up one full turn for both players.
+# Deadwood 1 after the best discard, knock legal, and the stock
+# deadline is one round away: knock now, or spend the last exchange
+# hunting a better ending? One turn later (pos_hard3_lastdiscard,
+# stock 2) the decision becomes knock-or-nothing; here the choice is
+# still real.
+
+me: 3S 3H 5H 3D 5D AC 2C 5C 6C 7C 8C
+opp-known: 4S AH 9H
+pile: QS KD JD KH JH QD TD QC 9D 9C 8S 9S 6H 6D TS JS 8D 4C JC 7D 2H TC 2D QH 2S 4D KS
+my-known: 3S 3H 6C 8C
+event: my-pickup 9C
+event: my-discard QS
+event: opp-decline QS
+event: opp-discard KD
+event: my-draw JH
+event: my-discard JD
+event: opp-decline JD
+event: opp-discard KH
+event: my-draw 5H
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard QD
+event: my-draw 5D
+event: my-discard 9H
+event: opp-pickup 9H
+event: opp-discard TD
+event: my-draw QC
+event: my-discard QC
+event: opp-decline QC
+event: opp-discard 9D
+event: my-draw 7C
+event: my-discard 9C
+event: opp-decline 9C
+event: opp-discard 8S
+event: my-draw 9S
+event: my-discard 9S
+event: opp-decline 9S
+event: opp-discard 6C
+event: my-pickup 6C
+event: my-discard 6H
+event: opp-decline 6H
+event: opp-discard 6D
+event: my-draw TS
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard JS
+event: my-draw 8D
+event: my-discard 8D
+event: opp-decline 8D
+event: opp-discard 8C
+event: my-pickup 8C
+event: my-discard 4C
+event: opp-decline 4C
+event: opp-discard JC
+event: my-draw 7D
+event: my-discard 7D
+event: opp-decline 7D
+event: opp-discard 3S
+event: my-pickup 3S
+event: my-discard 4S
+event: opp-pickup 4S
+event: opp-discard 3H
+event: my-pickup 3H
+event: my-discard 2H
+event: opp-decline 2H
+event: opp-discard TC
+event: my-draw AC
+event: my-discard 2D
+event: opp-decline 2D
+event: opp-discard QH
+event: my-draw AH
+event: my-discard AH
+event: opp-pickup AH
+event: opp-discard 2S
+event: my-draw 4D
+event: my-discard 4D
+event: opp-decline 4D
+event: opp-discard KS
+event: my-draw 2C
+flip: 9C
+knock-max: 9

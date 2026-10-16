@@ -1,0 +1,316 @@
+V6 campaign -- gate record (2026-08-27 ...)
+Full rules, seat-swapped engine matches, 12 workers unless noted.
+Selection seeds != confirmation seeds throughout. Prior-art survey:
+results/v6_prior_art.md. Plan: HANDOFF_V6.md + the four adopted design
+changes in the survey's synthesis section.
+
+ROT CHECK (2026-08-27)
+  sim.py --verify                 PASS (100.0000% teacher agreement)
+  fullrules.py --test             PASS
+  adaptive.py --parity            PASS (199 decisions IDENTICAL)
+
+TRACK 1 GATE 0 -- full-knowledge oracle bound (seed 60100, 1488 hands)
+  Survey-adopted gate (Richards & Amir IJCAI-07): v5's exact config but
+  every sampled world = the opponent's TRUE hidden hand (stock order
+  still unknown; _world_weight forced to 1 so the true world is never
+  vetoed). Upper-bounds ANY opponent-hand belief improvement in-search.
+  oracle-v5 vs v5              +15.91 +/- 1.44    PASS -- huge headroom
+  (results/v6_gate0_oracle.log; oracle_gate.py. For scale: v5 vs v4 was
+  +1.20. Scrabble precedent realized ~14% of its oracle bound, which
+  here would be ~+2.2 pts/hand.)
+
+TRACK 1 -- particle filter offline development (seed 61000 dev streams)
+  particle.py: sequential PF, N particles of the opp's hidden hand;
+  tau-softmax likelihoods over the belief_teacher scalarization
+  (discard energy dw_after + mu*live), softened draw-gain pickup rule,
+  optional no-knock evidence; atomic (draw, discard) turns with proper
+  importance weights (drew-and-dropped priced at 1/|pool|);
+  fully-adapted APF kept-draw step (subsample kdraw, weight by mean
+  lik, keep lik-proportional); belief-guided repair on hero-draw
+  refutations; ESS<N/2 systematic resampling.
+  Dev findings (40-hand teacher streams, scratch sanity runs):
+    raw particle marginal Brier LOSES to uniform at N<=512 -- pure
+      finite-sample variance (N=4096 recovers to +9.8% but 7.6 s/hand);
+    particle posterior DIRECTION beats the calibrated Belief at every
+      turn depth (mean mass on truly-held cards, e.g. .49 vs .47 mid,
+      .69 vs .65 late) -- the trajectory inference extracts MORE signal;
+    the Brier gap is noise, not bias: shrinking the particle marginal
+      toward the Belief marginal (lam = n_eff/(n_eff+kappa)) reaches
+      +11.9% vs Belief's +12.4% -- a marginal-metric tie.
+  NOTE: the searcher consumes SAMPLED WORLDS and world weights, never
+  marginals (marginals only feed build_obs plane 5 / BeliefTeacher).
+  The offline gate for integration is therefore sampled-world quality
+  on the search-consumed statistics (overlap with truth, deadwood
+  realism by stage, knock-capability calibration) vs the current
+  belief+boost sampler.
+
+  Without rejuvenation the PF only TIED the bel-auto sampler on world
+  quality (late overlap .499 vs .509, late dw-gap +15.6 vs +11.9) and
+  the floor-clip needed for ensemble survival destroyed the negative
+  evidence that makes compositions meldful -- the selectivity-vs-
+  diversity tension. RESAMPLE-MOVE (one windowed-MH card-swap per
+  particle after each resample; proposal = drop uniform held card, add
+  belief-weighted pool card; accepted on the last-6-opp-events
+  likelihood, Hastings-corrected) resolves it:
+
+  OFFLINE GATE 1 -- marginal Brier (40-hand dev teacher streams)
+    particle (MH, floor .02, kap 80)   +14.6% vs uniform   PASS
+    current Belief                     +12.4% vs uniform
+  OFFLINE GATE 2 -- sampled-world quality (100 teacher hands, 16/probe)
+    late game (opp turns 8+):        overlap  dw-gap  knockBrier
+      bel auto (current sampler)      0.508    +11.2    0.459
+      particle (MH, floor .02)        0.581     +4.1    0.191   PASS
+    mid game (4-7):  particle 0.376/+5.4/0.150 vs auto 0.346/+2.2/0.209
+    The late-game deadwood-realism bound that marginals cannot express
+    (lesson #9: sampled ~21 vs true ~9) drops to +4.1; knockability
+    error -- the statistic that fed v4's +6.59 -- is halved.
+  Cost: ~1.8 s/hand at N=256 (incremental, once per hand). In-search
+  gate will need a compute-matched control (v4-K80 pattern).
+
+TRACK 1 OFFLINE GATE -- CALIBRATED, HELD OUT (seed 61500; 400/200/200
+  teacher/clone/random hands, train = first half of teacher+clone)
+  Grid 18 (tau_d x p_knock x mu at N=128, floor .02, MH on); chosen
+  tau_d=1.0 mu=0.0 p_knock=0.0 (p_knock=0 is expected: neither stream
+  opponent knocks below gin; in-search keeps v5's (10,1.0) veto for
+  knock conditioning instead).
+    held-out vs teacher: pf +13.68% vs uniform, +1.32% vs belief  PASS
+    held-out vs clone  : pf +13.79% vs uniform, +2.11% vs belief  PASS
+    held-out vs random : pf -8.86% vs uniform, -0.67% vs belief
+      (mismatch stress: the CURRENT belief is equally bad here, -8.1%
+       -- a pre-existing property of inferring from meaningless
+       actions, not a PF regression; population has no random players)
+  results/v6_particle_calibration.txt, results/v6_particle_cal_run.log.
+
+TRACK 1 GATE -- IN-SEARCH SELECTION (seed 62100, 1488 hands)
+  pf-v6 = unchanged v5 search (stages 16/48/192, deep, z=1.5,
+  opp_model (10,1.0) veto kept) with worlds sampled from the particle
+  posterior (calibrated cfg, N=256) instead of belief+boost.
+  pf-v6 vs v5                  +2.31 +/- 1.59    CI excludes 0 -- PASS
+  (results/v6_pf_selection.log; 0.435 s/searched-move vs v5 ~0.33
+   under fan-out = ~1.3x cost -> compute-matched control required.)
+TRACK 1 GATE -- FRESH-SEED CONFIRM (seed 64300, 3984 hands)
+  pf-v6 vs v5                  +1.92 +/- 0.97    CONFIRMED
+  (results/v6_pf_confirm.log; 0.441 s/searched-move. Selection +2.31
+   held up on an independent seed; margin exceeds v5's own promotion
+   edge over v4, +1.20 +/- 0.93.)
+TRACK 1 GATE -- COMPUTE-MATCHED CONTROL (seed 64300, 3984 hands)
+  v5[16/48/256,deep] vs v5     +0.50 +/- 0.94    (nothing)
+  Control cost 0.378 s/searched-move vs pf-v6's 0.441 -- same compute
+  buys no measurable edge as extra worlds; pf-v6's +1.92 stands clear.
+  THE ARCHITECTURE WINS, NOT THE CYCLES. results/v6_pf_control.log.
+  Registered: meta registry "v6" (pf_expert.PFPolicy).
+TRACK 1 GATE -- FIELD MATCHES (1488 hands each)
+  pf-v6 vs teacher (seed 64700)  +2.56 +/- 1.65   CI excludes 0 --
+    FIRST BOT TO BEAT THE PATIENT TEACHER HEAD-TO-HEAD (v5 tied it
+    -0.12 +/- 0.96; the teacher was the empirical-game co-optimum).
+  pf-v6 vs smart   (seed 64800)  +8.76 +/- 1.31   (v5: +6.83 +/- 1.27)
+    The better knockability read extracts more from weak knockers,
+    exactly where the worlds-gate predicted.
+  (results/v6_pf_vs_teacher.log, results/v6_pf_vs_smart.log)
+  PENDING: probe_exploitability (run_probe_v6.py, seed 20260827) ->
+  promotion.
+
+  SIDE FINDING (config provenance): every in-search gate ran with
+  particle.DEFAULT_PF (tau_d=2.0 mu=0.3 p_knock=0.5 lik_floor=0.02
+  N=256 kdraw=4), NOT the Brier-grid winner (tau_d=1.0 mu=0 p_knock=0)
+  recorded in results/v6_particle_calibration.txt -- the chosen config
+  was never propagated. Self-consistent: registered v6 == the as-gated
+  DEFAULT_PF config. Note p_knock=0.5 means the filter carries SOFT
+  no-knock evidence on top of the (10,1.0) world veto, and that
+  combination is what won. Open item: a calibrated-config in-search
+  variant (and a no-veto variant) are cheap untested candidates; any
+  DEFAULT_PF change requires full re-gating.
+
+TRACK 1 GATE -- EXPLOITABILITY PROBE (seed 20260827, 400 hands/adv)
+  All 21 adversaries LOSE to v6: range -0.26 (br_t2_p0) to -10.69
+  (br_t6_p100). Best of 21 = -0.26 +/- 3.24 -- NEGATIVE even at the
+  max of 21 noisy measurements. Cleanest probe of any bot in the
+  project (v5 best adversary +0.51, v3search +0.59, both noise).
+  UNEXPLOITED. results/probe_v6_full_20260827.log,
+  results/v3_meta/exploit_v6_full.json.
+
+V6 PROMOTION CLOSED (2026-08-28):
+  All promotion criteria met: beats-or-ties every member, fresh-seed
+  confirm, compute-matched control, clean full-rules probe.
+  FINAL SCORECARD (pf_expert.PFPolicy: v5 search config [stages
+  16/48/192, deep, kbranch 3, T=16, z=1.5, opp_model (10,1.0) veto] +
+  particle.DEFAULT_PF worlds [N=256, kdraw=4, tau_d=2.0, mu=0.3,
+  tau_p=1.0, p_knock=0.5, eps=0.05, lik_floor=0.02, MH window 6];
+  ~0.44 s/searched-move under fan-out = ~1.33x v5):
+    vs v5       +1.92 +/- 0.97   (3984 fresh; selection +2.31)
+    vs teacher  +2.56 +/- 1.65   (first head-to-head win ever)
+    vs smart    +8.76 +/- 1.31
+    vs 21-adversary probe: all negative, best -0.26 +/- 3.24
+    oracle headroom remaining: bound was +15.91 over v5; v6 captured
+    ~12% of it -- most of the gap is still open.
+  PROMOTED: meta registry "v6".
+
+TRACK 2 -- cross-world exact endgame (endgame.py, built 2026-08-27)
+  Survey-corrected design: per-world full-depth max is strategy fusion
+  (candidate-asymmetric deferral bias the z-test would CERTIFY -- the
+  mechanism of the endgame-v1 negative, lesson #13). Instead: advance
+  each world to the hero's next decision, PARTITION worlds by the
+  hero-visible observation trace (opp discards/pickups/declines + own
+  drawn card), one move per partition (teacher-pruned top-k), recurse
+  exact_depth hero decisions, exact full-rules terminal payoffs, per-
+  world values flow back so the paired z-test applies unchanged. Root
+  candidates stay top-4. Fires only in endgame (stock <= exact_stock)
+  on close calls that survive a cheap untruncated screen.
+  endgame.py --parity (exact off vs AdaptiveExpert): 143 decisions
+  IDENTICAL -- PASS. Smoke: 0.224 s/searched-move under contention.
+
+  BUG FOUND & FIXED (first selection attempt crashed): when the applied
+  candidate is the hero's DRAW, the drawn card enters the hand inside
+  step_fast BEFORE _advance records observations -- worlds with
+  different drawn cards shared one group, breaking the identical-hero-
+  hand partition invariant (list.remove crash). Fix: the applied
+  action's own observable outcome (the drawn card) prefixes the group
+  key. Selection runs with exact_stock=8 (~1 endgame decision/hand --
+  power for a low-frequency mechanism).
+
+  SECOND BUG FOUND & FIXED (match-scale crash): sim.restore only
+  TRUNCATES move_sheet/game.actions -- content is assumed to be a
+  shared prefix. True for v5's same-point sibling worlds; FALSE for
+  snapshots on DIVERGED search branches. The engine reads the PHASE
+  from the last sheet entries, so restoring a sibling left another
+  branch's tail in place and fast_legal_actions surfaced scoring
+  actions mid-hand. Fix: _BSnap/_brestore -- branch-safe snapshots
+  that also capture and rebuild the sheet/actions tails beyond the
+  decision-point base. INFRASTRUCTURE LESSON for all future in-world
+  search (incl. tracks 3/4): plain snapshot/restore is only sound for
+  rewinding within one line or across content-identical siblings; any
+  branching search over diverged states must restore sheet CONTENT,
+  not just length.
+  Stress: 200 hands (both belief types, 2 seeds, exact_stock=8), 45
+  exact escalations, zero crashes, ~5.5 s/hand single-process.
+
+TRACK 2 GATE -- SELECTION (seed 63100, 1488 hands, exact_stock 8)
+  exact-eg[d2 k3, pf base] vs v6   -0.17 +/- 1.65    TIE
+  Telemetry: 0.64 endgame decisions/hand, 29% escalate to exact
+  (~0.19 exact decisions/hand): even +2 pts per exact decision would
+  read ~+0.4/hand -- invisible at this CI. Consistent with Long et
+  al.'s prediction (gin endgames disambiguate fast; incremental gain
+  of exact play over good determinized search is modest) and with
+  lesson #13's history (two endgame attempts, two ties).
+  VERDICT: mechanism correct (parity + 200-hand stress) but no
+  measurable full-match gain; PARKED. To ever resolve it: a
+  conditional gate on endgame-reached hands or ~13k hands. The
+  reusable assets stand: _BSnap branch-safe snapshots and the
+  observation-grouped cross-world evaluator (Track 3's opponent-reply
+  branching and Track 4 both need exactly these).
+  KEPT INFRASTRUCTURE: endgame.py (ExactEndgameExpert, _BSnap,
+  _advance, egmatch with eg-telemetry).
+
+TRACK 3 -- CONFIG RUNGS, SELECTION BATCH (1488 hands each, vs v6)
+  kbranch=4        (seed 65100)  -0.68 +/- 1.63   nothing
+  stages 16/48/384 (seed 65200)  -0.19 +/- 1.63   NOTHING at 2x cost
+    (0.859 s/move) -- ANSWERS THE SCALING-CURVE QUESTION: with the
+    particle posterior concentrating worlds, sampling noise is no
+    longer binding; more K buys zero (v4's plain-K plateau shape).
+    Accuracy-per-world rungs (deep/3-ply family) remain the live vein.
+  calibrated PF cfg (seed 65300) -0.18 +/- 1.63   tie -- DEFAULT_PF
+    stands (Brier-optimal != match-optimal; worlds-gate was the
+    criterion that transferred).
+  no-veto          (seed 65400)  +0.99 +/- 1.61   trend (CI incl. 0)
+    -- the PF's own p_knock evidence replacing the (10,1.0) hard world
+    rejection; also slightly cheaper (no rejection retries).
+  no-veto CONFIRM (seed 66200, 3984 hands)  +0.47 +/- 0.98   TIE
+    -- the +0.99 selection trend collapsed fresh (lesson #5 live,
+    again). Veto and PF p_knock evidence are interchangeable; v6
+    config stands.
+  N=512 particles (seed 66500, 1488)        +0.13 +/- 1.62   TIE
+    at 1.36x cost (0.600 s/move) -- N=256 already saturates what the
+    paired search can extract from the posterior.
+  Emerging picture: v6 is at a LOCAL OPTIMUM -- every cheap
+  perturbation (kbranch, K-scaling, PF params, veto, N) ties. The
+  accuracy-per-world family (3-ply, ladder.py, parity PASS) is the
+  remaining live rung this session.
+  3-ply (seed 67100, 1488)                  +0.44 +/- 1.65   TIE
+    at 1.58x cost (0.697 s/move; ladder.py, parity PASS at plies=1).
+    The accuracy-per-world rung saturates too.
+
+TRACK 3 VERDICT: v6 is at a measured LOCAL OPTIMUM. Seven independent
+  perturbations -- kbranch 4, world budget x2, calibrated PF params,
+  no-veto, particles x2, cross-world exact endgame, 3-ply -- ALL tie
+  within noise. The search architecture is saturated at its cost
+  point; the remaining ~14 pts/hand of oracle headroom is not
+  reachable by local moves. Next frontiers are structural: Track 4
+  subgame solving (fusion-free use of the particle ranges), match
+  scoring + human evaluation (roadmap #5/#6), or a fundamentally
+  better opponent model class.
+  KEPT INFRASTRUCTURE: ladder.py (playout_deep_n, LadderExpert --
+  the n-ply machinery, parity-proven), pf_expert search_cfg/CLI knobs.
+
+V6 CAMPAIGN SESSION CLOSED (2026-08-28). Handoff: HANDOFF_V7.md.
+
+V6 HOME-VARIANT PORT (2026-08-29, user request)
+  Changes (all default-preserving; standard-game smoke bit-identical):
+    particle.SoftOpponent knock_max param (no-knock evidence uses the
+      hand's public threshold instead of hard-coded 10);
+    particle.ParticleCore pile0 param (the flip is excluded from the
+      initial particle pool -- previously it could be hypothesized
+      into opponent hands);
+    pf_expert.ParticleBelief: home detection via rnd._home_flip_id ->
+      10+10 deal arithmetic, pile seeding at construction, knock_max
+      from game.settings.going_out_deadwood_count (=10 in standard
+      games, so the gated path is unchanged);
+    home_variant.HomeV6Policy (--bot v6home, --vs v4home added):
+      fresh PFExpert per hand with opp_model=(flip, 1.0) -- exact,
+      the threshold is public (the HomeV4Policy pattern).
+  Smokes: standard 4-hand points IDENTICAL pre/post edit; home 10
+  hands across flips 1-10, 0 desyncs, flip-exclusion + knock_max
+  assertions pass.
+  home_demo.py: same-position ace-vs-ten illustration. Knock-shaped
+  hand (7 melded + 10 scattered deadwood): ten game KNOCK +43.6 vs
+  best alternative +27.1 (deviate, dSE 1.2); ace game knock illegal,
+  plays on at +26.3 -- the same hand is worth ~17 pts less when the
+  knock cannot be cashed. Gin-shaped hand: worth MORE in the ace game
+  (+45.7 vs +43.9) and knocking is only EV-neutral in the ten game.
+  V6HOME VALIDATION MATCHES (1200 hands each)
+    v6home vs v4home  (seed 71000)  +1.90 +/- 1.83   CI excludes 0
+      flip<=3 (gin-ish) +1.48 +/- 4.04; flip>=8 (knock) +3.36 +/- 2.60
+      -- the v6 edge carries to the home variant at the same magnitude
+      as the standard game (+1.92), concentrated in knock games where
+      the PF's knockability read bites hardest.
+    v6home vs knocker (seed 72000)  +6.39 +/- 1.48
+      (v4home's historical mark vs knock-when-legal: +5.38 +/- 1.60)
+    results/v6_home_vs_v4home.log, results/v6_home_vs_knocker.log.
+
+  home_upcard_demo.py (2026-08-29, user request): take-vs-draw
+  connectivity ladder, ten game (flip KD), opponent discarded 7H,
+  spares all low so taking always worsens raw deadwood (isolates meld
+  potential). 384 worlds x 3 seeds; take-minus-draw EV gap:
+    0 combos -1.0, pair only -2.6, pair+run (user's 7d/8h example)
+    -0.7 TAKE, pair+run+gap +0.0 TAKE, immediate meld +18.5 TAKE.
+  Reading: 2 combos is where taking stops COSTING EV (the teacher's
+  deadwood tiebreak then tips to take); speculative takes are never
+  clearly profitable short of completing a meld. SIDE FINDING from a
+  discarded first design: with high junk in hand, taking a mid card
+  is worth ~+6 as a pure VALUE SWAP (7 replacing a J/Q) with zero
+  combos -- in practice most correct takes are swap-driven, not
+  combo-driven.
+
+EVALUATOR ENGINE UPGRADE (2026-08-29, user-caught blind spot)
+  On pos_take2_swap (take an unconnected 6C for a 16->13 deadwood
+  swap vs draw), the USER out-counted the draw branch: 11/39 unseen
+  cards enable an IMMEDIATE next-turn knock (2S/6S/KD at dw 7, three
+  aces at 8, 2H/2C at 9, three 3s at 10) while the take enables none
+  -- and challenged the evaluator's near-tie. Verified: the v4-family
+  engine's rollout hero (patient teacher) never knocks in rollouts,
+  so next-turn hero-knock value is priced as mere gin progress. At
+  K=1536: flat engine draw +0.74 +/- 0.35; deep 2-ply engine (hero's
+  first rollout decision branches over top-2 discards + best knock)
+  draw +4.50 +/- 0.39 -- a ~6x undervaluation, exactly the lesson-#12
+  asymmetry principle biting in the user-facing tool. FIX:
+  evaluate.py now defaults to engine="deep" (AdaptiveExpert single
+  stage, deep_from=0; --engine v4 keeps the old one). Re-rendered
+  gallery at 768 deep worlds: take1 tie +0.18 (take stands), take2
+  DRAW +4.04 +/- 0.57 (flipped, user vindicated), take3 draw (gap
+  narrowed to -1.49: the knock-aware engine values the take's
+  next-turn knock too), take4 take (ace game, -0.40 tie).
+  Also added: text+HTML reports now explicitly flag statistical ties
+  where the kept prior is not the top raw mean.
+  NOTE (fidelity): the engine's home transform gives the first actor
+  one take-the-flip decision; the real table rule also offers the
+  DEALER the flip if the non-dealer passes. That second option is not
+  modeled (accepted approximation since 2026-08-24).

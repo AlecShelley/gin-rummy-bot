@@ -1,0 +1,80 @@
+# HARD 7 -- STOCK 4: KNOCK, OR ONE MORE DRAW? (3-game endgame). We
+# can knock at 2-3 by shedding the 8S; the hand dies (0-0) in two
+# more turns. The knock-vs-play gap is a measured COIN-FLIP (-0.7 /
+# +0.2 / -0.1 across seeds). The real content is the trap underneath:
+# shedding ANYTHING but the 8S -- say "safely" banking an ace -- costs
+# 7 to 9.5 points, because only the 8S keeps both the A-4 spade run
+# and the 2-3-4 heart run intact for the final showdown. The
+# coin-flip is the headline; the discard is the exam.
+
+me: AS 2S 3S 4S 8S 2H 3H 4H 4D AC 4C
+opp-known: 
+pile: KH QD TC QH JH TD TS QS 9D 9C JD KC 8H KD 8D 9H 7D QC KS 7S 5S 5H 7H TH 9S 3C 5D
+my-known: 3S 4S 3H 4H
+event: my-pickup 3H
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard QD
+event: my-draw JH
+event: my-discard TC
+event: opp-decline TC
+event: opp-discard QH
+event: my-draw 9D
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard TD
+event: my-draw TS
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard QS
+event: my-draw AC
+event: my-discard 9D
+event: opp-decline 9D
+event: opp-discard 8D
+event: my-pickup 8D
+event: my-discard 9C
+event: opp-decline 9C
+event: opp-discard JD
+event: my-draw KC
+event: my-discard KC
+event: opp-decline KC
+event: opp-discard 8H
+event: my-draw KD
+event: my-discard KD
+event: opp-decline KD
+event: opp-discard 5S
+event: my-pickup 5S
+event: my-discard 8D
+event: opp-decline 8D
+event: opp-discard 9H
+event: my-draw 4D
+event: my-discard 7D
+event: opp-decline 7D
+event: opp-discard QC
+event: my-draw KS
+event: my-discard KS
+event: opp-decline KS
+event: opp-discard 4S
+event: my-pickup 4S
+event: my-discard 7S
+event: opp-decline 7S
+event: opp-discard 4H
+event: my-pickup 4H
+event: my-discard 5S
+event: opp-decline 5S
+event: opp-discard 3S
+event: my-pickup 3S
+event: my-discard 5H
+event: opp-decline 5H
+event: opp-discard 7H
+event: my-draw TH
+event: my-discard TH
+event: opp-decline TH
+event: opp-discard 9S
+event: my-draw 2S
+event: my-discard 3C
+event: opp-decline 3C
+event: opp-discard 5D
+event: my-draw 8S
+flip: 3H
+knock-max: 3

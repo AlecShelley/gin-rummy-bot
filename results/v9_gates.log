@@ -1,0 +1,386 @@
+================================================================
+V9 CAMPAIGN LOG — mid-game (turn-3+) adjacency/outs take rule
+Opened 2026-09-04. Prior campaign: results/v8_gates.log (v8home).
+================================================================
+
+--- REGISTRATION (2026-09-04, BEFORE any study launch) ---
+
+User idea: hand adjacency as a strength proxy; take-vs-draw should
+weigh the upcard's adjacency against how many good draws (outs)
+remain unseen. Generalize the turn-2 book to mid-game free-draw
+nodes (j >= 2), conditioning on outs.
+
+Definitions (all hero-observable):
+  free-draw node: hero to move, non-opening, legal kinds ==
+    {DrawCardAction, PickUpDiscardAction}; j = 1-based index of the
+    hand's free-draw nodes (j=1 is the t2-book node).
+  adj(hand, top) = # hand cards rank-mates of top OR same suit
+    within 2 ranks (the book metric).
+  outs(hand, seen) = # unseen cards c with min_deadwood(hand+[c])
+    <= min_deadwood(hand); seen = hand | pile | opp.known_cards
+    (FULL observable; outs_pileonly recorded as nat2 bridge).
+  melds = min_deadwood(hand+[top]) <= min_deadwood(hand).
+  topv = DEADWOOD_VALUE[top]. d = T - D (forced take minus forced
+    draw, both arms played to hand end by v8home both seats).
+
+Instrument: turn3_study.py — census-then-fork. Census plays the
+deal to the END on the champion line recording every free-draw
+node + the bot's natural choice; ONE node k is picked uniformly
+among eligible nodes (j>=2; cell-matching in --cell mode) by
+random.Random(deal_seed*2+1); both arms replay to node k (identity
+asserted vs census), forced, finished. One row per deal.
+
+Pre-registered hypotheses:
+  C1 (PRIMARY, suppression): in cell (bot_takes & ~melds),
+     dEV(take) < 0. Margins: pooled + one-dim splits outs {0-4,
+     5-8, 9+}, adj {<=1, >=2}, topv {<=3, 4-7, 8-10}, turn
+     {j=2, 3-4, 5+}. Interactions exploratory.
+  C2 (generalized t2 clause): in (~melds & topv<=3 & adj>=2),
+     dEV(take) > 0.
+  C2b (SECONDARY, the user's outs variant): same cell & outs<=4,
+     dEV(take) > 0. Chosen over C2 only if it clearly dominates on
+     CONFIRMATION rows. [K=4 was to be primary; the phase-0 nat2
+     reslice (nat2_reslice.py, 430 rows) shows the turn-2 cell is
+     positive across ALL outs bins (outs>2: +3.14 +/- 2.50; OLS
+     slope -0.08 +/- 1.19) and the outs<=2 +10.96 slice is n=24 —
+     not a robust trend, so the un-gated clause is registered as
+     primary exception and outs-gating must earn its place at
+     turn 3+.]
+  C3 (dose-response, the user's mechanism direct test): within
+     (~melds & adj>=2), OLS slope of d on outs is negative.
+
+Operational rule (the only thing that can reach a gate):
+  t3_book_take(hand, top, seen) = melds OR (topv<=3 AND adj>=2
+  [AND outs<=4 iff C2b dominates C2 on confirmation rows]),
+  applied as a full override at free-draw nodes j>=2 (it both
+  vetoes all other non-melding search takes — the C1 direction —
+  and forces the exception takes).
+
+Decision rule: advance to confirmation iff C1-pooled or C2 has a
+95% CI excluding 0 with the predicted sign on the selection rows.
+Anything else found in the rows is exploratory and re-enters at
+confirmation with its own fresh seed. If nothing fires: close the
+campaign with a power statement.
+
+Seeds (all residue-distinct mod 977 from every base used in v8):
+  90000 uniform selection study   92000 targeted C2 study
+  94000 confirmation              96000 t3_gate selection
+  98000 t3_gate confirmation
+  ps multiplier: seed*10141 + tries*19 (fresh vs 7211/9013).
+
+Gate protocol: t3_gate.py (t2_gate clone), hero
+HomeV8Policy(t3book=True) vs False, champion opponent, paired
+deals. >=-tie adoption allowed only because the causal evidence is
+same-distribution (methodology rule 4) AND the fire-rate x
+per-fire dilution estimate from the census is consistent with the
+gate number. Positive gates confirm fresh at 98000. If the rule
+fires too rarely for a gate to resolve, adoption on causal
+evidence alone per the t2 low-card precedent.
+
+--- PHASE 0 (2026-09-04): preflight + nat2 reslice ---
+
+Gates all green: sim.py --verify (teacher agreement 100%, 13
+strict-dead-hand diffs as documented), fullrules.py --test PASS,
+adaptive.py --parity PASS (199 decisions), ladder.py --parity PASS
+(143), particle.py --anchors PASS (meld .947 / no-use .073 /
+meld>=junk-dump), home_variant.py --test-opening PASS (300 hands).
+
+nat2_reslice.py (430 turn-2 rows, outs = pile-only):
+  ALL +3.58 +/- 2.41 | outs<=2 +10.96 +/- 7.81 (n=24) |
+  outs>2 +3.14 +/- 2.50 | outs<=4 +4.07 +/- 4.59 |
+  outs>4 +3.33 +/- 2.80 | OLS slope -0.08 +/- 1.19.
+  Verdict: at turn 2 the exception is NOT outs-concentrated; the
+  registration above reflects this (C2 un-gated primary, C2b
+  outs-gated secondary).
+
+--- PHASE 1 (2026-09-04): uniform selection study, seed 90000 ---
+
+turn3_study.py, 2000 paired deals, 200 shards x 10, 185 min, 0
+dupes, 0 replay mismatches. Full report: results/turn3_study.log;
+rows: results/turn3_rows.jsonl. Headlines:
+  overall dEV(take) -1.12 +/- 1.55; bot takes 33.6%; melds 18.0%.
+  C1 pooled -1.36 +/- 3.97            -> NOT fired.
+  C2 -2.70 +/- 8.28 (n=57)            -> NOT fired, wrong sign.
+  C2b -6.52 +/- 11.17 (n=31)          -> wrong sign.
+  C3 slope -0.42 +/- 1.68 (n=380)     -> flat.
+  Sanity: melding takes +12.41 +/- 3.82; counterfactual no-meld
+  takes -4.08 +/- 1.65 (bot already declines 81% of them).
+VERDICT on the registered hypotheses: the user's outs-conditioning
+shows NO mid-game signal (C2b/C3), and the t2 low-card exception
+does NOT generalize past j=1 (C2 sign flips). Registered decision
+rule -> no confirmation for C1-pooled/C2.
+
+EXPLORATORY selection (one of the 11 registered C1 margin cells,
+so winner's-curse rules apply — re-enters at a fresh seed):
+  j=2 (first turn-3 node), bot takes, no meld: -8.67 +/- 7.65
+  (n=64; was -17.13 +/- 11.74 at the 600-row interim). This is the
+  turn-decay continuation of the j=1 leak (-1.92/take, v8 gates
+  log); ~18% of hands hit the cell -> potential ~1+ pt/hand.
+
+DECISIONS:
+  Phase 2 (targeted C2 run, seed 92000) SKIPPED: powering up a
+  wrong-signed cell is not leverage; seed retired unused.
+  Phase 3 confirmation RE-TARGETED (allowed by registration: an
+  exploratory contrast re-enters with its own fresh seed): cell =
+  (j==2 & bot_takes & ~melds), hypothesis dEV(take) < 0, seed
+  94000, ~1000 accepted rows (expected CI ~ +/-2), instrument
+  turn3_confirm.py (turn2_study pattern rolled to the SECOND free
+  draw node, probe the bot, accept its non-melding takes, fork).
+  Advance to the gate iff the confirmation CI excludes 0 below.
+  Rule form if confirmed: at j=2, take iff melds (no exception —
+  C2 gave no evidence for one at j>=2).
+
+--- PHASE 3 (2026-09-04): j=2 confirmation, seed 94000 — NOT CONFIRMED ---
+
+turn3_confirm.py, 1000 accepted rows (cell rate 17.4% of 5755
+hands reaching j=2), 93 min, 0 dupes. Log:
+results/turn3_confirm.log; rows: results/turn3_confirm_rows.jsonl.
+  dEV(take) -0.80 +/- 2.36  -> CI includes 0. The -8.67 selection
+  estimate was winner's curse (lesson #5, live demonstration #3 for
+  this project: v3boost, the p2 grid, now this). True effect is
+  ~ -1 +/- 2 per take; at 17.4% of hands that caps the rule's value
+  at ~0.14 pts/hand — below any gate's resolution. No slice earns a
+  follow-up: the outs split (outs<=4 +1.68 +/- 3.72 vs 5+ -2.25 +/-
+  3.04, diff ~3.9 +/- 4.8) is not significant and follows three
+  flat/negative outs measurements (phase-0 reslice slope -0.08 +/-
+  1.19; phase-1 C3 slope -0.42 +/- 1.68; phase-1 C2b wrong sign).
+
+=== CAMPAIGN CLOSED 2026-09-04 — VERDICT ===
+
+1. The user's adjacency/outs conditioning hypothesis: NEGATIVE at
+   every registered test. Outs level does not detectably modulate
+   take value at turn 2 (flat reslice) or mid-game (flat C3, C2b
+   wrong sign). Adjacency itself already carries the value the
+   books capture (t2 low-card clause stands untouched).
+2. The t2 low-card exception does NOT generalize to j>=2
+   (C2 -2.70 +/- 8.28, wrong sign).
+3. NEW POSITIVE KNOWLEDGE: the mid-game TAKE/DRAW side of open
+   frontier #2 is now AUDITED AND CLEAN. 3000 forced-arm paired
+   deals (2000 uniform j>=2 + 1000 cell-targeted j=2) show the
+   search's own draw-node choices are within noise of optimal on
+   its own line: bot-takes-no-meld pooled -1.36 +/- 3.97 (uniform)
+   and -0.80 +/- 2.36 (j=2 targeted); counterfactual no-meld takes
+   the bot already declines cost -4.08 +/- 1.65 (it is right to
+   decline them); melding takes +12.41 +/- 3.82 (it takes 100%).
+   The early-game bias series (j=1 ~-1.9/take) decays below
+   measurement by j=2, as the v8 log predicted. NO BOOK CHANGE.
+   v8home remains the champion, unchanged.
+4. Remaining frontier #2 item: mid-game discard SAFETY (feeding
+   the opponent) — never forced-arm audited; separate instrument.
+5. Kept: turn3_study.py (census-then-fork — the reusable mid-game
+   forced-arm instrument, 0 replay mismatches over 3000 forks),
+   turn3_confirm.py, nat2_reslice.py, and the row files (full
+   observable state stored: any future mid-game take rule can be
+   re-sliced OFFLINE from results/turn3_rows.jsonl +
+   turn3_confirm_rows.jsonl before spending compute).
+   Seeds 92000/96000/98000 retired unused.
+
+================================================================
+LEAK HUNT (2026-09-04, user direction): force-arm audit of the
+remaining never-audited decision surfaces, hunting the bot's
+largest systematic misplay (the turn-1/turn-2 method, generalized).
+Surfaces already audited clean: opening (book), j=1 take (book),
+j>=2 take/draw (this campaign, phases 1+3). Never audited:
+KNOCK TIMING and DISCARD SAFETY. Registered before launch.
+================================================================
+
+--- REGISTRATION: K-study (knock timing), seed 100000 ---
+
+Mechanistic prior: the knock/continue choice is made by the search
+whose T=16 deadwood leaf caused the confirmed turn-1/2 over-taking
+(it overweights banked deadwood vs the gin race); full-rules
+undercut swings +/-25-50/hand; the home game is gin-dominated.
+
+Instrument knock_study.py (census-then-fork):
+  Node: hero to move, legal contains >=1 KnockAction and >=1
+  non-knock action, NO GinAction (gin is mandatory). Sample ONE
+  such node per hand uniformly (random.Random(deal_seed*2+1));
+  j = 1-based knock-node index.
+  Arm K: force the BEST KNOCK (min residual deadwood, judge order
+  on ties — the expert._candidates/MixedKnock rule).
+  Arm C: force FastTeacher.act(game, non-knock legal) (the
+  search's own prior discard; caveat: EV(C) is a mild lower bound
+  on continue-EV when v8 would discard differently — biases the
+  study TOWARD knocking looking good, so a confirmed
+  "bot over-knocks" finding is conservative).
+  Both arms finish with v8home both seats; paired per deal; full
+  observable state stored per row.
+Hypotheses:
+  KA (bot knocks): dEV(K-C) on the bot's own knocks — leak iff
+     mean < 0 with 95% CI excluding 0 (over-knocking).
+  KB (bot continues): dEV(K-C) on the bot's declines — leak iff
+     mean > 0, CI excluding 0 (under-knocking).
+  Margins (one-dim): threshold {A-3, 4-7, 8-10}, stock {>=20,
+  10-19, <10}, best-knock residual dw {0-3, 4-6, 7-10}, j {1, 2+}.
+Decision rule: any registered cell firing -> fresh-seed
+confirmation at 104000 before any rule/gate work.
+
+--- REGISTRATION: D-study (discard safety), seed 102000 ---
+
+Instrument discard_study.py (census-then-fork):
+  Node: hero discard node (11 cards, no knock legal, len(legal)>1).
+  Sample one per hand uniformly.
+  Challenger: among legal discards whose resulting min-deadwood
+  <= best+1, the one minimizing _live_count(card, hero-unseen
+  pool) (ties: higher deadwood value); REJECT the node if it
+  equals the bot's natural discard.
+  Arms: bot's natural discard vs challenger; d = EV(chall)-EV(bot).
+Hypotheses:
+  DA (pooled): safety-first discarding gains: mean d > 0, CI
+     excluding 0.
+  Margins: opp visible pickups {0, >=1}, stock bands, threshold
+  bands, dw-cost of challenger {0, 1}.
+Decision rule: as K-study; confirmation seed 106000.
+
+Seed hygiene: 100000/102000/104000/106000 mod 977 =
+346/392/438/484, distinct from all used bases.
+
+--- K-STUDY RESULT (2026-09-05): KNOCK TIMING AUDITED CLEAN ---
+
+knock_study.py, 2000 paired deals, seed 100000, 240 min, 0 dupes,
+0 replay mismatches. Log: results/knock_study.log; rows:
+results/knock_rows.jsonl. Knock-option nodes: 3.0/hand; bot knocks
+at 20.8% of them.
+  KA (bot knocks):   dEV(K-C) +5.60 +/- 2.45  -> its knocks are
+     RIGHT (positive, CI excludes 0 the healthy way). No margin
+     fires the leak direction (kdw 0-3: -1.20 +/- 6.82 n=69 and
+     j2+: -3.58 +/- 9.33 n=36 straddle 0).
+  KB (bot continues): dEV(K-C) -10.42 +/- 1.40 -> its declines are
+     RIGHT everywhere (all margins -6.8 to -13.3, all negative).
+VERDICT: no leak. Knock/continue is a measured STRENGTH — the
+deadwood-leaf over-taking mechanism does NOT extend to knock
+timing. Caveat noted at registration: arm C uses the teacher's
+continue-discard, biasing the study TOWARD knocking looking good —
+which makes the KB (patience) result conservative and the KA
+result mildly flattered; KA's +5.60 exceeds the plausible bias.
+D-study (discard safety, seed 102000) launches next.
+
+--- D-STUDY RESULT (2026-09-05): DISCARD SAFETY AUDITED CLEAN ---
+
+discard_study.py, 2000 paired deals, seed 102000, 0 dupes, 0
+replay divergences (wall-clock inflated by a ~9h machine sleep;
+compute ~3.5h). Log: results/discard_study.log; rows:
+results/discard_rows.jsonl. Eligible nodes (safety-first
+challenger differs from bot's discard): 3.0/hand.
+  DA pooled: dEV(safety-first - bot) = -3.47 +/- 1.65 -> the
+  challenger LOSES; CI excludes 0 on the healthy side. Every
+  registered margin negative (opp-pickups>=1 -4.10 +/- 2.05;
+  deadwood-TIED swaps -3.53 +/- 1.83; even live-saved>=3 -4.16).
+VERDICT: no leak. The bot's discard choice among near-tied cards
+carries real value the live-count safety heuristic destroys
+(opponent-live cards are usually hero-live too — naive safety
+sacrifices own draw structure). Consistent with lesson #12's
+standalone tie for belief-aware safety discarding; now confirmed
+at the ROOT decision with forced arms. Confirmation seed 106000
+retired unused.
+
+=== LEAK HUNT CLOSED 2026-09-05 — VERDICT ===
+
+All decision surfaces of v8home are now forced-arm audited:
+  opening (book, v8)  |  j=1 take (book, v8)  |  j>=2 take/draw
+  (v9 ph1+3, clean)  |  knock timing (K-study, clean — a measured
+  STRENGTH: knocks +5.60 +/- 2.45, declines avoid -10.42 +/- 1.40)
+  |  discard safety (D-study, clean).
+NO systematic misplay remains at measurable size on the bot's own
+line. The turn-1/turn-2 over-taking was the exception, not the
+pattern, and the books already fixed it. By elimination, the
+~14 pt/hand oracle gap is INFORMATION, not decision rules:
+mid-game hand-reading + endgame play under uncertainty. The
+standing structural direction (HANDOFF_V8 frontier #1, Track A
+subgame CFR / belief-conditioned endgame) is where the points are.
+Instruments kept: knock_study.py, discard_study.py (+ turn3_*),
+all row files re-sliceable offline. 10,000+ forced-arm forks this
+campaign, 0 replay mismatches.
+
+================================================================
+POSTERIOR GROUND-TRUTH CHECK (2026-09-05, user direction): the
+first exact Bayesian-consistency test of the PF belief — compare
+P_PF(opp hand | info set) against the EMPIRICAL conditional from
+rejection-sampled deals reaching the same info set on the v8home
+deployment line. Registered before launch. Instrument:
+posterior_check.py. Design rules: screens are implication-only
+(no forcing, no teacher screens — both bias a posterior study);
+hero side fixed by construction (= conditioning on hero's
+knowledge); hero policy seed FIXED (900001), opp seed fresh per
+sample; accept iff the trajectory reproduces the target
+hero-observable history exactly, early-abort on divergence.
+================================================================
+
+FROZEN SCENARIOS (from natural v8 self-play, picker seed 107000,
+hero=P1 in both; ids are sim card ids):
+  S1 (decline evidence, deal 107000): hero hand
+     [0,8,21,25,29,31,34,38,46,48], flip 15 (thresh 3). Events:
+     my-pass, opp-pass. Acceptance = opp book-pass (pure function,
+     no search). N target 200,000.
+  S2 (take+discard evidence, deal 107002): hero hand
+     [2,5,7,29,36,37,38,40,41,43], flip 30 (thresh 5), X=22.
+     Events: my-pass, opp-pickup flip, opp-discard X. Screens:
+     book-take(opp10), X in opp10. One searched opp move per
+     survivor. N target 1500.
+  S3 (mid-game decline+discard, deal 107000): D=26, C=25, Y=6.
+     Events: my-pass, opp-pass, my-draw D, my-discard C, opp-draw,
+     opp-discard Y. Screens: opp book-pass, stock-top==D, Y in
+     opp10 or Y==next stock card. Hero's discard C asserted
+     deterministic (fixed hero seed). Two searched opp moves per
+     survivor. N target 1500.
+
+REGISTERED METRICS (per scenario): M1 per-card reliability z vs
+binomial SE, flag |z|>3 (41 comparisons), watch |z|>2; M2 Brier
+(particle._brier_probe) of raw AND shrunk ensemble marginals vs
+uniform baseline; M3 evidence-channel mass (rank-mates and
+suit-within-2 of the declined/discarded cards; meld-mates of the
+taken flip) predicted vs empirical with CIs — the actionable
+over/under-reaction readout; M4 joint: opp-hand deadwood
+distribution + knockable fraction, particle cloud vs truth.
+PF side: read_regress.ensemble_marginal, filters=4 champion
+DEFAULT_PF; sensitivity row filters=8 + shifted ensemble seed —
+ensemble noise must be << flagged deviations.
+Seeds: S1 108000, S2 110000, S3 112000 (mod 977 distinct from all
+used). Any confirmed miscalibration becomes the NEXT campaign's
+target (likelihood fix per v7 protocol), not this study's scope.
+
+--- POSTERIOR CHECK RESULTS (2026-09-05) — THE BELIEF IS
+SYSTEMATICALLY UNDER-CONFIDENT; every evidence channel too soft ---
+
+S1 (200k exact samples, decline-only): PF captures 89% of node
+info (Brier 0.1809 vs uniform 0.1844, achievable 0.1805). Flip-
+adjacent mass PF 0.532 vs TRUE 0.421 (suit+-2), 0.383 vs 0.316
+(rank-mates) — ~25% excess on cards the deterministic book pass
+rules out (tau_p=0.1 softness leaves 10x weight on adj>=2 hands;
+in self-play the book NEVER mismatches). M4 cloud deadwood dead-on
+(57.5 vs 57.8). Ensemble noise 0.016 << deviations.
+S2 (1500, take+discard): PF captures 69% of node info (0.1683 /
+uni 0.1744 / ach 0.1656). Take evidence under-weighted: rank-mates
+of taken 5D PF 0.724 vs TRUE 0.893. DISCARD-CHOICE COUNTERFACTUAL
+missing: truth crushes dead high cards (KS 0.099, TC 0.119, KH
+0.115, QS 0.161 — "would have discarded THAT instead of TH") while
+PF leaves ~2x (0.16-0.25). Run-direction asymmetry: 7D PF 0.545 vs
+true 0.449, 3D PF 0.328 vs true 0.454. M4 cloud 7.6 pts too MELDY
+(51.8 vs 59.4).
+S3 (1500, decline+discard mid-game): PF captures 60% of node info
+(0.1731 / uni 0.1790 / ach 0.1692). ALL channels under-weighted:
+declined-flip suit+-2 PF 0.781 vs TRUE 0.443; declined-KH
+rank-mates 0.511 vs 0.292; discarded-7S rank-mates 0.646 vs 0.389
+(7D: PF 0.235 vs TRUE 0.087). M4 cloud 4.8 pts too pessimistic
+(50.8 vs 46.1). Hero-line note: hero's discard at fixed seed
+reproduces only ~50% across hidden permutations (the search's
+world-shuffle consumes actual pool list order) — conditioning on
+hero-played-C is the deployment line, noted as a benign
+entanglement.
+
+=== VERDICT ===
+Monotone: 89% -> 69% -> 60% of available information captured as
+evidence accumulates — the PF UNDER-REACTS to every evidence type
+(pass, take, discard), never over-reacts. Root-cause candidates,
+in order: (1) tau_p=0.1 on opening events that are DETERMINISTIC
+in deployment; (2) discard energy too soft (tau_d=2.0, mu=0.3) —
+misses the discard-choice counterfactual that empirically crushes
+dead high cards; (3) robustness clips (lik_floor=0.02, eps=0.05)
+cap per-event evidence; (4) historical calibration targeted
+STREAM Brier of the SHRUNK marginal — the raw cloud the search
+samples was never the calibration objective. This is the first
+concrete, measured entry point into the ~14 pt/hand oracle gap.
+NEXT CAMPAIGN: likelihood sharpening, gated per the v7 protocol,
+with these three frozen scenarios as permanent regression
+benchmarks (posterior_check.py --report re-runs them offline from
+the stored rows: results/post_s{1,2,3}_rows.jsonl).

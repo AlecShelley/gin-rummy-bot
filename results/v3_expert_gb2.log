@@ -1,0 +1,5 @@
+expert(K=48,A=4,opp_model=(0, 1.0),uniform=False,classes=('draw', 'discard'),T=16,z=1.5) vs strong: +4.03 +/- 1.70 over 984 hands (309s)
+expert(K=48,A=4,opp_model=(0, 1.0),uniform=False,classes=('draw', 'discard'),T=16,z=1.5) vs results/v2_final/gin_rummy_bot.policy.pt: +2.78 +/- 1.69 over 984 hands (309s)
+expert(K=48,A=4,opp_model=(10, 1.0),uniform=False,classes=('draw', 'discard'),T=16,z=1.5) vs smart: +2.43 +/- 1.55 over 984 hands (234s)
+expert(K=48,A=4,opp_model=(10, 1.0),uniform=True,classes=('draw', 'discard'),T=16,z=1.5) vs smart: +1.24 +/- 1.53 over 984 hands (228s)
+expert(K=48,A=4,opp_model=None,uniform=False,classes=('draw', 'discard'),T=16,z=1.5) vs smart: +2.59 +/- 1.58 over 984 hands (239s)

@@ -1,0 +1,33 @@
+expert(K=16,A=4,opp_model=(0, 1.0),uniform=False,classes=()) vs strong: -1.67 +/- 2.80 over 480 hands (3s)
+expert(K=16,A=4,opp_model=(0, 1.0),uniform=False,classes=('draw',)) vs strong: -4.50 +/- 2.88 over 480 hands (56s)
+expert(K=16,A=4,opp_model=(0, 1.0),uniform=False,classes=('discard',)) vs strong: -10.55 +/- 2.97 over 480 hands (98s)
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\alecs\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\expert.py", line 215, in _play_chunk
+    (opponent, hands, seat, seed, worlds, top_discards,
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     opp_model, uniform_worlds, classes, truncate) = job
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 10, got 9)
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    expert.evaluate('strong', hands=500, workers=12, opp_model=(0,1.0), seed=611, classes=classes)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\expert.py", line 251, in evaluate
+    classes, truncate))
+  File "C:\Users\alecs\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\alecs\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+ValueError: not enough values to unpack (expected 10, got 9)

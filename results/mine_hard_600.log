@@ -1,0 +1,91 @@
+6874 analyzed nodes, 0 errors, 35173s -> results/mine_hard_rows.json
+--- endgame_overrule: 27
+  s911442 d37 thr 6 st 2 pk1 adj1 z+36.2 [patient] (T)declare_dead_hand:+0.0  *take:+11.6
+  s911057 d35 thr 1 st 2 pk4 adj1 z+34.7 [50% kno] (T)declare_dead_hand:+0.0  *take:+3.1
+  s911199 d39 thr 6 st 2 pk4 adj1 z+32.8 [patient] (T)declare_dead_hand:+0.0  *take:+11.1
+  s911514 d36 thr 6 st 2 pk7 adj0 z+22.2 [patient] (T)drop-7S:+0.0  drop-AS:-3.3  drop-3H:-6.7  drop-2H:-5.5  *KNOCK-7S:+9.3
+  s911482 d40 thr 1 st 2 pk7 adj0 z+15.2 [knock-w] (T)drop-3S:+0.0  drop-3D:-7.9  *drop-2H:+21.2  drop-2C:+0.0
+  s911568 d39 thr 3 st 2 pk5 adj1 z+12.7 [patient] (T)declare_dead_hand:+0.0  *take:+1.3
+  s911112 d30 thr10 st 4 pk1 adj0 z+10.2 [patient] (T)drop-3C:+12.2  drop-2S:+22.3  *drop-2C:+27.1  drop-4H:+12.5  KNOCK-3C:+6.1
+  s911013 d38 thr 9 st 2 pk3 adj0 z+9.3 [patient] (T)drop-AS:-17.9  drop-AC:-17.9  *drop-5H:+22.9  drop-5D:+22.9  KNOCK-AS:+11.0
+  s911446 d36 thr 1 st 2 pk1 adj0 z+7.6 [knock-w] (T)drop-3S:-11.4  drop-2S:-20.3  drop-AD:-27.8  *drop-6S:+0.0
+  s911568 d38 thr 3 st 3 pk5 adj0 z+6.7 [patient] (T)drop-8D:-11.9  drop-2C:-15.3  drop-AD:-28.3  drop-5S:-17.9  *KNOCK-8D:-0.2
+  s911355 d39 thr 8 st 2 pk6 adj1 z+5.9 [patient] (T)declare_dead_hand:+0.0  *take:+13.4
+  s911115 d36 thr 9 st 3 pk1 adj0 z+5.7 [patient] (T)drop-KH:+3.6  drop-3S:+3.2  drop-2H:+4.7  drop-2D:+2.0  *KNOCK-KH:+14.5
+  s911382 d32 thr 7 st 6 pk3 adj0 z+5.5 [patient] (T)drop-2D:+19.2  drop-AS:+27.9  *drop-AH:+29.5  drop-6S:+25.1  KNOCK-2D:+10.8
+  s911568 d36 thr 3 st 5 pk5 adj0 z+5.2 [patient] (T)drop-2H:-8.5  drop-2C:-8.5  drop-AD:-21.4  drop-5S:-12.5  *KNOCK-2H:+0.6
+--- overrule: 549
+  s911442 d37 thr 6 st 2 pk1 adj1 z+36.2 [patient] (T)declare_dead_hand:+0.0  *take:+11.6
+  s911057 d35 thr 1 st 2 pk4 adj1 z+34.7 [50% kno] (T)declare_dead_hand:+0.0  *take:+3.1
+  s911199 d39 thr 6 st 2 pk4 adj1 z+32.8 [patient] (T)declare_dead_hand:+0.0  *take:+11.1
+  s911514 d36 thr 6 st 2 pk7 adj0 z+22.2 [patient] (T)drop-7S:+0.0  drop-AS:-3.3  drop-3H:-6.7  drop-2H:-5.5  *KNOCK-7S:+9.3
+  s911482 d40 thr 1 st 2 pk7 adj0 z+15.2 [knock-w] (T)drop-3S:+0.0  drop-3D:-7.9  *drop-2H:+21.2  drop-2C:+0.0
+  s911568 d39 thr 3 st 2 pk5 adj1 z+12.7 [patient] (T)declare_dead_hand:+0.0  *take:+1.3
+  s911137 d 6 thr10 st28 pk2 adj0 z+11.9 [knock-w] (T)drop-4D:+24.2  drop-3C:+25.8  drop-2D:+23.2  drop-AH:+26.1  *KNOCK-4D:+40.3
+  s911112 d30 thr10 st 4 pk1 adj0 z+10.2 [patient] (T)drop-3C:+12.2  drop-2S:+22.3  *drop-2C:+27.1  drop-4H:+12.5  KNOCK-3C:+6.1
+  s911189 d 8 thr 6 st25 pk2 adj0 z+9.8 [50% kno] (T)drop-7D:+19.6  drop-2S:+18.9  drop-2D:+18.3  drop-AH:+19.3  *KNOCK-7D:+33.6
+  s911166 d28 thr10 st12 pk5 adj0 z+9.7 [patient] *drop-3D:+27.5  (T)drop-3C:+8.4  drop-AH:+22.2  drop-AC:+21.9  KNOCK-3D:+8.5
+  s911013 d38 thr 9 st 2 pk3 adj0 z+9.3 [patient] (T)drop-AS:-17.9  drop-AC:-17.9  *drop-5H:+22.9  drop-5D:+22.9  KNOCK-AS:+11.0
+  s911465 d20 thr 9 st17 pk4 adj0 z+9.3 [50% kno] (T)drop-9C:-1.8  drop-4S:+1.9  drop-3H:+4.6  *drop-3D:+11.5
+  s911067 d12 thr 8 st25 pk3 adj0 z+9.2 [patient] (T)drop-6D:+20.4  drop-3H:+18.3  drop-3C:+20.1  drop-2S:+18.0  *KNOCK-6D:+36.2
+  s911493 d24 thr10 st13 pk4 adj0 z+9.1 [patient] (T)drop-3H:+16.4  *drop-2S:+31.4  drop-AS:+25.1  drop-AH:+24.4  KNOCK-3H:+8.4
+--- razor_knock: 78
+  s911395 d12 thr 2 st24 pk3 adj0 z+0.0 [knock-w] *(T)drop-2S:+32.7  drop-AH:+32.7  drop-6S:+20.3  drop-6H:+22.0  KNOCK-2S:+32.5
+  s911083 d12 thr 3 st24 pk3 adj0 z+0.0 [knock-w] drop-2S:+30.4  *(T)drop-2D:+30.4  drop-3H:+11.7  drop-3D:+12.3  KNOCK-2S:+29.2
+  s911215 d18 thr 9 st19 pk3 adj0 z+0.0 [knock-w] *(T)drop-5C:+21.4  drop-3S:+18.9  drop-3D:+19.6  drop-8D:+13.6  KNOCK-5C:+21.4
+  s911435 d18 thr 6 st18 pk2 adj0 z+0.0 [50% kno] *(T)drop-5S:+11.0  drop-3C:+7.0  drop-AS:+10.5  drop-AD:+11.0  KNOCK-5S:+9.7
+  s911450 d10 thr10 st25 pk2 adj0 z+0.0 [50% kno] *(T)drop-9S:+23.8  drop-4D:+23.7  drop-3D:+21.7  drop-2H:+23.8  KNOCK-9S:+22.7
+  s911484 d 8 thr 3 st26 pk2 adj0 z+0.0 [patient] *(T)drop-7C:+34.3  drop-3H:+34.3  drop-4S:+12.0  drop-3C:+10.5  KNOCK-7C:+33.4
+  s911129 d16 thr10 st23 pk3 adj0 z+2.3 [50% kno] (T)drop-4H:+13.8  drop-4C:+16.2  *drop-3D:+19.7  drop-AD:+8.9  KNOCK-4H:+13.8
+  s911166 d28 thr10 st12 pk5 adj0 z+9.7 [patient] *drop-3D:+27.5  (T)drop-3C:+8.4  drop-AH:+22.2  drop-AC:+21.9  KNOCK-3D:+8.5
+  s911438 d14 thr 4 st23 pk5 adj0 z+0.0 [50% kno] *(T)drop-3C:+16.7  drop-2H:+16.4  drop-AD:+11.2  drop-AC:+8.7  KNOCK-3C:+16.8
+  s911364 d20 thr 6 st18 pk3 adj0 z+3.2 [patient] (T)drop-4H:+4.0  *drop-3C:+9.9  drop-AH:-6.3  drop-AC:-1.4  KNOCK-4H:+4.1
+  s911354 d10 thr10 st23 pk0 adj0 z+0.0 [50% kno] *(T)drop-3C:+23.9  drop-2H:+24.1  drop-2D:+24.4  drop-AD:+18.7  KNOCK-3C:+24.6
+  s911049 d18 thr10 st17 pk0 adj0 z+3.1 [patient] (T)drop-4D:+14.3  drop-2H:+18.2  drop-2C:+18.2  *drop-AD:+21.6  KNOCK-4D:+14.5
+  s911412 d20 thr 5 st19 pk5 adj0 z+0.0 [patient] drop-3S:+4.0  *(T)drop-3H:+3.0  drop-2C:+0.6  drop-AD:-5.4  KNOCK-3S:+2.7
+  s911415 d14 thr10 st20 pk0 adj0 z+0.0 [patient] *(T)drop-4C:+15.6  drop-3H:+11.6  drop-2S:+14.9  drop-2D:+18.7  KNOCK-4C:+15.8
+--- refuse_spec: 376
+  s911229 d21 thr 2 st17 pk1 adj2 z+5.0 [patient] *draw:+4.0  (T)take:-2.4
+  s911081 d 7 thr 7 st27 pk0 adj2 z+4.9 [50% kno] *draw:+6.3  (T)take:-0.4
+  s911515 d19 thr 1 st20 pk3 adj2 z+4.7 [knock-w] *draw:+3.1  (T)take:-10.2
+  s911049 d11 thr10 st23 pk0 adj3 z+4.5 [patient] *draw:+17.0  (T)take:+7.6
+  s911122 d25 thr 1 st13 pk1 adj2 z+4.2 [knock-w] *draw:+10.4  (T)take:-0.3
+  s911520 d25 thr10 st13 pk0 adj2 z+4.2 [patient] *draw:+35.5  (T)take:+32.5
+  s911134 d15 thr 5 st19 pk1 adj2 z+4.0 [knock-w] *draw:+25.3  (T)take:+17.6
+  s911002 d 7 thr 5 st26 pk0 adj2 z+4.0 [knock-w] *draw:+1.7  (T)take:-4.4
+  s911078 d27 thr10 st11 pk3 adj2 z+3.9 [50% kno] *draw:+8.4  (T)take:+1.0
+  s911479 d21 thr 2 st17 pk1 adj3 z+3.9 [knock-w] *draw:+4.8  (T)take:-1.4
+  s911120 d 1 thr 2 st31 pk1 adj2 z+3.9 [50% kno] *draw:+4.2  (T)take:-2.5
+  s911156 d13 thr 7 st20 pk1 adj2 z+3.8 [50% kno] *draw:+1.3  (T)take:-4.6
+  s911111 d17 thr 4 st18 pk3 adj2 z+3.6 [50% kno] *draw:+2.8  (T)take:-2.0
+  s911312 d13 thr 8 st24 pk2 adj3 z+3.6 [50% kno] *draw:+14.7  (T)take:+7.6
+--- safety_overrule: 262
+  s911514 d36 thr 6 st 2 pk7 adj0 z+22.2 [patient] (T)drop-7S:+0.0  drop-AS:-3.3  drop-3H:-6.7  drop-2H:-5.5  *KNOCK-7S:+9.3
+  s911482 d40 thr 1 st 2 pk7 adj0 z+15.2 [knock-w] (T)drop-3S:+0.0  drop-3D:-7.9  *drop-2H:+21.2  drop-2C:+0.0
+  s911166 d28 thr10 st12 pk5 adj0 z+9.7 [patient] *drop-3D:+27.5  (T)drop-3C:+8.4  drop-AH:+22.2  drop-AC:+21.9  KNOCK-3D:+8.5
+  s911013 d38 thr 9 st 2 pk3 adj0 z+9.3 [patient] (T)drop-AS:-17.9  drop-AC:-17.9  *drop-5H:+22.9  drop-5D:+22.9  KNOCK-AS:+11.0
+  s911465 d20 thr 9 st17 pk4 adj0 z+9.3 [50% kno] (T)drop-9C:-1.8  drop-4S:+1.9  drop-3H:+4.6  *drop-3D:+11.5
+  s911067 d12 thr 8 st25 pk3 adj0 z+9.2 [patient] (T)drop-6D:+20.4  drop-3H:+18.3  drop-3C:+20.1  drop-2S:+18.0  *KNOCK-6D:+36.2
+  s911493 d24 thr10 st13 pk4 adj0 z+9.1 [patient] (T)drop-3H:+16.4  *drop-2S:+31.4  drop-AS:+25.1  drop-AH:+24.4  KNOCK-3H:+8.4
+  s911328 d 8 thr 8 st27 pk3 adj0 z+8.8 [patient] (T)drop-4S:+17.8  drop-4C:+18.4  drop-3H:+22.7  drop-AS:+19.5  *KNOCK-4S:+29.3
+  s911006 d24 thr 6 st14 pk3 adj0 z+8.3 [50% kno] (T)drop-QC:+27.4  *drop-AC:+41.6  drop-6H:+37.1  drop-JH:+30.4  KNOCK-QC:+11.8
+  s911004 d28 thr10 st 9 pk4 adj0 z+8.3 [patient] (T)drop-3D:+7.1  *drop-AD:+31.2  drop-4C:+17.3  drop-3H:+23.2  KNOCK-3D:+10.2
+  s911568 d34 thr 3 st 7 pk5 adj0 z+8.2 [patient] (T)drop-JH:-12.2  drop-2H:-13.5  drop-AD:-28.8  drop-5S:-17.5  *KNOCK-JH:+1.9
+  s911465 d18 thr 9 st18 pk3 adj0 z+8.1 [50% kno] drop-4S:-1.7  (T)drop-4C:-4.4  drop-3H:+0.5  *drop-3D:+7.1
+  s911067 d14 thr 8 st23 pk3 adj0 z+8.1 [patient] (T)drop-7C:+17.3  drop-3H:+17.1  drop-3C:+18.9  drop-2S:+15.1  *KNOCK-7C:+31.5
+  s911085 d10 thr10 st25 pk3 adj0 z+7.7 [patient] (T)drop-4S:+21.3  drop-4H:+21.6  drop-2C:+19.7  drop-AD:+16.9  *KNOCK-4S:+34.2
+--- tie_take: 640
+  s911521 d 7 thr10 st28 pk2 adj1 z+0.0 [knock-w] *(T)draw:-2.1  take:-2.1
+  s911526 d31 thr10 st 2 pk1 adj0 z+0.0 [patient] *(T)declare_dead_hand:+0.0  take:+0.0
+  s911575 d 5 thr10 st28 pk1 adj1 z+0.0 [knock-w] *(T)draw:+13.0  take:+13.0
+  s911033 d 9 thr 1 st24 pk2 adj3 z+0.0 [50% kno] draw:+9.5  *(T)take:+9.5
+  s911128 d 3 thr 5 st30 pk2 adj1 z+0.0 [knock-w] *(T)draw:+8.2  take:+8.2
+  s911187 d 9 thr 7 st25 pk3 adj2 z+0.0 [patient] draw:+33.8  *(T)take:+33.8
+  s911214 d19 thr 3 st18 pk2 adj1 z+0.0 [patient] *(T)draw:+0.8  take:+0.8
+  s911222 d 3 thr 3 st30 pk0 adj2 z+0.0 [50% kno] draw:+22.3  *(T)take:+22.3
+  s911277 d 3 thr 5 st31 pk2 adj1 z+0.0 [patient] *(T)draw:+14.0  take:+14.0
+  s911383 d 9 thr 5 st24 pk0 adj1 z+0.0 [knock-w] *(T)draw:+10.8  take:+10.8
+  s911429 d 3 thr10 st29 pk1 adj2 z+0.0 [50% kno] *(T)draw:+7.4  take:+7.4
+  s911430 d11 thr 1 st23 pk0 adj1 z+0.0 [patient] *(T)draw:+13.8  take:+13.8
+  s911486 d 7 thr 9 st27 pk1 adj1 z+0.0 [50% kno] draw:+7.3  *(T)take:+7.3
+  s911111 d 1 thr 4 st31 pk1 adj2 z+0.0 [50% kno] *(T)draw:+1.5  take:+1.5

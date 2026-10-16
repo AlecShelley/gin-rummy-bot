@@ -1,0 +1,35 @@
+# HARD 4 -- A GENUINE COIN-FLIP KNOCK (J-game, early-mid). Deadwood 6
+# (drop KH): 999 set + 6-9 diamond run, vs a knock-when-legal player
+# who has taken one card. Knock now, or play for more? The engine's
+# answer across seeds: THE TWO LINES ARE WORTH THE SAME (knock-vs-
+# play gap -0.6 / -4.3 / +1.5, inside noise) -- and the report says
+# "statistical tie" when the knock edges ahead. Some famous
+# table arguments are actually ties; this is what one looks like.
+
+me: 9S 9H KH AD 6D 7D 8D 9D 2C 3C 9C
+opp-known: 5S
+pile: QS JS KS KC TS TC 7C
+my-known: 9H 9C
+event: my-draw 9D
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard KS
+event: my-draw 5S
+event: my-discard KC
+event: opp-decline KC
+event: opp-discard TS
+event: my-draw 3C
+event: my-discard TC
+event: opp-decline TC
+event: opp-discard 9C
+event: my-pickup 9C
+event: my-discard 7C
+event: opp-pickup 7C
+event: opp-discard 9H
+event: my-pickup 9H
+event: my-discard 5S
+event: opp-pickup 5S
+event: opp-discard 7C
+event: my-draw KH
+flip: QS
+knock-max: 10

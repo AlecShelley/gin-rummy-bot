@@ -1,0 +1,33 @@
+# HARD 9 -- A 30-POINT HAND, A 0.4-POINT DECISION (7-game, early).
+# Seven cards melded (6-7-8 hearts, 6-7-8-9 clubs); the pile offers
+# the 5H, stretching the heart run to four. Take the sure extension,
+# or keep the blind draw that could hit the 2s/clubs? The engine's
+# answer across seeds: it does not matter -- take vs draw differ by
+# 0.4-1.4 +/- 0.9 on a hand worth ~+30 either way, and even the
+# follow-up discard (3C vs 2S) is flagged a statistical tie. When a
+# hand is this rich, many "big decisions" are actually ties -- the
+# value is already banked in the melds.
+
+me: 2S 6H 7H 8H 2C 3C 6C 7C 8C 9C
+opp-known: 4H 5D 7D
+pile: KD JH 9H JD JS 6S 5H
+event: opp-pickup 7D
+event: opp-discard KD
+event: my-draw JH
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard 9H
+event: my-draw JD
+event: my-discard JD
+event: opp-decline JD
+event: opp-discard JS
+event: my-draw 8H
+event: my-discard 5D
+event: opp-pickup 5D
+event: opp-discard 6S
+event: my-draw 6C
+event: my-discard 4H
+event: opp-pickup 4H
+event: opp-discard 5H
+flip: 7D
+knock-max: 7

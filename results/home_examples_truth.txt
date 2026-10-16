@@ -1,0 +1,31 @@
+Ground-truth answer key for pos_home*.txt (generation-time
+state; NOT visible to the evaluator). Opp = true hidden
+hand at the decision node.
+
+pos_home1_fliptake: seed 910016 d1, opp policy = 50% knocker, opp true hand = 4S 7S 2H 7H 8H 5D 8D AC 7C KC (deadwood 38), hero deadwood 49, stock 31
+pos_home2_timing: seed 910012 d2, opp policy = knock-when-legal, opp true hand = 2S 9S 3H 8H JH QH 2D JD 3C 7C (deadwood 64), hero deadwood 43, stock 30
+pos_home3_bridge: seed 910083 d5, opp policy = patient teacher, opp true hand = 6S 2H 3D 7D 8D 9D TD JD QD 5C (deadwood 16), hero deadwood 34, stock 28
+pos_home4_reading: seed 910001 d16, opp policy = 50% knocker, opp true hand = 3S 7S AH 6H 2D 4D JD QD KD AC (deadwood 24), hero deadwood 12, stock 22
+pos_home5_losing: seed 910139 d26, opp policy = 50% knocker, opp true hand = 6S AH 6H 4D 5D 6D AC 2C 3C 6C (deadwood 1), hero deadwood 19, stock 11
+pos_home6_gintake: seed 910108 d33, opp policy = knock-when-legal, opp true hand = 4S 7S AH 4H 2D 4D 7D AC 4C 7C (deadwood 4), hero deadwood 4, stock 5
+pos_home7_undercut: seed 910062 d36, opp policy = patient teacher, opp true hand = 4S 4H 4D 5D 6D 7D 8D 9D TD AC (deadwood 1), hero deadwood 2, stock 4
+pos_home8_acegrind: seed 910025 d6, opp policy = 50% knocker, opp true hand = 4S AH 2H 5H TH 6D 9D 3C 5C 8C (deadwood 53), hero deadwood 31, stock 28
+pos_home9_knock: seed 910021 d8, opp policy = knock-when-legal, opp true hand = AS 3S 5S 3H 7H 5D 6D 8C 9C TC (deadwood 30), hero deadwood 9, stock 26
+pos_home10_noknock: seed 910002 d24, opp policy = patient teacher, opp true hand = 2S 5S 6S 7S KS KH AD KD AC KC (deadwood 4), hero deadwood 1, stock 13
+
+# Hard set (2026-08-30)
+pos_hard1_blocker: seed 911006 d24, opp = 50% knocker, opp true hand = AS 3S 4S 5S QS QH 2D 3D QD 2C (dw 8), hero dw 1, stock 14
+pos_hard2_whichpoison: seed 911004 d28, opp = patient teacher, opp true hand = AS QS QH 2D 4D 5D 6D QD AC QC (dw 4), hero dw 1, stock 9
+pos_hard3_lastdiscard: seed 911013 d38, opp = patient teacher, opp true hand = 4S 5S 6S 7S AH 7H 8H 9H TH AD (dw 2), hero dw 1, stock 2
+pos_hard4_razorknock: seed 911023 d12, opp = knock-when-legal, opp true hand = AS 3S 4S 5S 6S AH 6H 2D 4D 5D (dw 19), hero dw 6, stock 24
+pos_hard5_baittake: seed 911002 d7, opp = knock-when-legal, opp true hand = 6S 7S 5H 7H 3D 7D AC 2C 3C 7C (dw 14), hero dw 49, stock 26
+pos_hard6_greedcheck: seed 911012 d10, opp = 50% knocker, opp true hand = 3S 8S 8H 4D 5D 6D 8D 5C 7C 8C (dw 15), hero dw 7, stock 24
+pos_hard7_lastknock: seed 911009 d34, opp = 50% knocker, opp true hand = 6S 6H AD 3D 6D 2C 5C 6C 7C 8C (dw 6), hero dw 1, stock 4
+pos_hard8_deadhandticket: seed 911442 d37, opp = patient teacher, opp true hand = 3S 9S AH 2H 9H AD 2D 9D 2C 9C (dw 5), hero dw 4, stock 2
+pos_hard9_richtie: seed 911187 d9, opp = patient teacher, opp true hand = TS AH 4H TH 5D 7D 8D 9D TD 4C (dw 14), hero dw 7, stock 25
+pos_hard3_minus1(+_strict): seed 911013 d36, opp = patient teacher, opp true hand = 4S 5S 6S 7S AH 7H 8H 9H TH AD (dw 2), hero dw 1, stock 4 (one full turn before pos_hard3_lastdiscard's d38)
+
+# 2026-08-30: standard dead-hand rule adopted engine-wide (stock <= 2 =
+# hand over unless the discarder knocks). pos_hard8_deadhandticket
+# RETIRED (cannot arise); pos_hard3_lastdiscard is now knock-or-nothing;
+# the *_strict twin files were merged into their base positions.

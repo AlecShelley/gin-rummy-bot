@@ -1,0 +1,11 @@
+# HOME 1 -- TURN-1 FLIP TAKE (3-game). First decision of the hand: the
+# flip is the 3H and taking it is our option. It slots into BOTH of our
+# low pairs (3S 3D and 4H 4D 4C are one card each from sets) -- but it
+# also hands the opponent information and forfeits a blind draw.
+# ENGINE: take the 3H (draw from stock is -6.2 worse), then shed 7D.
+
+me: 3S 4H TH 3D 4D 7D TD QD 4C 6C
+opp-known: 
+pile: 3H
+flip: 3H
+knock-max: 3

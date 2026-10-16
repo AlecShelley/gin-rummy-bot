@@ -1,0 +1,63 @@
+# HOME 5 -- LOSING SEAT, DAMAGE CONTROL (2-game, late-ish). A grabby
+# opponent has taken four cards and we are still 19 deadwood with one
+# meld. Every candidate EV is NEGATIVE -- the evaluator says this seat
+# is losing and plays for the cheapest exit (shed 5H; worse choices
+# leak 1-3 more points). Honest losing-position output.
+
+me: AS 3S 5S 7S 8S 9S 2H 4H 5H AD 3D
+opp-known: 6H 6D 2C 6C
+pile: QC KH QD QS QH KC JD KD JS JH TC TS 9D 9C 8C 7C KS 7H TH 8H
+picked: AS
+my-known: AS 9S
+event: opp-pickup 2C
+event: opp-discard QC
+event: my-draw KC
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard QD
+event: my-draw 8S
+event: my-discard QS
+event: opp-decline QS
+event: opp-discard QH
+event: my-draw KD
+event: my-discard KC
+event: opp-decline KC
+event: opp-discard JD
+event: my-draw 5S
+event: my-discard KD
+event: opp-decline KD
+event: opp-discard JS
+event: my-draw 2H
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard TC
+event: my-draw 5H
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard 9S
+event: my-pickup 9S
+event: my-discard 6H
+event: opp-pickup 6H
+event: opp-discard 9D
+event: my-draw 9C
+event: my-discard 9C
+event: opp-decline 9C
+event: opp-discard 8C
+event: my-draw 4H
+event: my-discard 6D
+event: opp-pickup 6D
+event: opp-discard 7C
+event: my-draw KS
+event: my-discard KS
+event: opp-decline KS
+event: opp-discard 7H
+event: my-draw TH
+event: my-discard TH
+event: opp-decline TH
+event: opp-discard 8H
+event: my-draw 6C
+event: my-discard 6C
+event: opp-pickup 6C
+event: opp-discard AS
+flip: 2C
+knock-max: 2

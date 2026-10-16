@@ -1,0 +1,18 @@
+# HOME 3 -- THE BRIDGE CARD (K-game, mid-early). The pile offers the
+# 8H, which BRIDGES our two heart pieces (6H 7H + 9H TH JH) into a
+# six-card run. Textbook take -- the engine prices declining it as a
+# -6.2 blunder -- and the follow-up plan sheds the now-redundant 8S.
+
+me: 5S 8S 4H 6H 7H 9H TH JH AD 3C
+opp-known: 9D
+pile: KH TS TC 8H
+event: my-draw JH
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard TC
+event: my-draw 8S
+event: my-discard 9D
+event: opp-pickup 9D
+event: opp-discard 8H
+flip: KH
+knock-max: 10

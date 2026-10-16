@@ -1,0 +1,12 @@
+# C: speculative take. Two melds already made. The upcard 6D is a
+# double-duty card (pairs our 6S, combos our 7D) but costs 6 deadwood
+# and the opponent just threw it -- take it or draw?
+me: AS 2S 3S 8H 9H TH 6S 7D QH KD
+opp-known:
+pile: 9C 2D 6D
+event: opp-discard 9C
+event: my-draw
+event: my-discard 2D
+event: opp-decline 2D
+event: opp-discard 6D
+opp-model: 10,1.0

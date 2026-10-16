@@ -1,0 +1,528 @@
+--> Running on the GPU
+Resuming from results/pretrained.pth
+
+----------------------------------------
+  episode      |  0
+  reward       |  0.4426999999999998
+----------------------------------------
+  outcomes: gin 8.7% knock 71.3% undercut 0.0% dead 20.0% | win 78.3% | 0.1 eps/s | ETA 438.56h | vs rule -8.25 pts/hand (win 28.7%)
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+----------------------------------------
+  episode      |  5000
+  reward       |  0.3480333333333332
+----------------------------------------
+  outcomes: gin 8.0% knock 55.0% undercut 0.3% dead 36.7% | win 62.3% | 7.7 eps/s | ETA 5.25h
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+----------------------------------------
+  episode      |  10000
+  reward       |  0.2700666666666667
+----------------------------------------
+  outcomes: gin 9.3% knock 38.7% undercut 0.0% dead 52.0% | win 47.3% | 7.0 eps/s | ETA 5.59h | vs rule -14.91 pts/hand (win 15.7%)

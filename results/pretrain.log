@@ -1,0 +1,296 @@
+--> Running on the GPU
+rolling out 8000 noisy-teacher episodes (epsilon=0.15)
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  1000/8000 episodes, 46s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  2000/8000 episodes, 89s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  3000/8000 episodes, 134s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  4000/8000 episodes, 184s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  5000/8000 episodes, 236s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  6000/8000 episodes, 289s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  7000/8000 episodes, 341s
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+
+INFO - Copied model parameters to target network.
+  8000/8000 episodes, 395s
+collected 479991 expert decisions in 395s; DQN replay holds 200000
+behaviour cloning: 479991 samples, 30 epochs
+  epoch  1: loss 1.3036 acc 46.3%
+  epoch  2: loss 0.9830 acc 52.1%
+  epoch  3: loss 0.9180 acc 53.3%
+  epoch  4: loss 0.8780 acc 54.1%
+  epoch  5: loss 0.8472 acc 54.9%
+  epoch  6: loss 0.8216 acc 56.0%
+  epoch  7: loss 0.8009 acc 56.7%
+  epoch  8: loss 0.7795 acc 57.8%
+  epoch  9: loss 0.7585 acc 58.9%
+  epoch 10: loss 0.7380 acc 59.9%
+  epoch 11: loss 0.7180 acc 61.1%
+  epoch 12: loss 0.6984 acc 62.2%
+  epoch 13: loss 0.6808 acc 63.3%
+  epoch 14: loss 0.6619 acc 64.6%
+  epoch 15: loss 0.6441 acc 65.6%
+  epoch 16: loss 0.6290 acc 66.6%
+  epoch 17: loss 0.6134 acc 67.5%
+  epoch 18: loss 0.5973 acc 68.5%
+  epoch 19: loss 0.5836 acc 69.4%
+  epoch 20: loss 0.5685 acc 70.3%
+  epoch 21: loss 0.5571 acc 71.1%
+  epoch 22: loss 0.5453 acc 71.8%
+  epoch 23: loss 0.5322 acc 72.6%
+  epoch 24: loss 0.5218 acc 73.2%
+  epoch 25: loss 0.5110 acc 73.8%
+  epoch 26: loss 0.5032 acc 74.4%
+  epoch 27: loss 0.4924 acc 75.0%
+  epoch 28: loss 0.4842 acc 75.5%
+  epoch 29: loss 0.4765 acc 76.0%
+  epoch 30: loss 0.4677 acc 76.5%
+seeded reservoir with 200000 transitions
+
+saved warm-started NFSP agent to results/pretrained.pth (654 MB)
+continue with:  python train_gin_rummy.py --load_model results/pretrained.pth --reward shaped ...

@@ -1,0 +1,15 @@
+1200 deals x 3 arms in 9460s
+=== ace-flip probe, 1200 paired deals x 3 arms ===
+ace melds into the dealt hand: 12.8% of deals
+default arm takes the flip   : 97.8%
+  default : mean  +0.31 +/- 2.00
+  meldonly: mean  +2.77 +/- 2.10
+  decline : mean  +1.72 +/- 2.09
+  paired meldonly - default:  +2.46 +/- 2.61
+  paired decline - default:  +1.41 +/- 2.62
+  paired meldonly - decline:  +1.05 +/- 0.97
+subgroup: ace does NOT meld at deal (1047 deals)
+  default : mean  -0.74 +/- 2.12
+  meldonly: mean  +2.26 +/- 2.23
+  decline : mean  +2.26 +/- 2.23
+  paired meldonly - default:  +3.00 +/- 2.80

@@ -1,0 +1,31 @@
+# Close call 3 -- MELD NOW vs IMPROVE LATER (ten game, mid-late:
+# four full rounds played, full transcript). Our hand is fully
+# structured -- two melds, the 9C-9D pair, the TC-JC run draw -- so
+# each turn we shed the drawn brick (QD, QH) and, on principle, the
+# cards that would break nothing (8D at turn 2 -- the opponent took
+# it -- and 6S at turn 4, keeping the T-J draw alive). Their pickups
+# and discards are unremarkable. Now they throw 9H: taking it
+# completes the 9-set and makes an immediate knock at exactly 10
+# possible (discarding TC or JC). But a 10-knock courts the undercut,
+# and drawing keeps the QC out (a 9-or-better knock next turn).
+me: 5H 6H 7H 2C 2H 2S 9C 9D TC JC
+opp-known: 8D
+pile: TD QD 3C KD QH JH 6S 9H
+event: my-draw QD
+event: my-discard QD
+event: opp-decline QD
+event: opp-discard 3C
+event: my-draw 8D
+event: my-discard 8D
+event: opp-pickup 8D
+event: opp-discard KD
+event: my-draw QH
+event: my-discard QH
+event: opp-decline QH
+event: opp-discard JH
+event: my-draw 6S
+event: my-discard 6S
+event: opp-decline 6S
+event: opp-discard 9H
+opp-model: 10,1.0
+knock-max: 10

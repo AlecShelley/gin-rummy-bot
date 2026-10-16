@@ -1,0 +1,15 @@
+# HOME 2 -- DISCARD TIMING BEATS DEADWOOD ARITHMETIC (K-game, our very
+# first discard; the opponent has not moved yet). Deadwood logic says
+# pitch KH or QD (43 vs 47 after the alternatives). The engine PAYS 4
+# points of deadwood to shed the connected 6H instead, at every seed
+# (+1.8..+3.2, z up to 3.7): with KC dead at the bottom of the pile the
+# KH stays a SAFE discard for turns to come, while the 6H only gets
+# hotter as the opponent develops. The historical flat engine cannot
+# see this (it keeps the KH prior) -- the deep 2-ply engine can.
+
+me: 5S 7S 6H 7H KH 3D 6D 7D 9D QD 4C
+opp-known: 
+pile: KC
+event: my-draw 7D
+flip: KC
+knock-max: 10

@@ -1,0 +1,2 @@
+expert(K=48,A=4,opp_model=(0, 1.0),uniform=False,classes=('draw', 'discard'),T=16,z=1.5) vs strong: +2.78 +/- 2.25 over 600 hands (188s)
+expert(K=48,A=4,opp_model=(0, 1.0),uniform=False,classes=('draw', 'discard'),T=16,z=2.5) vs strong: +2.11 +/- 2.13 over 600 hands (181s)

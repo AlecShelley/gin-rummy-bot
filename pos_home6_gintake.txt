@@ -1,0 +1,76 @@
+# HOME 6 -- ENDGAME, THE PILE OFFERS GIN (ace-game, stock 5). Pure gin
+# race (threshold 1, knocking is out of reach for both sides all
+# game). The 3S on the pile completes A-2-3 of spades PLUS frees the
+# 3-set/8-set double: take, then GIN. Declining it (+5.2 vs +30.3)
+# would throw away the hand with the stock about to run dry.
+
+me: AS 2S 8S 3H 8H AD 3D 8D 3C 8C
+opp-known: 4S 4C
+pile: TH QD KD QS QH KC TC JH 9C 6S 5D 9D 5S JS 5H TD 5C TS 2H 6D JD KH JC 2C 6H KS 3S
+my-known: AS 8S 8D 8C
+event: my-pickup AS
+event: my-discard TH
+event: opp-decline TH
+event: opp-discard QD
+event: my-draw 3D
+event: my-discard KD
+event: opp-decline KD
+event: opp-discard QS
+event: my-draw QH
+event: my-discard QH
+event: opp-decline QH
+event: opp-discard KC
+event: my-draw 4S
+event: my-discard TC
+event: opp-decline TC
+event: opp-discard 8C
+event: my-pickup 8C
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard 8S
+event: my-pickup 8S
+event: my-discard 9C
+event: opp-decline 9C
+event: opp-discard 6S
+event: my-draw 2C
+event: my-discard 5D
+event: opp-decline 5D
+event: opp-discard 9D
+event: my-draw 5S
+event: my-discard 5S
+event: opp-decline 5S
+event: opp-discard JS
+event: my-draw 3H
+event: my-discard 4C
+event: opp-pickup 4C
+event: opp-discard 5H
+event: my-draw TD
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard 5C
+event: my-draw TS
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard 8D
+event: my-pickup 8D
+event: my-discard 4S
+event: opp-pickup 4S
+event: opp-discard 2H
+event: my-draw 6D
+event: my-discard 6D
+event: opp-decline 6D
+event: opp-discard JD
+event: my-draw KH
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard JC
+event: my-draw 2S
+event: my-discard 2C
+event: opp-decline 2C
+event: opp-discard 6H
+event: my-draw KS
+event: my-discard KS
+event: opp-decline KS
+event: opp-discard 3S
+flip: AS
+knock-max: 1

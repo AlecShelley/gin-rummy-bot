@@ -1,0 +1,30 @@
+# HARD 6 -- SEVEN CARDS MELDED: CASH OR PUSH? (T-game, early, stock
+# 24). Four tens plus a 3-set on turn five -- the kind of hand humans
+# fall in love with and ride toward gin. The engine KNOCKS at 7
+# immediately (+4.1 to +5.9 over playing on, significant at every
+# seed): the loose AS 2H 4C don't improve fast, the opponent showed
+# 8H/8C pickups and knocks at 10 themselves, and the gin dream is
+# worth less than seven melded cards RIGHT NOW. Anti-greed check.
+
+me: AS TS 2H 3H TH 3D TD 3C 4C 6C TC
+opp-known: 8H 8C
+pile: KC QD KS QC KH QS 9S
+event: my-draw 6C
+event: my-discard QD
+event: opp-decline QD
+event: opp-discard KS
+event: my-draw 4C
+event: my-discard QC
+event: opp-decline QC
+event: opp-discard KH
+event: my-draw TC
+event: my-discard 8H
+event: opp-pickup 8H
+event: opp-discard QS
+event: my-draw 8C
+event: my-discard 8C
+event: opp-pickup 8C
+event: opp-discard 9S
+event: my-draw 3H
+flip: KC
+knock-max: 10

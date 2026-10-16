@@ -1,0 +1,11 @@
+# User's real hand, 2026-08-24. History partially unknown -- only certain
+# facts encoded (pickups both ways, current pile). Assumed stock draw this
+# turn and a knock-at-10 opponent.
+me: AS AD 5D 8D TD JD QD 5H 6H 8C 2C
+opp-known: JH
+my-known: 8D QD
+pile: KS JC
+event: opp-pickup JH
+event: my-pickup 8D
+event: my-pickup QD
+opp-model: 10,1.0

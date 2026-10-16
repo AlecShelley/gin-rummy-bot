@@ -1,0 +1,12 @@
+# B: knock timing at a LOW count. Discarding 9H leaves A-A-2 = 4 deadwood.
+# The engine refused a knock at 9 (sample_turn3) -- what about 4?
+me: 2C 3C 4C 5C 7S 8S 9S AH AD 2D 9H
+opp-known:
+pile: QD KS JS
+event: opp-discard QD
+event: my-draw
+event: my-discard KS
+event: opp-decline KS
+event: opp-discard JS
+event: my-draw
+opp-model: 10,1.0

@@ -1,0 +1,89 @@
+=== pos_home1_fliptake ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 3♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home2_timing ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * discard 6♥                   EV   +9.82  vs prior  +3.17 +/- 1.16  significant
+RECOMMENDATION: discard 6♥   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_home3_bridge ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 8♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home4_reading ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 8♣   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home5_losing ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 5♥   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home6_gintake ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 3♠ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home7_undercut ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 10♠   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home8_acegrind ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 8♠   [search keeps the teacher prior (no significant improvement found)]
+=== pos_home9_knock ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * KNOCK (discarding 4♠)        EV  +28.84  vs prior  +6.79 +/- 1.19  significant
+RECOMMENDATION: KNOCK (discarding 4♠)   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_home10_noknock ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 2♦   [search keeps the teacher prior (no significant improvement found)]
+=== pos_hard1_blocker ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * discard A♣                   EV  +37.63  vs prior +16.81 +/- 1.28  significant
+   discard 6♥                   EV  +31.67  vs prior +10.84 +/- 1.63  significant
+RECOMMENDATION: discard A♣   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_hard2_whichpoison ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 3♦   [search keeps the teacher prior (no significant improvement found)]
+=== pos_hard3_lastdiscard ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * KNOCK (discarding A♠)        EV   +2.02  vs prior  +2.02 +/- 0.40  significant
+RECOMMENDATION: KNOCK (discarding A♠)   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_hard3_minus1 ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 2♣   [search keeps the teacher prior (no significant improvement found)]
+=== pos_hard4_razorknock ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard K♥   [search keeps the teacher prior (no significant improvement found)]
+=== pos_hard5_baittake ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * draw from stock              EV   -0.15  vs prior  +3.77 +/- 1.11  significant
+RECOMMENDATION: draw from stock   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_hard6_greedcheck ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * KNOCK (discarding 6♣)        EV  +26.27  vs prior  +6.71 +/- 1.22  significant
+RECOMMENDATION: KNOCK (discarding 6♣)   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_hard7_lastknock ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard 8♠   [search keeps the teacher prior (no significant improvement found)]
+=== pos_hard9_richtie ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 5♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_take1_spec ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * draw from stock              EV  +21.93  vs prior  +2.66 +/- 1.17  significant
+RECOMMENDATION: draw from stock   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_take2_swap ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * draw from stock              EV  +25.37  vs prior  +5.07 +/- 1.19  significant
+RECOMMENDATION: draw from stock   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_take3_meldnow ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: draw from stock   [search keeps the teacher prior (no significant improvement found)]
+=== pos_take4_acegame ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 7♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_ex5_takeplan ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: take 9♠ from pile   [search keeps the teacher prior (no significant improvement found)]
+=== pos_ex6_knockrisk ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+ * KNOCK (discarding Q♦)        EV  +36.32  vs prior +15.37 +/- 1.23  significant
+   discard 3♣                   EV  +23.00  vs prior  +2.05 +/- 1.04  significant
+RECOMMENDATION: KNOCK (discarding Q♦)   [search deviates from the prior (paired evidence significant at z=1.5)]
+=== pos_ex7_feeddanger ===
+Belief    : particle filter x4 independent replications (v7 posterior, 256 particles from the full transcript)
+RECOMMENDATION: discard K♠   [search keeps the teacher prior (no significant improvement found)]

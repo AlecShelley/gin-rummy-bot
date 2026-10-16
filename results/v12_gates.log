@@ -1,0 +1,149 @@
+================================================================
+V12 CAMPAIGN LOG — Track A: converting belief into points
+Opened 2026-09-08. Prior: v10 promoted (posterior quality), v11
+closed not-promoted. Goal: the first MEASURABLE match-strength
+gain since the turn-2 book — subgame solving / posterior-consuming
+play. Standing directive honored: POWER BUDGET FIRST.
+================================================================
+
+--- A1 (2026-09-08): endgame-phase frequency — NEGATIVE for
+narrow endgame solving ---
+
+From the banked 372k-decision harvest (free): only 4.9% of v10home
+self-play hands ever reach stock <= 4; 1.4% reach stock <= 2; 0.8%
+of decisions occur at stock <= 4. The home game is gin-dominated
+and ends early. Even a +10 pts/hand solver inside the stock<=4
+cell caps at ~0.5 pts/hand overall — below the gate noise floor.
+Track A AS SPECCED (exact enumeration at stock <= 3-4) cannot pay
+in match terms regardless of solver quality. The v6_prior_art §3
+design rules remain valid for the cell; the cell is just too rare
+in the home variant.
+
+--- A2 REGISTRATION: oracle-gap phase decomposition ---
+
+Instrument phase_oracle.py: HomeV8Policy machinery with the
+belief's sampled worlds replaced by the TRUE opponent hidden hand
+ONLY when stock <= K (world veto disabled in oracle phase);
+otherwise the normal v10 particle posterior. Hero = phase-oracle,
+opponent = v10home, paired-deal t10_gate harness, 1500 pairs per
+K, seeds: K=99 -> 140000, K=10 -> 142000, K=4 -> 144000 (mod 977
+= 289/335/381, distinct from all used).
+  K=99 = the HOME oracle bound for v10home (never measured; the
+  v8 log's open compass item). K=10 and K=4 give the marginal
+  share of the gap that late-phase information alone captures.
+Decision rule: if (K=4 margin) is within noise of zero, endgame
+solving is DEAD for the home variant and the campaign pivots to
+mid-game posterior consumption (design registered after the
+decomposition is known). If the K=10..4 band carries >= 3
+pts/hand, a raised-threshold solver (depth-limited) re-enters.
+
+--- REGISTRATION ADDENDUM (2026-09-08, user directive): the
+REGRESSION LADDER is a mandatory promotion component ---
+
+Any v12 (or later) promotion must include, beyond the standard
+candidate-vs-champion gate: matches vs v8home (pinned), vs the
+patient teacher, and vs knock-when-legal (home_variant --match
+harness, >= 1500 hands each, fresh seeds) — beat-or-tie required
+against the WHOLE ladder, not just the predecessor. Status note:
+v10home-vs-v8home = the pooled t10 gate tie (-0.72 +/- 1.10); the
+teacher/knocker field numbers date from v8home's campaign and get
+refreshed by this ladder.
+
+--- V11b REFIT (2026-09-08, run during A2 dead time; extends the
+v11 log's registered next step) ---
+
+6th feature meldprot = VALUE[drop] + dw_after - dw_before (0 for
+pure deadwood; large for meld members whose removal strands
+partners). Held-out logloss unchanged vs 5-feat (meld-break states
+are rare) but the weights REORGANIZE: value flips -0.30 -> ~+0.06
+/ +0.10 while meldprot takes -0.40..-0.59 — the value weight had
+been absorbing meld protection, which is the exact home10 failure
+mechanism. 6-feat weights (open/pickup/draw):
+  open   [-0.4916,-0.1405,-0.0938,-0.4998, 0.0,   -0.5854]
+  pickup [-0.5002,-0.3089,+0.0995,-0.6517, 0.0,   -0.4007]
+  draw   [-0.4882,-0.4722,+0.0557,-0.7255,+0.1375,-0.4325]
+Integration + G-ladder re-entry queued behind the A2 oracle runs
+(particle.py is imported by their workers — no edits until they
+drain).
+
+--- A2 RESULTS (2026-09-08): THE COMPASS CORRECTED ---
+
+phase_oracle.py, 1500 paired deals per K (seeds 140000/142000/
+144000):
+  K=99 (full):      +15.25 +/- 1.92  <- the HOME oracle bound for
+                                        v10home (first measurement)
+  K=10:             +0.95 +/- 0.52
+  K=4:              +0.29 +/- 0.25
+VERDICTS:
+1. ENDGAME SOLVING IS DEAD for the home variant (registered rule:
+   K<=10 band 0.95 << 3). Track A as specced in v6_prior_art §3 is
+   formally closed for home rules — the design rules stay valid
+   for the standard game's longer endgames only.
+2. >93% of the oracle bound lives at stock > 10 — the early/mid
+   game. Much of that is IRREDUCIBLE hidden-information value (at
+   turn 3 the observations do not determine the hand; the
+   posterior checks showed the PF already captures 60-92% of the
+   per-node information that IS there). The project's standing
+   "~14 pts of belief headroom" framing overstated achievable
+   headroom; the honest open question is the PERFECT-BELIEF bound
+   (worlds from the exact Bayes conditional), which no cheap
+   instrument currently measures.
+3. K=10 oracle value +0.95 +/- 0.52 is real but sub-1-point — a
+   ceiling on ANY late-phase improvement (belief or solver).
+CAMPAIGN PIVOT (registered): v12 completes v11b (integration +
+full G-ladder + the user-directed regression ladder) as its
+deliverable; the strength frontier beyond that requires either a
+perfect-belief-bound instrument or compute-scaling curves (the
+v5-era anytime question) — to be registered separately.
+
+--- V11b VERDICT (2026-09-08): NOT PROMOTED — model validated,
+machinery blocker isolated ---
+
+6-feature integration (fitdraw): G2 holds all gains (s3 62.9, s6
+70.9, s7 68.8; pickup scenarios bit-identical); G4a: hard3 0.793
+and hard1 0.559 now SHARPEN, but home10 0.642 vs bound 0.713.
+Definitive A/B: at mh_window=0, fitdraw6 == v10 (0.606 vs 0.600)
+— the model is INNOCENT; rejuvenation lifts v10's home10 read
++0.133 but the fitted model's only +0.036. The blocker is the MH
+frozen-composition rescoring's interaction with fitted weights
+(the drawn-attribution and re-added-card feature distortions).
+Registered retry + one integration fix are spent -> v11b closes
+at the gate per discipline. BANKED: the 6-feat weights (value
+weight was absorbing meld protection — now separated), the
+mh0-parity proof, and the precise spec for the future fix: MH
+rescoring needs per-event primary-time context (a _window_loglik
+redesign — its own registered campaign when resumed).
+
+--- REGRESSION LADDER HEALTH CHECK (user directive) ---
+
+No promotion occurred, but the champion's field numbers are stale
+(v8-era). Running fresh: v10home vs patient teacher and vs
+knock-when-legal (home_variant --match, 1500 hands each, seat-
+swapped, seeds 146000/148000).
+
+--- REGRESSION LADDER RESULTS (2026-09-08) ---
+
+v10home vs patient teacher: +3.54 +/- 1.66 (1488 seat-swapped
+  hands, seed 146000; gin-ish flips +6.63, knock flips +1.02).
+v10home vs knock-when-legal: +7.09 +/- 1.40 (seed 148000).
+Historical anchors (different seeds/eras, so cross-era diffs carry
+~+/-2.4 combined CIs): v4home-era teacher number was +1.23 +/-
+1.95 and knocker +5.38 +/- 1.60. Both ladder rungs moved the
+right direction, and the teacher margin is the best home-vs-
+teacher number ever recorded — the accumulated v4->v8->v10 chain
+IS visible against fixed external baselines even though each
+recent increment gated as a self-play tie (lesson #9's symmetric
+cancellation hides symmetric gains; fixed-baseline ladders reveal
+them). The champion chain is CONFIRMED non-regressive.
+
+=== V12 CLOSED 2026-09-08 ===
+Deliverables: the corrected compass (endgame dead for home; oracle
+bound +15.25 mostly irreducible early info), the home oracle bound
+itself, the v11b-validated discard model with its isolated MH
+blocker, the tau_p asymmetry table, and the fresh regression
+ladder. No promotion; v10home stands, now with current field
+evidence. Registered next candidates: (1) compute-scaling curve
+(the v5 anytime question: stages 16/48/384+, kbranch 4, at 2-4x
+budget — the only mechanism class that ever beat a champion at
+fixed information); (2) MH-rescoring redesign (unblocks v11b);
+(3) perfect-belief-bound instrument (research).

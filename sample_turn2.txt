@@ -1,0 +1,17 @@
+# Turn 2 showcase -- hand-reading. Full transcript: WE dumped two kings
+# early (standard human play: shed high deadwood); the opponent took BOTH.
+# Now we drew 8D and must discard. Deadwood logic says pitch KD -- but
+# that's the third king.
+me: AS 2S 3S 5H 5D 5C KD 9H 4C 7D 8D
+opp-known: KC KH
+pile: 4S 2H 6S
+event: opp-discard 4S
+event: my-draw
+event: my-discard KC
+event: opp-pickup KC
+event: opp-discard 2H
+event: my-draw
+event: my-discard KH
+event: opp-pickup KH
+event: opp-discard 6S
+opp-model: 10,1.0

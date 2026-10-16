@@ -1,0 +1,16 @@
+# Example 5 -- TAKE WITH A PLAN (ten game, shows the follow-up
+# recommendation). Full transcript: turn 1 we drew KC -- with our JD-JC
+# pair worth keeping, the lone KC (10 deadwood, only a weak K-J club
+# gap) was the natural shed. The opponent took it and let go of 9S,
+# which completes our 9C-9D set: an easy take. The interesting half is
+# the follow-up discard from JD/JC/4S/2C/AD -- the belief marks clubs
+# near their KC hot.
+me: 5H 6H 7H 9C 9D JD JC 4S 2C AD
+opp-known: KC
+pile: TD 9S
+event: my-draw KC
+event: my-discard KC
+event: opp-pickup KC
+event: opp-discard 9S
+opp-model: 10,1.0
+knock-max: 10

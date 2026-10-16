@@ -1,0 +1,66 @@
+  BR cand t=0 p=0.0: vs-mixture  +1.26 (worst member  -1.30)
+  BR cand t=0 p=0.5: vs-mixture  -1.62 (worst member  -3.73)
+  BR cand t=0 p=1.0: vs-mixture  -0.18 (worst member  -2.72)
+  BR cand t=2 p=0.0: vs-mixture  +0.60 (worst member  -2.62)
+  BR cand t=2 p=0.5: vs-mixture  -0.16 (worst member  -2.66)
+  BR cand t=2 p=1.0: vs-mixture  +1.19 (worst member  -1.99)
+  BR cand t=4 p=0.0: vs-mixture  -0.54 (worst member  -2.57)
+  BR cand t=4 p=0.5: vs-mixture  -1.48 (worst member  -3.89)
+  BR cand t=4 p=1.0: vs-mixture  +0.64 (worst member  -1.19)
+  BR cand t=6 p=0.0: vs-mixture  -0.68 (worst member  -2.75)
+  BR cand t=6 p=0.5: vs-mixture  -1.59 (worst member  -3.53)
+  BR cand t=6 p=1.0: vs-mixture  -1.37 (worst member  -2.84)
+  BR cand t=8 p=0.0: vs-mixture  +2.35 (worst member  -0.94)
+  BR cand t=8 p=0.5: vs-mixture  -1.97 (worst member  -4.40)
+  BR cand t=8 p=1.0: vs-mixture  +0.26 (worst member  -0.89)
+  BR cand t=10 p=0.0: vs-mixture  +0.52 (worst member  -2.19)
+  BR cand t=10 p=0.5: vs-mixture  -0.90 (worst member  -2.37)
+  BR cand t=10 p=1.0: vs-mixture  +0.35 (worst member  -1.55)
+BEST RESPONSE: t=8 p=0.0 gains +2.35 pts/hand vs the mixture
+  adversary(model p=0.0) vs MixedKnock(t=6,p=0.0): +2.77 +/- 1.87 (888 hands)
+  adversary(model p=0.5) vs MixedKnock(t=6,p=0.5): +2.50 +/- 1.69 (888 hands)
+  adversary(model p=1.0) vs MixedKnock(t=6,p=1.0): +2.80 +/- 1.63 (888 hands)
+        br_t0_p0 vs v3search:  -2.87 +/- 2.86
+       br_t0_p50 vs v3search:  -4.47 +/- 2.79
+      br_t0_p100 vs v3search:  -6.35 +/- 2.85
+        br_t2_p0 vs v3search:  -5.53 +/- 2.81
+       br_t2_p50 vs v3search:  -1.85 +/- 2.78
+      br_t2_p100 vs v3search:  -4.53 +/- 2.66
+        br_t4_p0 vs v3search:  -0.11 +/- 2.84
+       br_t4_p50 vs v3search:  -2.84 +/- 2.60
+      br_t4_p100 vs v3search:  -4.07 +/- 2.53
+        br_t6_p0 vs v3search:  -3.49 +/- 2.73
+       br_t6_p50 vs v3search:  -4.49 +/- 2.65
+      br_t6_p100 vs v3search:  -3.94 +/- 2.61
+        br_t8_p0 vs v3search:  -0.28 +/- 2.86
+       br_t8_p50 vs v3search:  -2.24 +/- 2.61
+      br_t8_p100 vs v3search:  -2.02 +/- 2.37
+       br_t10_p0 vs v3search:  -3.73 +/- 2.73
+      br_t10_p50 vs v3search:  -0.41 +/- 2.70
+     br_t10_p100 vs v3search:  -1.52 +/- 2.43
+     adv_t0_p100 vs v3search:  -2.12 +/- 2.63
+     adv_t6_p100 vs v3search:  -0.10 +/- 2.71
+    adv_t10_p100 vs v3search:  -1.10 +/- 2.68
+EXPLOITABILITY(v3search) >= -0.10 +/- 2.71 (by adv_t6_p100)
+        br_t0_p0 vs v2:  +2.73 +/- 3.13
+       br_t0_p50 vs v2:  +0.77 +/- 3.09
+      br_t0_p100 vs v2:  +2.61 +/- 3.11
+        br_t2_p0 vs v2:  +2.84 +/- 3.10
+       br_t2_p50 vs v2:  -1.76 +/- 2.89
+      br_t2_p100 vs v2:  +0.16 +/- 2.73
+        br_t4_p0 vs v2:  +1.06 +/- 3.18
+       br_t4_p50 vs v2:  +2.39 +/- 2.71
+      br_t4_p100 vs v2:  +0.42 +/- 2.66
+        br_t6_p0 vs v2:  +3.79 +/- 3.25
+       br_t6_p50 vs v2:  -1.14 +/- 2.62
+      br_t6_p100 vs v2:  +1.75 +/- 2.36
+        br_t8_p0 vs v2:  +2.23 +/- 3.10
+       br_t8_p50 vs v2:  +1.53 +/- 2.64
+      br_t8_p100 vs v2:  +0.57 +/- 2.29
+       br_t10_p0 vs v2:  +2.08 +/- 3.12
+      br_t10_p50 vs v2:  -1.40 +/- 2.62
+     br_t10_p100 vs v2:  -1.40 +/- 2.66
+     adv_t0_p100 vs v2:  +4.83 +/- 2.76
+     adv_t6_p100 vs v2:  +1.70 +/- 2.79
+    adv_t10_p100 vs v2:  +4.34 +/- 2.73
+EXPLOITABILITY(v2) >= +4.83 +/- 2.76 (by adv_t0_p100)

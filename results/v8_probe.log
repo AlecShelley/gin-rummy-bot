@@ -1,0 +1,4 @@
+pf-v6[veto=True,rule/tp0.1] vs ad_self [full]: +4.55 +/- 1.59 over 1488 hands (0.515 s/searched-move, 1372s wall)
+pf-v6[veto=True,rule/tp0.1] vs ad_jam [full]: +4.54 +/- 1.61 over 1488 hands (0.526 s/searched-move, 1361s wall)
+pf-v6[veto=True,rule/tp0.1] vs ad_self_k10 [full]: +7.69 +/- 1.30 over 1488 hands (0.531 s/searched-move, 976s wall)
+pf-v6[veto=True,rule/tp0.1] vs teacher [full]: +1.98 +/- 1.61 over 1488 hands (0.527 s/searched-move, 1371s wall)

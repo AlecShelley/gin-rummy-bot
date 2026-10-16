@@ -1,0 +1,44 @@
+--> Running on the GPU
+rolling out 16000 noisy-teacher episodes (teacher=strong, epsilon=0.15)
+  2000/16000 episodes, 48s
+  4000/16000 episodes, 97s
+  6000/16000 episodes, 144s
+  8000/16000 episodes, 192s
+  10000/16000 episodes, 241s
+  12000/16000 episodes, 291s
+  14000/16000 episodes, 343s
+  16000/16000 episodes, 393s
+collected 907823 expert decisions in 393s; DQN replay holds 0
+behaviour cloning: 907823 samples, 30 epochs
+  epoch  1: loss 0.8002 acc 73.7%
+  epoch  2: loss 0.4444 acc 84.4%
+  epoch  3: loss 0.3655 acc 87.3%
+  epoch  4: loss 0.3225 acc 88.8%
+  epoch  5: loss 0.2918 acc 89.9%
+  epoch  6: loss 0.2690 acc 90.7%
+  epoch  7: loss 0.2519 acc 91.3%
+  epoch  8: loss 0.2360 acc 91.8%
+  epoch  9: loss 0.2228 acc 92.2%
+  epoch 10: loss 0.2105 acc 92.6%
+  epoch 11: loss 0.2003 acc 93.0%
+  epoch 12: loss 0.1906 acc 93.2%
+  epoch 13: loss 0.1809 acc 93.6%
+  epoch 14: loss 0.1730 acc 93.8%
+  epoch 15: loss 0.1654 acc 94.0%
+  epoch 16: loss 0.1590 acc 94.3%
+  epoch 17: loss 0.1521 acc 94.5%
+  epoch 18: loss 0.1460 acc 94.7%
+  epoch 19: loss 0.1403 acc 94.9%
+  epoch 20: loss 0.1352 acc 95.1%
+  epoch 21: loss 0.1296 acc 95.2%
+  epoch 22: loss 0.1261 acc 95.4%
+  epoch 23: loss 0.1208 acc 95.6%
+  epoch 24: loss 0.1175 acc 95.7%
+  epoch 25: loss 0.1136 acc 95.8%
+  epoch 26: loss 0.1111 acc 95.9%
+  epoch 27: loss 0.1062 acc 96.1%
+  epoch 28: loss 0.1035 acc 96.2%
+  epoch 29: loss 0.1009 acc 96.3%
+  epoch 30: loss 0.0988 acc 96.4%
+saved cloned policy to results/v2_bc.policy.pt (1.8 MB)
+continue with:  python dagger.py --teacher strong --init results/v2_bc.policy.pt ...

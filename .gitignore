@@ -1,0 +1,18 @@
+# environment
+.venv/
+__pycache__/
+*.pyc
+
+# large artifacts kept out of the public repo (training datasets,
+# network checkpoints, self-play harvests, posterior benchmark rows)
+results/pretrained.pth
+results/v4_value/
+results/v5_q/
+results/v3/
+results/v3_data/
+results/dagger/
+results/dagger2/
+results/v2_dagger/
+results/selfplay/
+results/discard_harvest.jsonl
+results/post_s*_rows.jsonl

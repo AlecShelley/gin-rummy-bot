@@ -1,0 +1,24 @@
+s1: 200000 accepted / 450412 tried (6s)
+=== posterior check S1, 200000 accepted samples, 4-filter ensemble ===
+unseen 41 cards, hidden 10, chance 0.244; ensemble noise (4f vs 8f) mean|d|=0.0161
+M2 Brier: raw 0.1809  shrunk 0.1810  uniform 0.1844  (raw vs uniform +1.9%)
+M1 per-card (empirical vs raw PF; |z|>3 flag, |z|>2 watch):
+  FLAG  4H   PF 0.151 emp 0.105 z -66.9
+  FLAG  6C   PF 0.231 emp 0.272 z +41.2
+  FLAG  QS   PF 0.234 emp 0.272 z +37.7
+  FLAG  2C   PF 0.306 emp 0.271 z -35.5
+  FLAG  AH   PF 0.138 emp 0.105 z -47.6
+  FLAG  2S   PF 0.246 emp 0.272 z +26.2
+  FLAG  TD   PF 0.298 emp 0.272 z -25.6
+  FLAG  3D   PF 0.130 emp 0.106 z -36.2
+  FLAG  KC   PF 0.296 emp 0.273 z -23.8
+  FLAG  7D   PF 0.250 emp 0.273 z +23.5
+  FLAG  JD   PF 0.297 emp 0.274 z -23.3
+  FLAG  3S   PF 0.129 emp 0.106 z -33.7
+  FLAG  5H   PF 0.128 emp 0.105 z -33.8
+  FLAG  7H   PF 0.251 emp 0.272 z +20.7
+  FLAG  5C   PF 0.253 emp 0.274 z +20.5
+M3 rank-mates of declined flip 3H PF 0.383  emp 0.316 +/- 0.002  (3S, 3D, 3C)
+M3 suit+-2 of declined flip 3H  PF 0.532  emp 0.421 +/- 0.003  (AH, 2H, 4H, 5H)
+M4 opp deadwood: emp mean 57.79 (sd 13.88)  PF cloud 57.47
+M4 knockable (dw<=thresh 3): emp 0.0001  PF cloud 0.0000

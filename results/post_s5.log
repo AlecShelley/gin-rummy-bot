@@ -1,0 +1,175 @@
+shard 1/150 (10 rows) elapsed 0m ETA 30m
+shard 2/150 (20 rows) elapsed 0m ETA 16m
+shard 3/150 (30 rows) elapsed 0m ETA 12m
+shard 4/150 (40 rows) elapsed 0m ETA 13m
+shard 5/150 (50 rows) elapsed 0m ETA 13m
+shard 6/150 (60 rows) elapsed 1m ETA 12m
+shard 7/150 (70 rows) elapsed 1m ETA 10m
+shard 8/150 (80 rows) elapsed 1m ETA 10m
+shard 9/150 (90 rows) elapsed 1m ETA 10m
+shard 10/150 (100 rows) elapsed 1m ETA 9m
+shard 11/150 (110 rows) elapsed 1m ETA 8m
+shard 12/150 (120 rows) elapsed 1m ETA 8m
+shard 13/150 (130 rows) elapsed 1m ETA 7m
+shard 14/150 (140 rows) elapsed 1m ETA 9m
+shard 15/150 (150 rows) elapsed 1m ETA 8m
+shard 16/150 (160 rows) elapsed 1m ETA 8m
+shard 17/150 (170 rows) elapsed 1m ETA 8m
+shard 18/150 (180 rows) elapsed 1m ETA 7m
+shard 19/150 (190 rows) elapsed 1m ETA 8m
+shard 20/150 (200 rows) elapsed 1m ETA 8m
+shard 21/150 (210 rows) elapsed 1m ETA 8m
+shard 22/150 (220 rows) elapsed 1m ETA 7m
+shard 23/150 (230 rows) elapsed 1m ETA 7m
+shard 24/150 (240 rows) elapsed 1m ETA 7m
+shard 25/150 (250 rows) elapsed 1m ETA 7m
+shard 26/150 (260 rows) elapsed 1m ETA 7m
+shard 27/150 (270 rows) elapsed 1m ETA 7m
+shard 28/150 (280 rows) elapsed 2m ETA 7m
+shard 29/150 (290 rows) elapsed 2m ETA 7m
+shard 30/150 (300 rows) elapsed 2m ETA 7m
+shard 31/150 (310 rows) elapsed 2m ETA 7m
+shard 32/150 (320 rows) elapsed 2m ETA 7m
+shard 33/150 (330 rows) elapsed 2m ETA 6m
+shard 34/150 (340 rows) elapsed 2m ETA 6m
+shard 35/150 (350 rows) elapsed 2m ETA 7m
+shard 36/150 (360 rows) elapsed 2m ETA 7m
+shard 37/150 (370 rows) elapsed 2m ETA 6m
+shard 38/150 (380 rows) elapsed 2m ETA 6m
+shard 39/150 (390 rows) elapsed 2m ETA 6m
+shard 40/150 (400 rows) elapsed 2m ETA 6m
+shard 41/150 (410 rows) elapsed 2m ETA 6m
+shard 42/150 (420 rows) elapsed 2m ETA 6m
+shard 43/150 (430 rows) elapsed 2m ETA 6m
+shard 44/150 (440 rows) elapsed 2m ETA 6m
+shard 45/150 (450 rows) elapsed 3m ETA 6m
+shard 46/150 (460 rows) elapsed 3m ETA 6m
+shard 47/150 (470 rows) elapsed 3m ETA 6m
+shard 48/150 (480 rows) elapsed 3m ETA 6m
+shard 49/150 (490 rows) elapsed 3m ETA 6m
+shard 50/150 (500 rows) elapsed 3m ETA 6m
+shard 51/150 (510 rows) elapsed 3m ETA 6m
+shard 52/150 (520 rows) elapsed 3m ETA 6m
+shard 53/150 (530 rows) elapsed 3m ETA 5m
+shard 54/150 (540 rows) elapsed 3m ETA 5m
+shard 55/150 (550 rows) elapsed 3m ETA 5m
+shard 56/150 (560 rows) elapsed 3m ETA 5m
+shard 57/150 (570 rows) elapsed 3m ETA 5m
+shard 58/150 (580 rows) elapsed 3m ETA 5m
+shard 59/150 (590 rows) elapsed 3m ETA 5m
+shard 60/150 (600 rows) elapsed 3m ETA 5m
+shard 61/150 (610 rows) elapsed 3m ETA 5m
+shard 62/150 (620 rows) elapsed 3m ETA 5m
+shard 63/150 (630 rows) elapsed 3m ETA 5m
+shard 64/150 (640 rows) elapsed 3m ETA 5m
+shard 65/150 (650 rows) elapsed 4m ETA 5m
+shard 66/150 (660 rows) elapsed 4m ETA 4m
+shard 67/150 (670 rows) elapsed 4m ETA 4m
+shard 68/150 (680 rows) elapsed 4m ETA 4m
+shard 69/150 (690 rows) elapsed 4m ETA 4m
+shard 70/150 (700 rows) elapsed 4m ETA 4m
+shard 71/150 (710 rows) elapsed 4m ETA 4m
+shard 72/150 (720 rows) elapsed 4m ETA 4m
+shard 73/150 (730 rows) elapsed 4m ETA 4m
+shard 74/150 (740 rows) elapsed 4m ETA 4m
+shard 75/150 (750 rows) elapsed 4m ETA 4m
+shard 76/150 (760 rows) elapsed 4m ETA 4m
+shard 77/150 (770 rows) elapsed 4m ETA 4m
+shard 78/150 (780 rows) elapsed 4m ETA 4m
+shard 79/150 (790 rows) elapsed 4m ETA 4m
+shard 80/150 (800 rows) elapsed 4m ETA 4m
+shard 81/150 (810 rows) elapsed 4m ETA 4m
+shard 82/150 (820 rows) elapsed 4m ETA 4m
+shard 83/150 (830 rows) elapsed 4m ETA 3m
+shard 84/150 (840 rows) elapsed 4m ETA 4m
+shard 85/150 (850 rows) elapsed 5m ETA 3m
+shard 86/150 (860 rows) elapsed 5m ETA 3m
+shard 87/150 (870 rows) elapsed 5m ETA 3m
+shard 88/150 (880 rows) elapsed 5m ETA 3m
+shard 89/150 (890 rows) elapsed 5m ETA 3m
+shard 90/150 (900 rows) elapsed 5m ETA 3m
+shard 91/150 (910 rows) elapsed 5m ETA 3m
+shard 92/150 (920 rows) elapsed 5m ETA 3m
+shard 93/150 (930 rows) elapsed 5m ETA 3m
+shard 94/150 (940 rows) elapsed 5m ETA 3m
+shard 95/150 (950 rows) elapsed 5m ETA 3m
+shard 96/150 (960 rows) elapsed 5m ETA 3m
+shard 97/150 (970 rows) elapsed 5m ETA 3m
+shard 98/150 (980 rows) elapsed 5m ETA 3m
+shard 99/150 (990 rows) elapsed 5m ETA 3m
+shard 100/150 (1000 rows) elapsed 5m ETA 3m
+shard 101/150 (1010 rows) elapsed 5m ETA 3m
+shard 102/150 (1020 rows) elapsed 6m ETA 3m
+shard 103/150 (1030 rows) elapsed 6m ETA 3m
+shard 104/150 (1040 rows) elapsed 6m ETA 3m
+shard 105/150 (1050 rows) elapsed 6m ETA 2m
+shard 106/150 (1060 rows) elapsed 6m ETA 2m
+shard 107/150 (1070 rows) elapsed 6m ETA 2m
+shard 108/150 (1080 rows) elapsed 6m ETA 2m
+shard 109/150 (1090 rows) elapsed 6m ETA 2m
+shard 110/150 (1100 rows) elapsed 6m ETA 2m
+shard 111/150 (1110 rows) elapsed 6m ETA 2m
+shard 112/150 (1120 rows) elapsed 6m ETA 2m
+shard 113/150 (1130 rows) elapsed 6m ETA 2m
+shard 114/150 (1140 rows) elapsed 6m ETA 2m
+shard 115/150 (1150 rows) elapsed 6m ETA 2m
+shard 116/150 (1160 rows) elapsed 6m ETA 2m
+shard 117/150 (1170 rows) elapsed 6m ETA 2m
+shard 118/150 (1180 rows) elapsed 7m ETA 2m
+shard 119/150 (1190 rows) elapsed 7m ETA 2m
+shard 120/150 (1200 rows) elapsed 7m ETA 2m
+shard 121/150 (1210 rows) elapsed 7m ETA 2m
+shard 122/150 (1220 rows) elapsed 7m ETA 2m
+shard 123/150 (1230 rows) elapsed 7m ETA 1m
+shard 124/150 (1240 rows) elapsed 7m ETA 1m
+shard 125/150 (1250 rows) elapsed 7m ETA 1m
+shard 126/150 (1260 rows) elapsed 7m ETA 1m
+shard 127/150 (1270 rows) elapsed 7m ETA 1m
+shard 128/150 (1280 rows) elapsed 7m ETA 1m
+shard 129/150 (1290 rows) elapsed 7m ETA 1m
+shard 130/150 (1300 rows) elapsed 7m ETA 1m
+shard 131/150 (1310 rows) elapsed 7m ETA 1m
+shard 132/150 (1320 rows) elapsed 7m ETA 1m
+shard 133/150 (1330 rows) elapsed 7m ETA 1m
+shard 134/150 (1340 rows) elapsed 7m ETA 1m
+shard 135/150 (1350 rows) elapsed 7m ETA 1m
+shard 136/150 (1360 rows) elapsed 7m ETA 1m
+shard 137/150 (1370 rows) elapsed 7m ETA 1m
+shard 138/150 (1380 rows) elapsed 8m ETA 1m
+shard 139/150 (1390 rows) elapsed 8m ETA 1m
+shard 140/150 (1400 rows) elapsed 8m ETA 1m
+shard 141/150 (1410 rows) elapsed 8m ETA 0m
+shard 142/150 (1420 rows) elapsed 8m ETA 0m
+shard 143/150 (1430 rows) elapsed 8m ETA 0m
+shard 144/150 (1440 rows) elapsed 8m ETA 0m
+shard 145/150 (1450 rows) elapsed 8m ETA 0m
+shard 146/150 (1460 rows) elapsed 8m ETA 0m
+shard 147/150 (1470 rows) elapsed 8m ETA 0m
+shard 148/150 (1480 rows) elapsed 8m ETA 0m
+shard 149/150 (1490 rows) elapsed 8m ETA 0m
+shard 150/150 (1500 rows) elapsed 8m ETA 0m
+=== posterior check S5, 1500 accepted samples, 4-filter ensemble ===
+unseen 40 cards, hidden 9, chance 0.225; ensemble noise (4f vs 8f) mean|d|=0.0365
+M2 Brier: raw 0.1659  shrunk 0.1658  uniform 0.1744  (raw vs uniform +4.9%)
+M1 per-card (empirical vs raw PF; |z|>3 flag, |z|>2 watch):
+  FLAG  3H   PF 0.380 emp 0.523 z +11.1
+  FLAG  AC   PF 0.381 emp 0.520 z +10.8
+  FLAG  2H   PF 0.449 emp 0.549 z +7.8
+  FLAG  3D   PF 0.271 emp 0.176 z -9.7
+  FLAG  3C   PF 0.280 emp 0.185 z -9.5
+  FLAG  KC   PF 0.155 emp 0.078 z -11.2
+  FLAG  TC   PF 0.114 emp 0.189 z +7.4
+  FLAG  5C   PF 0.272 emp 0.198 z -7.2
+  FLAG  8H   PF 0.283 emp 0.215 z -6.5
+  FLAG  KH   PF 0.135 emp 0.071 z -9.7
+  FLAG  TD   PF 0.143 emp 0.201 z +5.7
+  FLAG  4D   PF 0.235 emp 0.177 z -6.0
+  FLAG  9H   PF 0.242 emp 0.184 z -5.8
+  FLAG  7C   PF 0.155 emp 0.211 z +5.3
+  FLAG  JD   PF 0.269 emp 0.215 z -5.0
+M3 rank-mates of taken flip AH  PF 0.905  emp 1.063 +/- 0.036  (AD, AC)
+M3 suit+-2 of taken flip AH     PF 0.829  emp 1.072 +/- 0.036  (2H, 3H)
+M3 rank-mates of discarded X KS PF 0.419  emp 0.249 +/- 0.024  (KH, KD, KC)
+M3 suit+-2 of discarded X KS    PF 0.219  emp 0.242 +/- 0.022  (JS)
+M4 opp deadwood: emp mean 59.31 (sd 10.49)  PF cloud 49.07
+M4 knockable (dw<=thresh 1): emp 0.0000  PF cloud 0.0000

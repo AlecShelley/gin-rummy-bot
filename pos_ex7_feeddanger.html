@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Gin rummy evaluator</title><style>
+body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+       background: #f4f3ef; color: #1a1a1a; margin: 0; padding: 24px; }
+.wrap { max-width: 760px; margin: 0 auto; }
+h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+.sub { color: #6b6b6b; font-size: 13.5px; margin-bottom: 14px; }
+.banner { display: flex; gap: 16px; align-items: center;
+          background: #f7ede3; border: 2px solid #c76d33;
+          border-radius: 12px; padding: 12px 18px; margin-bottom: 16px; }
+.banner .btitle { font-weight: 700; font-size: 16px;
+                  letter-spacing: .05em; color: #a4551f; }
+.banner .bsub { font-size: 14.5px; margin-top: 2px; }
+.panel { background: #fff; border: 1px solid #ddd9d0; border-radius: 12px;
+         padding: 18px 20px; margin-bottom: 16px; }
+.label { font-size: 12px; color: #6b6b6b; text-transform: uppercase;
+         letter-spacing: .04em; margin-bottom: 8px; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: flex-end; }
+.card { width: 46px; height: 64px; border-radius: 6px; background: #fff;
+        border: 1px solid #c9c4b8; display: inline-flex; flex-direction:
+        column; align-items: center; justify-content: center;
+        font-size: 16px; font-weight: 600; box-sizing: border-box; }
+.card .s { font-size: 15px; font-weight: 400; }
+.card.red { color: #b3372f; }
+.card.back { background: #8b95a8; border-color: #7c8598; color: #f0f2f5;
+             font-weight: 400; font-size: 13px; }
+.card.hot { border: 3px solid #c76d33; }
+.card.dim { opacity: .8; }
+.card.seen { border: 2px dashed #6a5bd0; }
+.card.mine { border: 2px solid #3a7d44; }
+.card.theirs { border: 2px solid #b3372f; }
+.card.pickedme { outline: 2px dashed #3a7d44; outline-offset: -6px; }
+.card.pickedopp { outline: 2px dashed #b3372f; outline-offset: -6px; }
+.card.big { width: 56px; height: 78px; font-size: 19px; }
+.group { display: inline-flex; gap: 4px; padding: 5px; border-radius: 9px;
+         margin-right: 8px; margin-bottom: 4px; }
+.group.meld { background: #e8f0e4; border: 1px solid #b9d0ae; }
+.group.loose { border: 1px dashed #d4cfc4; }
+.gcap { font-size: 11px; color: #8a857a; text-align: center; margin-top: 2px; }
+.cols { display: flex; gap: 24px; }
+.hist { font-size: 13.5px; line-height: 1.9; color: #3a3a3a; }
+.hist b { font-weight: 600; }
+.stock { width: 46px; height: 64px; border-radius: 6px; background: #8b95a8;
+         border: 1px solid #7c8598; color: #f0f2f5; display: inline-flex;
+         align-items: center; justify-content: center; font-size: 14px;
+         box-sizing: border-box; }
+.stock.hot { border: 3px solid #c76d33; }
+.ev { width: 100%; border-collapse: collapse; font-size: 14px; }
+.ev td { padding: 5px 8px; vertical-align: middle; }
+.bar { height: 13px; border-radius: 4px; background: #d8d3c8; }
+.bar.best { background: #c76d33; }
+.bar.bad { background: #c8574d; }
+.rec { background: #f7ede3; border: 1px solid #e3c9ad; border-radius: 9px;
+       padding: 12px 16px; font-size: 14.5px; margin-top: 14px; }
+.rec b { color: #a4551f; }
+.badge { display: inline-block; background: #ece9f5;
+         color: #4a3d7a; font-size: 12px; border-radius: 6px;
+         padding: 2px 10px; margin-left: 8px; }
+.muted { color: #8a857a; font-size: 12.5px; }
+.seennote { color: #6a5bd0; font-size: 12.5px; margin-top: 6px; }
+</style></head><body>
+<div class="wrap">
+<h1>Gin rummy evaluator</h1>
+<div class="sub">to move: choose a discard &nbsp;&middot;&nbsp; assumes the opponent knocks whenever their deadwood is 1 or less</div>
+<div class="banner"><div class="card red big"><span>A</span><span class="s">♥</span></div><div><div class="btitle">HOME VARIANT</div><div class="bsub">first card flipped: <b>A♥</b> (bottom of the pile) &nbsp;&rarr;&nbsp; knocking allowed at deadwood &le; <b>1</b></div></div></div>
+
+<div class="panel">
+<div class="label">Opponent &mdash; 2 known,
+8 hidden</div>
+<div class="row"><div class="card  "><span>Q</span><span class="s">♠</span></div><div class="card red "><span>8</span><span class="s">♥</span></div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div><div class="card back">?</div></div>
+<div class="muted" style="margin-top:6px">face-up cards = pickups we have seen; the rest is hidden</div>
+<div class="muted" style="color:#3a3a3a">reading their play &mdash; likely: Q♦&nbsp;(45%), Q♣&nbsp;(41%), Q♥&nbsp;(34%), 4♣&nbsp;(30%), 2♦&nbsp;(29%), 7♥&nbsp;(29%), 6♦&nbsp;(28%), 5♥&nbsp;(28%) <span class="muted">(chance level 22%)</span></div>
+</div>
+
+<div class="panel">
+<div class="label">Discard pile (bottom &rarr; top) &nbsp;/&nbsp; stock</div>
+<div class="row"><div style="display:inline-flex;flex-direction:column;align-items:center;vertical-align:top"><div class="card red dim"><span>A</span><span class="s">♥</span></div><span style="font-size:9px;color:#c99a2c;letter-spacing:1px;margin-top:2px">FLIP &le; 1</span></div><div class="card  dim theirs"><span>2</span><span class="s">♣</span></div><div class="card  theirs"><span>6</span><span class="s">♠</span></div>
+<span style="width:14px"></span><div class="stock">28</div></div>
+<div class="muted" style="margin-top:6px"><span style="color:#3a7d44">green border</span> = our discard, <span style="color:#b3372f">red</span> = theirs; a dashed inner ring means the card was picked up and later thrown back (ring color = who took it)</div>
+</div>
+
+<div class="panel">
+<div class="label">Our hand &mdash; 11 cards,
+deadwood 18</div>
+<div style="display:flex; align-items:flex-start; flex-wrap:wrap;"><span><span class="group meld"><div class="card  "><span>5</span><span class="s">♣</span></div><div class="card  "><span>6</span><span class="s">♣</span></div><div class="card  "><span>7</span><span class="s">♣</span></div></span><div class="gcap">run</div></span><span><span class="group meld"><div class="card red "><span>10</span><span class="s">♦</span></div><div class="card red "><span>10</span><span class="s">♥</span></div><div class="card  "><span>10</span><span class="s">♠</span></div></span><div class="gcap">set</div></span><span><span class="group loose"><div class="card red "><span>3</span><span class="s">♦</span></div><div class="card red "><span>4</span><span class="s">♦</span></div><div class="card red hot"><span>9</span><span class="s">♥</span></div><div class="card  "><span>2</span><span class="s">♠</span></div><div class="card  "><span>K</span><span class="s">♠</span></div></span><div class="gcap">unmelded</div></span></div>
+
+</div>
+
+<div class="panel">
+<div class="label">Turn history</div>
+<div class="hist">1. we <b>drew 8♥ from stock</b><br>2. we <b>discarded Q♠</b><br>3. opponent <b>took Q♠</b> from the pile<br>4. opponent <b>discarded 2♣</b><br>5. we <b>drew 2♠ from stock</b><br>6. we <b>discarded 8♥</b><br>7. opponent <b>took 8♥</b> from the pile<br>8. opponent <b>discarded 6♠</b><br>9. we <b>drew 9♥ from stock</b> (this turn)</div><div class="muted" style="margin-top:6px">&#10003; complete history</div>
+</div>
+
+<div class="panel">
+<div class="label">Verdict</div>
+<table class='ev'><tr class='muted'><td>your options</td><td>expected final score (this hand)</td><td style='text-align:right'>EV</td><td></td></tr><tr><td style='width:200px; font-weight:600'>discard 9♥</td><td><div class='bar best' style='width:100%'></div></td><td style='width:70px; text-align:right'>+23.46</td><td style='width:110px'> <span class="badge">recommended</span></td></tr><tr><td style='width:200px; font-weight:400'>discard 4♦</td><td><div class='bar ' style='width:59%'></div></td><td style='width:70px; text-align:right'>+21.01</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard 3♦</td><td><div class='bar ' style='width:56%'></div></td><td style='width:70px; text-align:right'>+20.80</td><td style='width:110px'></td></tr><tr><td style='width:200px; font-weight:400'>discard K♠</td><td><div class='bar ' style='width:25%'></div></td><td style='width:70px; text-align:right'>+18.97</td><td style='width:110px'></td></tr></table><div class="rec">Recommended: <b>discard 9♥</b><br>best by 2.4 points. With good play on both sides this hand is worth about <b>+23.5</b> points to us.</div>
+</div>
+
+<div class="muted">Highlighted card / pile / stock = the recommended
+move. EV = the expected final score of this hand for us, in
+points.</div>
+</div></body></html>

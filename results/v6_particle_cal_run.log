@@ -1,0 +1,27 @@
+logging 400 teacher + 200 clone + 200 random hands...
+logged in 5s
+grid: 18 configs on 300 train hands (12 workers)
+  tau_d=1.0 p_knock=0.0 mu=0.0                 train Brier 0.17753
+  tau_d=1.0 p_knock=0.0 mu=0.3                 train Brier 0.17855
+  tau_d=1.0 p_knock=0.5 mu=0.0                 train Brier 0.17874
+  tau_d=1.0 p_knock=0.5 mu=0.3                 train Brier 0.17779
+  tau_d=1.0 p_knock=0.9 mu=0.0                 train Brier 0.17847
+  tau_d=1.0 p_knock=0.9 mu=0.3                 train Brier 0.17982
+  tau_d=2.0 p_knock=0.0 mu=0.0                 train Brier 0.17760
+  tau_d=2.0 p_knock=0.0 mu=0.3                 train Brier 0.17865
+  tau_d=2.0 p_knock=0.5 mu=0.0                 train Brier 0.17820
+  tau_d=2.0 p_knock=0.5 mu=0.3                 train Brier 0.17903
+  tau_d=2.0 p_knock=0.9 mu=0.0                 train Brier 0.18000
+  tau_d=2.0 p_knock=0.9 mu=0.3                 train Brier 0.17907
+  tau_d=4.0 p_knock=0.0 mu=0.0                 train Brier 0.17929
+  tau_d=4.0 p_knock=0.0 mu=0.3                 train Brier 0.18044
+  tau_d=4.0 p_knock=0.5 mu=0.0                 train Brier 0.17918
+  tau_d=4.0 p_knock=0.5 mu=0.3                 train Brier 0.18017
+  tau_d=4.0 p_knock=0.9 mu=0.0                 train Brier 0.18031
+  tau_d=4.0 p_knock=0.9 mu=0.3                 train Brier 0.18058
+grid done in 626s
+v6 particle calibration (400 teacher hands, grid of 18; train Brier 0.17753)
+chosen: tau_d=1.0 mu=0.0 tau_p=1.0 p_knock=0.0 eps=0.05 N=256
+held-out vs teacher: particle 0.17773  belief 0.18010  uniform 0.20589  pf-vs-uniform +13.68%  pf-vs-belief +1.32%
+held-out vs clone  : particle 0.17570  belief 0.17949  uniform 0.20380  pf-vs-uniform +13.79%  pf-vs-belief +2.11%
+held-out vs random : particle 0.20410  belief 0.20274  uniform 0.18749  pf-vs-uniform -8.86%  pf-vs-belief -0.67%

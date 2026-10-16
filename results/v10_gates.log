@@ -1,0 +1,192 @@
+================================================================
+V10 CAMPAIGN LOG — likelihood sharpening
+Opened 2026-09-06. Prior campaign: results/v9_gates.log (leak hunt
++ posterior ground-truth check). Motivating evidence: the PF is
+systematically UNDER-CONFIDENT — captures 89/69/60% of node
+information on the frozen S1/S2/S3 scenarios; every evidence
+channel too soft; root-cause candidates tau_p=0.1 on
+book-deterministic opening events, tau_d=2.0 discard softness
+(misses the discard-choice counterfactual), clips
+(lik_floor=0.02, eps=0.05), and calibration history that targeted
+stream Brier of the SHRUNK marginal rather than the raw cloud.
+================================================================
+
+--- REGISTRATION (2026-09-06, before any sweep) ---
+
+Objective: a DEFAULT_PF config (no structural code change in phase
+A) that raises posterior information capture on the frozen
+scenarios without breaking the standing gates. Structural changes
+only if the config frontier saturates (phase A2, separate
+registration).
+
+Phase A — offline sweep (post_sweep.py) scored against the STORED
+ground-truth rows (results/post_s{1,2,3}_rows.jsonl; empirical
+conditionals are data, re-used freely — re-slice, never re-run):
+  Metrics per cfg per scenario: info captured % (Brier vs uniform
+  vs achievable), M3 channel gaps, M4 deadwood gap.
+  Staged grid: (1) tau_p x lik_floor on S1; (2) tau_d x mu x eps
+  on S2/S3; (3) joint top-4 combos on all three.
+  Overfitting guard: 3 scenarios is a TINY validation set — the
+  sweep SELECTS, it does not confirm.
+Phase B — held-out validation of the ONE selected cfg:
+  (a) read_regress.py hold-or-sharpen (existing truth-keyed gate);
+  (b) stream Brier held-out teacher+clone + random-opponent
+      mismatch (particle.py _score_pf machinery) — must not
+      regress materially (register: mismatch degradation < 5
+      Brier-% vs champion);
+  (c) TWO FRESH scenarios (S4/S5, picker seed 114000, run seeds
+      116000/118000, ~1500 accepted each) sampled AFTER the cfg is
+      chosen — posterior capture must improve vs DEFAULT_PF on
+      these too (selection seed != confirmation seed, applied to
+      scenarios).
+Phase C — match gate (t2_gate pattern + pf_cfg pass-through in
+  HomeV8Policy): candidate vs champion, 2000 paired deals, seed
+  120000; fresh confirm 122000 if positive. Per the v7 promotion
+  protocol a TIE promotes on posterior quality IF (a)-(c) all
+  hold and the poison probe (ad_self, ad_jam) stays clean.
+Seeds: 114000/116000/118000/120000/122000 (mod 977 = 668/714/760/
+806/852, distinct from all used bases).
+
+--- PHASE A RESULTS (2026-09-06): config frontier SATURATES ---
+
+Sweep logs: results/v10_sweep_stage{1,2,3}.log. Champion baseline
+capture s1/s2/s3 = 89.6/69.3/60.6% (mean 73.2%).
+Stage 1 (S1): tau_p=0.0 wins decisively — capture 91.6%, opening
+channel gap 0.179 -> 0.052; lik_floor irrelevant; exact zero is
+numerically safe.
+Stage 2 (S2/S3): SHARPENING tau_d BACKFIRES — s3 collapses 60.6 ->
+40.1% at tau_d=0.75: the discard energy's softness was protecting
+against its own misspecification; the discard-choice
+counterfactual is NOT expressible by the current energy at any
+temperature. eps 0.05->0.02 and mu 0.5 give crumbs.
+Stage 3 (joint): best config tau_p=0.0 + eps=0.02 -> mean 74.6%
+(91.6/70.1/62.1). Config-only gain +1.4 points of capture.
+VERDICT: phase A2 (structural) triggered per registration. The
+indicated change is the v7 take-side redesign applied to the
+DISCARD side (HANDOFF_V8 frontier #4): discard_mode="rule" —
+score P(discard X | hand) by the teacher's actual discard rule
+(min dw-after, live/safe/value tie-breaks) with a calibrated
+mismatch rate, behind a mode flag; v6/v7 frozen behavior
+untouched (pickup_mode precedent).
+
+--- PHASE A2 REGISTRATION (2026-09-06): structural discard fix ---
+
+Root cause read from particle.SoftOpponent.discard_logprob: energy
+= dw_after + mu*live(drop). Deadwood-tied discards (two dead high
+cards) score ~50/50, but the deployment opponent tie-breaks
+near-deterministically toward the higher-value/deader card — this
+is the missing discard-choice counterfactual (S2: truth KS 0.099
+vs PF 0.198 after a TH discard).
+Candidates, smallest first, each behind a param/flag with frozen
+default (pickup_mode precedent; v6/v7 registry behavior pinned):
+  (a) nu: energy -= nu * DEADWOOD_VALUE[drop] (nu=0 = frozen).
+      Sweep nu x tau_d on stored S2/S3 rows.
+  (b) discard_mode="rule": exact teacher tie-broken argmin with
+      mismatch rate, softmax fallback — only if (a) leaves the
+      channel gaps standing.
+Selection metric unchanged (capture % + channel gaps + dw gap on
+stored rows); phase B unchanged and binding.
+
+--- PHASE A2 RESULTS (2026-09-06): four structural discard
+attempts, all negative; candidate selected ---
+
+Sweep logs: results/v10_sweep_{nu,kdraw,sigma,tier,taupo}.log.
+  nu (value tie-break term): fails — S3 collapses at every nu>0;
+    the missing suppression is not the value tie-break.
+  kdraw=31 (full draw marginalization): does NOT rescue sharp
+    tau_d (S3 42.8%) — the subsample was not the cause.
+  sigma (in-hand synergy term): helps S3 channels (1.10->0.83)
+    but wrecks S2 (69.9->58.6 at sigma=2) — a single linear term
+    cannot separate pair-breaking from junk-cluster shedding.
+  discard_mode="tier" (two-scale argmin likelihood): S2 ground
+    truth motivated it (observed discard in dw-argmin 100%/1500,
+    teacher tie-break match only 23% ~ uniform-within) but S3
+    collapses (62->32%): after a STOCK DRAW the search often dumps
+    the drawn junk even when a bigger dead card sits in hand —
+    argmin membership is context-dependent. All four negative
+    results documented; the discard side needs a measured behavior
+    model of the search (future campaign; likelihood-net territory
+    — respect lessons #2/#8/#10).
+  tau_po split (opening-only zero mismatch): scores ~= global
+    tau_p=0 on the scenarios (74.3-74.5% vs 74.6%), strictly safer
+    mid-game (the search really does decline gain>=1 cards; global
+    zero would fine particles 50:1 via lik_floor on those).
+
+SELECTED CANDIDATE (v10cand): DEFAULT_PF + tau_po=0.0 + eps=0.02.
+Frozen-behavior checks green after every edit (anchors PASS;
+sigma=0/nu=0/tau_po=tau_p/eps_out-no-op all reproduce champion
+numbers exactly). New SoftOpponent params nu/sigma/discard_mode/
+eps_out/tau_po all default-frozen; registry v6/v7 pins unaffected.
+Phase B next: (a) truth-keyed reads, (b) held-out stream Brier +
+random-mismatch, (c) fresh scenarios S4 (decline-type, free), S5
+(take+discard, ~10 min), S6 (draw+discard, N=800).
+
+--- PHASE B RESULTS (2026-09-06): ALL HELD-OUT GATES GREEN ---
+
+Candidate = DEFAULT_PF + tau_po=0.0 + eps=0.02.
+(a) Truth-keyed reads (read_regress CASES, cand vs champ): 0.806->
+    0.792 / 0.663->0.733 / 0.554->0.535 — hold-or-sharpen ALL OK.
+(b) Held-out stream Brier (400 fresh hands each, standard game, no
+    opening events => mostly validates the eps change): teacher
+    +0.04%, clone +0.06% vs champ; random-opponent mismatch -0.28%
+    (registered bound 5%) — PASS.
+(c) Fresh scenarios (picker 114000; S4 decline 200k, S5 take 1500,
+    S6 draw 1500; sampled under the champion line, scored offline):
+    capture champ->cand: S4 86.8->88.6, S5 72.3->75.2,
+    S6 68.9->69.7; ALL channel gaps improved (S4 .197->.116,
+    S5 .594->.304, S6 .820->.715); no regressions — PASS.
+STANDING NOTE: take-scenario particle clouds are ~10 deadwood too
+optimistic under BOTH configs (S5 dwgap ~-10.2/-11.2) — a
+structural bias this campaign does not address; candidate item for
+the discard/behavior-model follow-up.
+INCIDENT: one command chain launched with a trailing '&' (the
+standing-rule violation) — audited: single orphaned s6 run adopted,
+no duplicate writes (rows dedupe clean).
+Phase C: pf_cfg pass-through + t10_gate.py, 2000 paired deals,
+seed 120000.
+
+--- PHASE C GATE, first 2000 pairs (seed 120000, 2026-09-06) ---
+
+t10_gate.py: candidate -0.71, champion +0.48, paired diff
+-1.18 +/- 1.57 (83% of deals diverge). Formally a tie (CI includes
+0) but negative-leaning — weaker than the v7 promotion-tie
+precedent (-0.30 +/- 0.99). DECISION (logged before the data):
+extend 2000 fresh pairs at the reserved seed 122000 and decide on
+the POOLED 4000 (CI ~ +/-1.1). Pooled comfortable tie -> proceed
+to probes and the promote-on-posterior-quality path; pooled
+negative CI-excluding-0 -> candidate REJECTED on match evidence
+despite the posterior gains (and that anti-correlation becomes a
+first-class finding).
+
+=== V10 PROMOTED 2026-09-07 — v10home ===
+
+Gate extension (seed 122000, 2000 pairs): -0.26 +/- 1.54; POOLED
+4000: -0.72 +/- 1.10 -> TIE per the pre-logged rule. Probes:
+  book-inverter (NEW, targets the sharpened opening likelihood;
+  seed 124000, 1500 paired deals): candidate hero +6.74 +/- 1.60
+  vs inverter, champion +5.84 +/- 1.63, paired +0.90 +/- 1.81 —
+  CLEAN (deception costs the deceiver more than the belief damage).
+  ad_self/ad_jam (pfmatch, seed 126000, 1488 hands each):
+  champ +3.65/+4.18, cand +3.05/+3.89 — margins hold, CLEAN.
+PROMOTED on posterior quality per the v7 protocol precedent:
+DEFAULT_PF += tau_po=0.0, eps 0.05->0.02. Home champion = v10home
+(home_variant --bot default; = HomeV8Policy on the new default).
+FROZEN pins added everywhere the old identities live: registry v6
+AND v7 (meta.py, play_vs_bot.py) pin eps=0.05/tau_po=None; --bot
+v8home pins the pre-v10 belief; read_regress v6_cfg pinned.
+Evaluator inherits automatically (belief note -> "v10 posterior").
+Post-flip verification ALL GREEN: sim --verify, fullrules,
+adaptive/ladder parity, anchors (meld .961/no-use .059), opening
+tests, read_regress PASS, scenario sweep: new default reproduces
+candidate (74.3% mean capture), old pin reproduces champion
+(73.2%) exactly.
+
+Open items carried forward (measured this campaign, not
+addressed): (1) the discard-side likelihood remains the frontier —
+the search's discard behavior is context-dependent (post-pickup:
+dw-argmin 100%/tie-break ~uniform; post-draw: dumps drawn junk
+over bigger dead cards) and no simple energy/tier model fits; a
+measured behavior model of the search is the indicated next step.
+(2) Take-scenario particle clouds ~10 dw too optimistic (S5).
+(3) Mid-game tau_p=0.1 never calibrated against the search's
+actual take-deviation rate.

@@ -1,0 +1,5 @@
+logging 1200 teacher hands + 400 clone hands...
+belief calibration over grid [0.0, 0.15, 0.25, 0.35, 0.5] (train Brier 0.17968)
+chosen alpha=0.25 beta=0.35 gamma=0.5
+held-out vs teacher: model 0.17913  uniform 0.20474  improvement +12.51%
+held-out vs clone  : model 0.17906  uniform 0.20480  improvement +12.57%

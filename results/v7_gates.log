@@ -1,0 +1,170 @@
+================================================================
+V7 CAMPAIGN LOG -- adversarial audit of the bot AND the evaluator
+Started 2026-08-29. User directive: "be adversarial to both the bot
+and evaluator to identify and then implement improvements to both."
+================================================================
+
+--- 0. First-session checklist (2026-08-29) ---
+sim.py --verify        : PASS (12345 legal checks, teacher 100.0000%)
+fullrules.py --test    : PASS
+adaptive.py --parity   : PASS (199 decisions IDENTICAL)
+ladder.py --parity     : PASS (143 decisions IDENTICAL)
+
+================================================================
+TRACK P -- belief-poisoning probe of v6 (poison.py, NEW)
+================================================================
+The v6 particle filter's likelihood assumes the opponent discards its
+least-useful card (softened teacher). poison.Advertiser attacks that
+assumption with ZERO deadwood cost: among the deadwood-optimal
+discards it throws the most misleading card instead of the safest --
+mode "self" = maximize meld-adjacency to its KEPT cards (human
+"salting": every discard tells the hero's belief a zone is dead
+exactly where the advertiser collects); mode "jam" = maximize
+live-count vs unseen (energy-maximal discards = likelihood jamming).
+This is the belief-poisoning adversary results/v6_prior_art.md s.3
+prescribes as a gate; first time built.
+
+Gate P1 (fundamentals parity, poison.py --check): PASS.
+  self: 3474 discard nodes, differs from teacher on 15.4%, deadwood
+  parity exact. jam: 3361 nodes, 25.3% divergence, parity exact.
+  (The salt only ever moves within the deadwood-optimal set.)
+
+Gate P2 (PF invariant stress, poison.py --stress): PASS.
+  13,561 decision-node checks over {teacher, knock10_p50, random,
+  ad_self} x {standard, home}: filter h-count == true hidden count,
+  filter pile == true pile, particles disjoint from hero hand / pile /
+  opp-known, particle size == h, logw finite, zero desyncs. The PF's
+  public bookkeeping is exact everywhere we could push it.
+
+Gate P3 (offline worlds quality on poisoned streams): NULL -- the
+  poison does not bite. particle.worlds_gate on 150 advertiser[self]
+  hands vs 150 teacher hands (seed 71900): particle sampler overlap
+  0.275/0.378/0.560 by stage vs 0.275/0.375/0.561 on teacher; dw-gap
+  +4.1/+7.2/+4.5 vs +3.9/+6.6/+4.2; knock-Brier 0.017/0.181/0.206 vs
+  0.016/0.191/0.201. World quality is UNCHANGED by the salt: the
+  filter's likelihood mass sits on deadwood-after, which zero-cost
+  (tie-break-only) deception cannot move; the mu=0.3 live term plus
+  the eps/lik_floor insurance absorb the rest. The bluntness that
+  Kermit-proofs the filter also deception-proofs it at this level.
+
+Gate P4 (matches, seed 71100, 1488 hands each, full rules,
+  results/v7_probe_matches.log) -- ALL CLEAN, same-seed comparison:
+    v6 vs teacher      +3.52 +/- 1.63   (the baseline)
+    v6 vs ad_self      +3.58 +/- 1.63   (salt gains the adversary 0)
+    v6 vs ad_jam       +3.15 +/- 1.64   (jamming gains ~0)
+    v6 vs ad_self_k10  +8.37 +/- 1.31   (salted knocker: crushed,
+                                         in line with the knock family)
+Controls (seeds 71200-71350):
+    ad_self vs teacher -0.44 +/- 1.11 (3000)  salt is fundamentals-free
+    ad_jam  vs teacher +0.63 +/- 1.12 (3000)  ditto
+    ad_self vs v4      -1.67 +/- 1.53 (1488)  no gain vs classic belief
+    ad_self vs v5      -0.99 +/- 1.54 (1488)  ditto
+
+VERDICT: v6 is UNEXPLOITED by belief poisoning at the zero-cost
+  (deadwood-neutral) level, in-sample and offline. The prior-art
+  survey's prescribed belief-poisoning gate now EXISTS (poison.py,
+  registry members ad_self / ad_jam / ad_self_k10) and is part of the
+  promotion probe suite going forward. Costly deception (sacrificing
+  deadwood to mislead) remains untested -- it must earn its cost back
+  through the poison, which this null makes unlikely at v6's current
+  read sharpness.
+
+Gate P5 (oracle compass vs v6, oracle_gate.py --vs v6, seed 72500):
+  oracle (v5 search + TRUE opponent hands) vs v6: +13.47 +/- 1.50
+  over 1488 hands (results/v7_oracle_v6.log). The v6-era bound was
+  +15.91 +/- 1.44 vs v5: v6 closed ~2.4 pts of the gap (consistent
+  with its +1.92 head-to-head edge over v5) and ~13.5 pts/hand of
+  belief headroom REMAINS OPEN against the current champion. The
+  compass still points at structural belief work (tracks A/C).
+
+================================================================
+V7 SESSION SUMMARY
+  Bot: belief-poisoning probe suite built (poison.py + 3 permanent
+    registry adversaries); v6 certified unexploited by zero-cost
+    deception (matches + offline worlds gate + 13.5k invariant
+    checks); oracle compass refreshed vs v6 (+13.47 +/- 1.50).
+  Evaluator: upgraded to the champion's particle belief (x4
+    ensemble, transcript-verified, classic fallback with reason);
+    champion-default opp-model; borderline/tie verdict honesty
+    (3 near-tie instabilities found by seed-testing and now
+    labeled); worlds default 192; library regenerated; 2 stale
+    library claims corrected (sample_turn3, ex5 follow-up).
+  All four machinery parity gates green before and after; no bot
+    or kernel files were modified (evaluate.py/viz.py + new
+    poison.py + registry additions in meta.py/particle.py only).
+================================================================
+
+================================================================
+TRACK E -- adversarial audit of the evaluator (evaluate.py/viz.py)
+================================================================
+
+E1. FIXED -- the champion-belief gap (the documented v7 open item).
+  evaluate.py now builds the v6 particle posterior from the position's
+  transcript whenever history_check says COMPLETE, and falls back to
+  the classic weights with an explicit reason line otherwise (both
+  text and HTML report the belief source). The PF replay lands on the
+  declared position or refuses: it cross-checks h vs hidden count,
+  replayed hero hand vs 'me', filter pile vs 'pile', replayed pickups
+  vs 'opp-known' -- catching transcript holes history_check cannot
+  see (e.g. an 11-card hand whose final my-draw is missing: pile
+  replay is consistent but the deal unwinds to 12 cards; verified).
+  Demo of the gap it closes: pos_ex7 after the opponent's QS pickup --
+  classic belief rates ALL QS-neighbors an identical 1.5x (including
+  the irrelevant JS); the particle posterior concentrates on the
+  actual queen picture (QD 2.2x, QH 1.9x).
+
+E2. FOUND + FIXED -- filter-noise verdicts (single-filter tilt).
+  A single 256-particle filter on a SHORT history carries spurious
+  per-card reads of 1.2-1.7x uniform on ARBITRARY cards (measured on
+  pos_take1_spec: top-read cards completely different across filter
+  seeds while n_eff stays ~160-217). All 192 worlds inherit one
+  filter's tilt, shifting candidate EV diffs coherently. Fix:
+  FilterEnsemble -- 4 independent filter replications, worlds sampled
+  from the mixture, displayed reads = ensemble mean (so the "likely
+  holdings" panel stops presenting initialization noise as signal).
+  Verified: pos_take4's spurious pre-ensemble "draw, significant" flip
+  disappeared; verdict stable "take stands" at seeds 0/1/2.
+
+E3. FOUND + FIXED -- overconfident "significant" verdicts at z=1.5.
+  pos_take1_spec measured 12 times (filter seed x expert seed
+  decomposition): the true draw-vs-take diff is ~+1.0 pt -- a genuine
+  near-tie -- yet single runs printed anything from "draw +2.70 +/-
+  1.27 significant" to "draw -2.98 +/- 1.29" (a ~4.5-SE swing across
+  seeds). z=1.5 is the BOT's in-game deviation bar, correct on
+  average over thousands of hands; presented as a one-shot analysis
+  verdict it overstates. Fix: deviations with z < 2.5 are labeled
+  BORDERLINE (seed-sensitive, confirm with --worlds 384 / --seed)
+  in both text and HTML. Decisive verdicts (take2 z=4.5, ex6, ex7,
+  turn3 knock z~6) are unaffected.
+
+E4. FOUND + FIXED -- follow-up plan instability.
+  pos_ex5's "then: discard X" landed on THREE different discards
+  across three seeds (J-drop vs 4S vs 2C -- the follow-up node is
+  nearly indifferent). The follow-up line now carries "(borderline --
+  close call)" or "(statistical tie with Y)" annotations. NOTE: the
+  library doc's old claim that the engine "keeps the JJ pair and
+  sheds 4S" was itself one arm of this coin-flip -- corrected.
+
+E5. FIXED -- opponent-model fidelity default.
+  The promoted bot ALWAYS plays with opp_model=(knock threshold, 1.0);
+  the evaluator's old default was None (opponent never knocks in
+  rollouts) -- the same blind-spot class as the flat-engine 6C miss,
+  silently active on any position file without an opp-model line.
+  New default: (knock-max, 1.0), reported with "(default)"; explicit
+  opt-out via "opp-model: none". Worlds default bumped 96 -> 192
+  (the champion's final search stage).
+
+E6. FOUND (doc rot) -- sample_turn3's documented showcase verdict
+  ("declines a knock most humans would take", CLAUDE.md) does NOT
+  reproduce under ANY engine: deep engine +8.60 +/- 1.34 for KNOCK,
+  historical v4 flat engine at worlds 96 +11.13 +/- 2.08 for KNOCK,
+  with or without opp-model. The engine now agrees with the humans.
+  Library docs corrected.
+
+E7. Library regenerated (txt+html) under the upgraded evaluator:
+  sample_home_ten KNOCK (unchanged) | take1 take-stands + tie note |
+  take2 DRAW significant (unchanged, the flagship position) |
+  take3 draw (unchanged) | take4 take-stands (stable post-E2) |
+  ex5 take 9S, follow-up now honestly tied J-drop vs 4S |
+  ex6 KNOCK (unchanged) | ex7 shed 9H (unchanged, now with the
+  sharper particle read on the queen picture).

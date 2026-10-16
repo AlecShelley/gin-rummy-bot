@@ -1,0 +1,147 @@
+            rule vs smart           -10.32 +/- 1.23
+            rule vs teacher         -20.34 +/- 1.52
+            rule vs knock6_p100     -11.69 +/- 1.29
+            rule vs knock6_p50      -13.33 +/- 1.34
+            rule vs knock10_p100    -10.24 +/- 1.25
+            rule vs knock10_p50     -12.54 +/- 1.32
+            rule vs v1               -7.37 +/- 1.33
+            rule vs v2              -17.37 +/- 1.51
+            rule vs v3               -8.03 +/- 1.35
+            rule vs v3search        -13.09 +/- 1.49
+           smart vs teacher          -7.42 +/- 1.59
+           smart vs knock6_p100      -1.20 +/- 1.34
+           smart vs knock6_p50       -4.41 +/- 1.43
+           smart vs knock10_p100     -1.13 +/- 1.29
+           smart vs knock10_p50      -3.03 +/- 1.37
+           smart vs v1               +1.71 +/- 1.24
+           smart vs v2               -4.46 +/- 1.57
+           smart vs v3               +1.77 +/- 1.41
+           smart vs v3search         -3.29 +/- 1.51
+         teacher vs knock6_p100      +3.73 +/- 1.55
+         teacher vs knock6_p50       +2.89 +/- 1.69
+         teacher vs knock10_p100     +3.79 +/- 1.55
+         teacher vs knock10_p50      +3.54 +/- 1.65
+         teacher vs v1               +9.64 +/- 1.60
+         teacher vs v2               +1.58 +/- 1.96
+         teacher vs v3               +9.41 +/- 1.72
+         teacher vs v3search         +0.73 +/- 1.79
+     knock6_p100 vs knock6_p50       -0.64 +/- 1.42
+     knock6_p100 vs knock10_p100     -0.11 +/- 1.35
+     knock6_p100 vs knock10_p50      -0.35 +/- 1.30
+     knock6_p100 vs v1               +4.22 +/- 1.35
+     knock6_p100 vs v2               -2.69 +/- 1.48
+     knock6_p100 vs v3               +4.02 +/- 1.40
+     knock6_p100 vs v3search         -3.22 +/- 1.53
+      knock6_p50 vs knock10_p100     +0.86 +/- 1.34
+      knock6_p50 vs knock10_p50      -0.35 +/- 1.43
+      knock6_p50 vs v1               +4.75 +/- 1.43
+      knock6_p50 vs v2               -2.92 +/- 1.64
+      knock6_p50 vs v3               +3.79 +/- 1.47
+      knock6_p50 vs v3search         -2.79 +/- 1.55
+    knock10_p100 vs knock10_p50      -0.41 +/- 1.32
+    knock10_p100 vs v1               +2.86 +/- 1.30
+    knock10_p100 vs v2               -4.43 +/- 1.50
+    knock10_p100 vs v3               +3.64 +/- 1.42
+    knock10_p100 vs v3search         -1.34 +/- 1.43
+     knock10_p50 vs v1               +3.97 +/- 1.37
+     knock10_p50 vs v2               -4.34 +/- 1.62
+     knock10_p50 vs v3               +4.26 +/- 1.43
+     knock10_p50 vs v3search         -1.52 +/- 1.61
+              v1 vs v2               -9.15 +/- 1.57
+              v1 vs v3               -0.09 +/- 1.36
+              v1 vs v3search         -5.26 +/- 1.50
+              v2 vs v3               +7.65 +/- 1.67
+              v2 vs v3search         -2.32 +/- 1.74
+              v3 vs v3search         -5.33 +/- 1.52
+matrix[full] over 11 members in 2620s -> results/v3_meta/matrix_full.json
+Nash of the empirical game:
+         teacher: 1.000
+  in-matrix exploitability 0.000 pts/hand, solver drift 0.0000
+  BR cand t=0 p=0.0: vs-mixture  +0.55 (worst member  +0.55)
+  BR cand t=0 p=0.5: vs-mixture  -2.38 (worst member  -2.38)
+  BR cand t=0 p=1.0: vs-mixture  +1.17 (worst member  +1.17)
+  BR cand t=2 p=0.0: vs-mixture  +0.62 (worst member  +0.62)
+  BR cand t=2 p=0.5: vs-mixture  -3.82 (worst member  -3.82)
+  BR cand t=2 p=1.0: vs-mixture  -2.32 (worst member  -2.32)
+  BR cand t=4 p=0.0: vs-mixture  +0.88 (worst member  +0.88)
+  BR cand t=4 p=0.5: vs-mixture  -1.30 (worst member  -1.30)
+  BR cand t=4 p=1.0: vs-mixture  -3.01 (worst member  -3.01)
+  BR cand t=6 p=0.0: vs-mixture  +1.65 (worst member  +1.65)
+  BR cand t=6 p=0.5: vs-mixture  -2.31 (worst member  -2.31)
+  BR cand t=6 p=1.0: vs-mixture  -4.75 (worst member  -4.75)
+  BR cand t=8 p=0.0: vs-mixture  +0.26 (worst member  +0.26)
+  BR cand t=8 p=0.5: vs-mixture  -2.34 (worst member  -2.34)
+  BR cand t=8 p=1.0: vs-mixture  -4.78 (worst member  -4.78)
+  BR cand t=10 p=0.0: vs-mixture  -0.70 (worst member  -0.70)
+  BR cand t=10 p=0.5: vs-mixture  -5.07 (worst member  -5.07)
+  BR cand t=10 p=1.0: vs-mixture  -4.14 (worst member  -4.14)
+BEST RESPONSE: t=6 p=0.0 gains +1.65 pts/hand vs the mixture
+  adversary(model p=0.0) vs MixedKnock(t=6,p=0.0): +1.04 +/- 1.85 (888 hands)
+  adversary(model p=0.5) vs MixedKnock(t=6,p=0.5): +2.35 +/- 1.75 (888 hands)
+  adversary(model p=1.0) vs MixedKnock(t=6,p=1.0): +3.94 +/- 1.65 (888 hands)
+        br_t0_p0 vs v3search:  -0.86 +/- 2.80
+       br_t0_p50 vs v3search:  -3.51 +/- 2.89
+      br_t0_p100 vs v3search:  -1.72 +/- 3.00
+        br_t2_p0 vs v3search:  -1.60 +/- 3.02
+       br_t2_p50 vs v3search:  -1.59 +/- 2.76
+      br_t2_p100 vs v3search:  +0.96 +/- 2.80
+        br_t4_p0 vs v3search:  +2.58 +/- 2.98
+       br_t4_p50 vs v3search:  -3.49 +/- 2.64
+      br_t4_p100 vs v3search:  -4.39 +/- 2.48
+        br_t6_p0 vs v3search:  -2.46 +/- 2.77
+       br_t6_p50 vs v3search:  -1.18 +/- 2.64
+      br_t6_p100 vs v3search:  -2.27 +/- 2.49
+        br_t8_p0 vs v3search:  -0.63 +/- 2.98
+       br_t8_p50 vs v3search:  -2.02 +/- 2.52
+      br_t8_p100 vs v3search:  -1.67 +/- 2.37
+       br_t10_p0 vs v3search:  -0.10 +/- 2.90
+      br_t10_p50 vs v3search:  -2.18 +/- 2.48
+     br_t10_p100 vs v3search:  -1.62 +/- 2.35
+     adv_t0_p100 vs v3search:  -0.44 +/- 2.55
+     adv_t6_p100 vs v3search:  +0.28 +/- 2.65
+    adv_t10_p100 vs v3search:  -0.91 +/- 2.65
+EXPLOITABILITY(v3search) >= +2.58 +/- 2.98 (by br_t4_p0)
+        br_t0_p0 vs v2:  +1.14 +/- 3.08
+       br_t0_p50 vs v2:  +2.95 +/- 3.10
+      br_t0_p100 vs v2:  +3.44 +/- 3.15
+        br_t2_p0 vs v2:  +1.95 +/- 3.21
+       br_t2_p50 vs v2:  -1.37 +/- 2.95
+      br_t2_p100 vs v2:  -0.61 +/- 2.72
+        br_t4_p0 vs v2:  +0.85 +/- 3.17
+       br_t4_p50 vs v2:  -0.10 +/- 2.77
+      br_t4_p100 vs v2:  -2.35 +/- 2.54
+        br_t6_p0 vs v2:  +0.36 +/- 3.17
+       br_t6_p50 vs v2:  -3.21 +/- 2.66
+      br_t6_p100 vs v2:  -1.92 +/- 2.33
+        br_t8_p0 vs v2:  +0.84 +/- 3.14
+       br_t8_p50 vs v2:  -2.98 +/- 2.61
+      br_t8_p100 vs v2:  -4.57 +/- 2.37
+       br_t10_p0 vs v2:  -0.55 +/- 3.11
+      br_t10_p50 vs v2:  -3.68 +/- 2.63
+     br_t10_p100 vs v2:  -1.33 +/- 2.46
+     adv_t0_p100 vs v2:  +1.01 +/- 2.98
+     adv_t6_p100 vs v2:  +3.90 +/- 2.90
+    adv_t10_p100 vs v2:  +1.99 +/- 2.97
+EXPLOITABILITY(v2) >= +3.90 +/- 2.90 (by adv_t6_p100)
+        br_t0_p0 vs teacher:  +0.88 +/- 3.15
+       br_t0_p50 vs teacher:  +4.63 +/- 3.12
+      br_t0_p100 vs teacher:  -2.29 +/- 3.10
+        br_t2_p0 vs teacher:  -2.10 +/- 3.11
+       br_t2_p50 vs teacher:  -0.54 +/- 2.88
+      br_t2_p100 vs teacher:  -3.92 +/- 2.71
+        br_t4_p0 vs teacher:  -3.96 +/- 3.10
+       br_t4_p50 vs teacher:  -0.15 +/- 2.73
+      br_t4_p100 vs teacher:  -2.65 +/- 2.59
+        br_t6_p0 vs teacher:  -0.97 +/- 3.15
+       br_t6_p50 vs teacher:  -1.90 +/- 2.77
+      br_t6_p100 vs teacher:  -2.94 +/- 2.40
+        br_t8_p0 vs teacher:  +0.34 +/- 3.13
+       br_t8_p50 vs teacher:  -4.43 +/- 2.67
+      br_t8_p100 vs teacher:  -4.50 +/- 2.29
+       br_t10_p0 vs teacher:  -2.85 +/- 3.06
+      br_t10_p50 vs teacher:  -4.44 +/- 2.55
+     br_t10_p100 vs teacher:  -4.95 +/- 2.38
+     adv_t0_p100 vs teacher:  +1.36 +/- 2.76
+     adv_t6_p100 vs teacher:  -1.72 +/- 2.85
+    adv_t10_p100 vs teacher:  +0.30 +/- 2.79
+EXPLOITABILITY(teacher) >= +4.63 +/- 3.12 (by br_t0_p50)

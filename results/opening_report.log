@@ -1,0 +1,30 @@
+6000 deals x 3 arms in 49220s
+=== opening study, 6000 deals x 3 arms ===
+
+-- P1 theory: dEV(take) = A - pass (v7-P2 responds) --
+all deals: +0.96 +/- 1.07   (v7-P1 takes 72.7%, v7-P2 would take a passed flip 54.5%)
+  flip A-3      melds=True  n=  198  dEV(take) +11.20 +/- 6.72
+  flip A-3      melds=False n= 1163  dEV(take)  -2.45 +/- 2.58
+  flip 4-7      melds=True  n=  301  dEV(take) +10.19 +/- 4.77
+  flip 4-7      melds=False n= 1538  dEV(take)  +1.08 +/- 2.07
+  flip 8-10/JQK melds=True  n=  431  dEV(take)  +9.57 +/- 3.86
+  flip 8-10/JQK melds=False n= 2369  dEV(take)  -1.03 +/- 1.62
+  by teacher gain (non-melding deals only):
+    gain 0-0: n= 1506  dEV(take)  -0.69 +/- 2.00
+    gain 1-3: n= 1183  dEV(take)  -0.91 +/- 2.36
+    gain 4-6: n= 1143  dEV(take)  +1.27 +/- 2.42
+    gain 7-10: n= 1156  dEV(take)  -2.35 +/- 2.60
+
+-- P2 theory: dEV(P2 take | P1 passed) = C - B (P2 perspective) --
+all deals: +0.99 +/- 1.08
+  flip A-3      melds=True  n=  212  dEV(take) +19.36 +/- 6.05
+  flip A-3      melds=False n= 1149  dEV(take)  -4.03 +/- 2.55
+  flip 4-7      melds=True  n=  276  dEV(take) +11.69 +/- 5.24
+  flip 4-7      melds=False n= 1563  dEV(take)  +0.70 +/- 2.14
+  flip 8-10/JQK melds=True  n=  444  dEV(take) +11.58 +/- 3.82
+  flip 8-10/JQK melds=False n= 2356  dEV(take)  -1.26 +/- 1.63
+  tempo question -- flip does NOT meld for P2: -1.29 +/- 1.16 (n=5068)
+    gain 0-0: n= 1512  dEV(P2 take)  -1.65 +/- 2.02
+    gain 1-3: n= 1172  dEV(P2 take)  +0.73 +/- 2.37
+    gain 4-6: n= 1181  dEV(P2 take)  -0.20 +/- 2.50
+    gain 7-10: n= 1138  dEV(P2 take)  -3.87 +/- 2.54

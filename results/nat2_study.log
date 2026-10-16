@@ -1,0 +1,134 @@
+shard 1/120 (0 accepted, ~0 attempts/accept) elapsed 1m ETA 177m
+shard 2/120 (2 accepted, ~50707 attempts/accept) elapsed 2m ETA 98m
+shard 3/120 (3 accepted, ~64297 attempts/accept) elapsed 2m ETA 65m
+shard 4/120 (7 accepted, ~46332 attempts/accept) elapsed 2m ETA 53m
+shard 5/120 (9 accepted, ~128684 attempts/accept) elapsed 2m ETA 45m
+shard 6/120 (11 accepted, ~96172 attempts/accept) elapsed 2m ETA 39m
+shard 7/120 (14 accepted, ~72469 attempts/accept) elapsed 2m ETA 34m
+shard 8/120 (18 accepted, ~53147 attempts/accept) elapsed 2m ETA 30m
+shard 9/120 (23 accepted, ~79942 attempts/accept) elapsed 2m ETA 30m
+shard 10/120 (28 accepted, ~96136 attempts/accept) elapsed 2m ETA 27m
+shard 11/120 (31 accepted, ~104228 attempts/accept) elapsed 3m ETA 25m
+shard 12/120 (36 accepted, ~106880 attempts/accept) elapsed 3m ETA 24m
+shard 13/120 (39 accepted, ~124058 attempts/accept) elapsed 4m ETA 30m
+shard 14/120 (44 accepted, ~80527 attempts/accept) elapsed 4m ETA 28m
+shard 15/120 (47 accepted, ~68969 attempts/accept) elapsed 4m ETA 27m
+shard 16/120 (50 accepted, ~76031 attempts/accept) elapsed 4m ETA 26m
+shard 17/120 (55 accepted, ~38332 attempts/accept) elapsed 4m ETA 26m
+shard 18/120 (60 accepted, ~106224 attempts/accept) elapsed 4m ETA 25m
+shard 19/120 (61 accepted, ~55406 attempts/accept) elapsed 4m ETA 23m
+shard 20/120 (66 accepted, ~87432 attempts/accept) elapsed 4m ETA 22m
+shard 21/120 (70 accepted, ~52504 attempts/accept) elapsed 5m ETA 22m
+shard 22/120 (72 accepted, ~77608 attempts/accept) elapsed 5m ETA 23m
+shard 23/120 (77 accepted, ~104258 attempts/accept) elapsed 5m ETA 22m
+shard 24/120 (78 accepted, ~69320 attempts/accept) elapsed 5m ETA 21m
+shard 25/120 (83 accepted, ~79594 attempts/accept) elapsed 5m ETA 20m
+shard 26/120 (88 accepted, ~21332 attempts/accept) elapsed 6m ETA 20m
+shard 27/120 (93 accepted, ~62291 attempts/accept) elapsed 6m ETA 20m
+shard 28/120 (98 accepted, ~51336 attempts/accept) elapsed 6m ETA 21m
+shard 29/120 (102 accepted, ~34870 attempts/accept) elapsed 7m ETA 21m
+shard 30/120 (105 accepted, ~85208 attempts/accept) elapsed 7m ETA 21m
+shard 31/120 (110 accepted, ~97550 attempts/accept) elapsed 7m ETA 21m
+shard 32/120 (115 accepted, ~95671 attempts/accept) elapsed 7m ETA 20m
+shard 33/120 (116 accepted, ~98794 attempts/accept) elapsed 7m ETA 19m
+shard 34/120 (120 accepted, ~69347 attempts/accept) elapsed 7m ETA 18m
+shard 35/120 (125 accepted, ~57194 attempts/accept) elapsed 8m ETA 18m
+shard 36/120 (127 accepted, ~116685 attempts/accept) elapsed 8m ETA 18m
+shard 37/120 (132 accepted, ~65289 attempts/accept) elapsed 8m ETA 17m
+shard 38/120 (137 accepted, ~80217 attempts/accept) elapsed 8m ETA 17m
+shard 39/120 (137 accepted, ~0 attempts/accept) elapsed 8m ETA 16m
+shard 40/120 (142 accepted, ~76835 attempts/accept) elapsed 8m ETA 17m
+shard 41/120 (144 accepted, ~31824 attempts/accept) elapsed 9m ETA 17m
+shard 42/120 (149 accepted, ~51638 attempts/accept) elapsed 9m ETA 17m
+shard 43/120 (154 accepted, ~56102 attempts/accept) elapsed 9m ETA 17m
+shard 44/120 (157 accepted, ~123550 attempts/accept) elapsed 9m ETA 16m
+shard 45/120 (162 accepted, ~61676 attempts/accept) elapsed 10m ETA 16m
+shard 46/120 (165 accepted, ~99990 attempts/accept) elapsed 10m ETA 15m
+shard 47/120 (168 accepted, ~75534 attempts/accept) elapsed 10m ETA 15m
+shard 48/120 (172 accepted, ~63434 attempts/accept) elapsed 10m ETA 15m
+shard 49/120 (176 accepted, ~63281 attempts/accept) elapsed 10m ETA 15m
+shard 50/120 (181 accepted, ~54705 attempts/accept) elapsed 11m ETA 15m
+shard 51/120 (186 accepted, ~84054 attempts/accept) elapsed 11m ETA 15m
+shard 52/120 (189 accepted, ~124481 attempts/accept) elapsed 11m ETA 15m
+shard 53/120 (190 accepted, ~39410 attempts/accept) elapsed 11m ETA 14m
+shard 54/120 (192 accepted, ~47281 attempts/accept) elapsed 11m ETA 14m
+shard 55/120 (195 accepted, ~88664 attempts/accept) elapsed 12m ETA 14m
+shard 56/120 (197 accepted, ~117936 attempts/accept) elapsed 12m ETA 13m
+shard 57/120 (202 accepted, ~91237 attempts/accept) elapsed 12m ETA 13m
+shard 58/120 (204 accepted, ~39720 attempts/accept) elapsed 12m ETA 13m
+shard 59/120 (209 accepted, ~69316 attempts/accept) elapsed 12m ETA 12m
+shard 60/120 (211 accepted, ~86036 attempts/accept) elapsed 13m ETA 13m
+shard 61/120 (216 accepted, ~66413 attempts/accept) elapsed 13m ETA 13m
+shard 62/120 (220 accepted, ~77678 attempts/accept) elapsed 13m ETA 13m
+shard 63/120 (224 accepted, ~49692 attempts/accept) elapsed 14m ETA 12m
+shard 64/120 (227 accepted, ~61727 attempts/accept) elapsed 14m ETA 12m
+shard 65/120 (231 accepted, ~87620 attempts/accept) elapsed 14m ETA 12m
+shard 66/120 (233 accepted, ~79575 attempts/accept) elapsed 14m ETA 11m
+shard 67/120 (235 accepted, ~29918 attempts/accept) elapsed 14m ETA 11m
+shard 68/120 (239 accepted, ~52997 attempts/accept) elapsed 14m ETA 11m
+shard 69/120 (242 accepted, ~101064 attempts/accept) elapsed 14m ETA 10m
+shard 70/120 (246 accepted, ~56710 attempts/accept) elapsed 14m ETA 10m
+shard 71/120 (247 accepted, ~108641 attempts/accept) elapsed 15m ETA 10m
+shard 72/120 (251 accepted, ~66605 attempts/accept) elapsed 15m ETA 10m
+shard 73/120 (256 accepted, ~85430 attempts/accept) elapsed 15m ETA 10m
+shard 74/120 (258 accepted, ~94074 attempts/accept) elapsed 16m ETA 10m
+shard 75/120 (260 accepted, ~21006 attempts/accept) elapsed 16m ETA 9m
+shard 76/120 (264 accepted, ~56662 attempts/accept) elapsed 16m ETA 9m
+shard 77/120 (269 accepted, ~31000 attempts/accept) elapsed 16m ETA 9m
+shard 78/120 (274 accepted, ~96785 attempts/accept) elapsed 16m ETA 9m
+shard 79/120 (279 accepted, ~35720 attempts/accept) elapsed 16m ETA 9m
+shard 80/120 (282 accepted, ~83189 attempts/accept) elapsed 17m ETA 8m
+shard 81/120 (287 accepted, ~55810 attempts/accept) elapsed 17m ETA 8m
+shard 82/120 (291 accepted, ~61585 attempts/accept) elapsed 17m ETA 8m
+shard 83/120 (294 accepted, ~101571 attempts/accept) elapsed 17m ETA 8m
+shard 84/120 (299 accepted, ~75269 attempts/accept) elapsed 18m ETA 8m
+shard 85/120 (300 accepted, ~129228 attempts/accept) elapsed 18m ETA 7m
+shard 86/120 (302 accepted, ~88531 attempts/accept) elapsed 18m ETA 7m
+shard 87/120 (307 accepted, ~55629 attempts/accept) elapsed 18m ETA 7m
+shard 88/120 (310 accepted, ~71359 attempts/accept) elapsed 18m ETA 7m
+shard 89/120 (314 accepted, ~51518 attempts/accept) elapsed 18m ETA 6m
+shard 90/120 (319 accepted, ~47803 attempts/accept) elapsed 18m ETA 6m
+shard 91/120 (322 accepted, ~96050 attempts/accept) elapsed 19m ETA 6m
+shard 92/120 (326 accepted, ~63974 attempts/accept) elapsed 19m ETA 6m
+shard 93/120 (331 accepted, ~72930 attempts/accept) elapsed 20m ETA 6m
+shard 94/120 (332 accepted, ~44236 attempts/accept) elapsed 20m ETA 5m
+shard 95/120 (335 accepted, ~33538 attempts/accept) elapsed 20m ETA 5m
+shard 96/120 (336 accepted, ~141029 attempts/accept) elapsed 20m ETA 5m
+shard 97/120 (340 accepted, ~33986 attempts/accept) elapsed 20m ETA 5m
+shard 98/120 (345 accepted, ~45433 attempts/accept) elapsed 20m ETA 5m
+shard 99/120 (350 accepted, ~71378 attempts/accept) elapsed 20m ETA 4m
+shard 100/120 (352 accepted, ~104750 attempts/accept) elapsed 20m ETA 4m
+shard 101/120 (356 accepted, ~34457 attempts/accept) elapsed 21m ETA 4m
+shard 102/120 (359 accepted, ~47486 attempts/accept) elapsed 21m ETA 4m
+shard 103/120 (363 accepted, ~53318 attempts/accept) elapsed 21m ETA 3m
+shard 104/120 (366 accepted, ~77787 attempts/accept) elapsed 21m ETA 3m
+shard 105/120 (371 accepted, ~29684 attempts/accept) elapsed 22m ETA 3m
+shard 106/120 (374 accepted, ~46691 attempts/accept) elapsed 22m ETA 3m
+shard 107/120 (376 accepted, ~71092 attempts/accept) elapsed 22m ETA 3m
+shard 108/120 (381 accepted, ~66275 attempts/accept) elapsed 22m ETA 2m
+shard 109/120 (386 accepted, ~24085 attempts/accept) elapsed 22m ETA 2m
+shard 110/120 (389 accepted, ~71334 attempts/accept) elapsed 23m ETA 2m
+shard 111/120 (394 accepted, ~43711 attempts/accept) elapsed 23m ETA 2m
+shard 112/120 (396 accepted, ~71410 attempts/accept) elapsed 23m ETA 2m
+shard 113/120 (400 accepted, ~112442 attempts/accept) elapsed 23m ETA 1m
+shard 114/120 (403 accepted, ~52160 attempts/accept) elapsed 23m ETA 1m
+shard 115/120 (408 accepted, ~52372 attempts/accept) elapsed 23m ETA 1m
+shard 116/120 (411 accepted, ~87548 attempts/accept) elapsed 23m ETA 1m
+shard 117/120 (416 accepted, ~34479 attempts/accept) elapsed 24m ETA 1m
+shard 118/120 (421 accepted, ~46032 attempts/accept) elapsed 24m ETA 0m
+shard 119/120 (426 accepted, ~73405 attempts/accept) elapsed 24m ETA 0m
+shard 120/120 (430 accepted, ~64414 attempts/accept) elapsed 25m ETA 0m
+=== natural-conditioned t2 take (opp CHOSE a low discard, adj>=2, non-melding), 430 paired states ===
+  ALL accepted                       n= 430  dEV(take)  +3.58 +/- 2.41
+  scenario 1: t>=8 & dead-10 shed    n= 168  dEV(take)  +2.87 +/- 3.07
+  scenario 2: t<=3 & top<=2          n=  34  dEV(take)  -0.71 +/- 9.37
+  dead-10 shed available             n= 387  dEV(take)  +3.22 +/- 2.58
+  no dead-10 shed                    n=  43  dEV(take)  +6.74 +/- 6.39
+  -- by OUTS (user hand-strength measure) --
+  outs 0-2 (weak hand)               n=  24  dEV(take) +10.96 +/- 7.81
+  outs 3-5                           n= 195  dEV(take)  +2.41 +/- 3.77
+  outs 6-8                           n= 176  dEV(take)  +3.40 +/- 3.68
+  outs 9+ (strong hand)              n=  35  dEV(take)  +5.94 +/- 7.93
+  -- outs x dead-10 --
+  weak (outs<=4) & dead-10           n= 133  dEV(take)  +4.99 +/- 4.79
+  strong (outs>=5) & dead-10         n= 254  dEV(take)  +2.30 +/- 3.03

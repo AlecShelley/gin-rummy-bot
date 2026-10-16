@@ -1,0 +1,36 @@
+--> Running on the GPU
+
+=== results/v2_final/gin_rummy_bot.policy.pt (network only)  vs  smart-draw-rule ===
+hands played         : 2000 (seats swapped at halfway)
+points/hand for A    : +1.891  +/- 1.110 (95% CI)
+decisive hands       : 2000 (100.0%)
+A win rate (decisive): 36.1%
+outcome mix          : gin 8.1%  knock 62.0%  undercut 29.9%  dead 0.0%
+VERDICT              : results/v2_final/gin_rummy_bot.policy.pt (network only) is stronger (95% confidence)
+--> Running on the GPU
+
+=== results/v2_final/gin_rummy_bot.policy.pt (network only)  vs  novice-rule ===
+hands played         : 2000 (seats swapped at halfway)
+points/hand for A    : +14.687  +/- 1.134 (95% CI)
+decisive hands       : 1951 (97.5%)
+A win rate (decisive): 57.9%
+outcome mix          : gin 19.7%  knock 39.6%  undercut 38.4%  dead 2.5%
+VERDICT              : results/v2_final/gin_rummy_bot.policy.pt (network only) is stronger (95% confidence)
+--> Running on the GPU
+
+=== results/v2_final/gin_rummy_bot.policy.pt (network only)  vs  random ===
+hands played         : 2000 (seats swapped at halfway)
+points/hand for A    : +74.478  +/- 1.215 (95% CI)
+decisive hands       : 1845 (92.2%)
+A win rate (decisive): 99.3%
+outcome mix          : gin 91.2%  knock 0.5%  undercut 0.5%  dead 7.8%
+VERDICT              : results/v2_final/gin_rummy_bot.policy.pt (network only) is stronger (95% confidence)
+
+
+| Opponent | Hands | Points/hand (95% CI) | Decisive | Win rate | Gin | Knock | Undercut | Dead | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| smart-draw-rule | 2000 | +1.89 ± 1.11 | 100% | 36.1% | 8.1% | 62.0% | 29.9% | 0.0% | **bot wins** |
+| novice-rule | 2000 | +14.69 ± 1.13 | 98% | 57.9% | 19.7% | 39.6% | 38.4% | 2.5% | **bot wins** |
+| random | 2000 | +74.48 ± 1.21 | 92% | 99.3% | 91.2% | 0.5% | 0.5% | 7.8% | **bot wins** |
+
+wrote results/v2_final/benchmark_network_only.md

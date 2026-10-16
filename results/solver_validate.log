@@ -1,0 +1,39 @@
+shard 1/30 (10 deals) elapsed 0m ETA 8m
+shard 2/30 (20 deals) elapsed 0m ETA 4m
+shard 3/30 (30 deals) elapsed 0m ETA 2m
+shard 4/30 (40 deals) elapsed 0m ETA 2m
+shard 5/30 (50 deals) elapsed 0m ETA 1m
+shard 6/30 (60 deals) elapsed 0m ETA 1m
+shard 7/30 (70 deals) elapsed 0m ETA 1m
+shard 8/30 (80 deals) elapsed 0m ETA 1m
+shard 9/30 (90 deals) elapsed 0m ETA 1m
+shard 10/30 (100 deals) elapsed 0m ETA 1m
+shard 11/30 (110 deals) elapsed 0m ETA 1m
+shard 12/30 (120 deals) elapsed 0m ETA 1m
+shard 13/30 (130 deals) elapsed 1m ETA 1m
+shard 14/30 (140 deals) elapsed 1m ETA 1m
+shard 15/30 (150 deals) elapsed 1m ETA 1m
+shard 16/30 (160 deals) elapsed 1m ETA 1m
+shard 17/30 (170 deals) elapsed 1m ETA 0m
+shard 18/30 (180 deals) elapsed 1m ETA 0m
+shard 19/30 (190 deals) elapsed 1m ETA 0m
+shard 20/30 (200 deals) elapsed 1m ETA 0m
+shard 21/30 (210 deals) elapsed 1m ETA 0m
+shard 22/30 (220 deals) elapsed 1m ETA 0m
+shard 23/30 (230 deals) elapsed 1m ETA 0m
+shard 24/30 (240 deals) elapsed 1m ETA 0m
+shard 25/30 (250 deals) elapsed 1m ETA 0m
+shard 26/30 (260 deals) elapsed 1m ETA 0m
+shard 27/30 (270 deals) elapsed 1m ETA 0m
+shard 28/30 (280 deals) elapsed 1m ETA 0m
+shard 29/30 (290 deals) elapsed 1m ETA 0m
+shard 30/30 (300 deals) elapsed 1m ETA 0m
+validation cells (study ground truth vs solver estimate):
+  P1 melding                   study +10.12+/-2.76  solver  +8.31+/-1.73
+  P1 non-melding               study  -0.71+/-1.15  solver  +0.20+/-0.38
+  P2 melding                   study +13.38+/-2.77  solver  +8.77+/-1.80
+  P2 nm adj0                   study  -4.57+/-2.24  solver  -3.76+/-0.65
+  P2 nm adj1                   study  -1.33+/-1.69  solver  -1.41+/-0.65
+  P2 nm adj2+                  study  +2.02+/-2.25  solver  +1.19+/-0.80
+  P2 nm adj0 A-3               study -11.32+/-4.53  solver  -5.87+/-1.42
+  P2 nm adj2+ A-3              study  +2.07+/-5.24  solver  +1.89+/-2.19

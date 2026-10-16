@@ -1,0 +1,57 @@
+  sweep 1 knock_at         5  mean   +3.79  worst   -1.33  smart  +0.73  patient  -1.33  random  +58.6
+  sweep 1 knock_at         3  mean   +4.54  worst   -1.02  smart  +1.85  patient  -1.02  random  +63.0
+  sweep 1 knock_at         2  mean   +4.75  worst   -1.32  smart  +2.38  patient  -1.32  random  +64.7
+  sweep 1 knock_at         1  mean   +5.52  worst   -1.26  smart  +3.05  patient  -1.26  random  +70.2
+  sweep 1 knock_at         0  mean   +7.02  worst   +0.00  smart  +3.10  patient  +0.00  random  +78.7
+  -> best knock_at=0 (mean +7.02)
+  sweep 1 endgame_stock   12  mean   +4.66  worst   -3.12  smart  +2.96  patient  -3.12  random  +71.9
+  sweep 1 endgame_stock    8  mean   +6.00  worst   -2.07  smart  +3.34  patient  -2.07  random  +76.1
+  sweep 1 endgame_stock    2  mean   +6.70  worst   -0.19  smart  +3.17  patient  -0.19  random  +80.1
+  sweep 1 endgame_stock    5  mean   +6.34  worst   -0.74  smart  +3.02  patient  -0.74  random  +79.1
+  -> best endgame_stock=0 (mean +7.02)
+  sweep 1 draw_gain        3  mean   +5.72  worst   -3.81  smart  +3.82  patient  -3.81  random  +70.4
+  sweep 1 draw_gain        2  mean   +6.52  worst   -2.47  smart  +4.08  patient  -2.47  random  +72.9
+  -> best draw_gain=1 (mean +7.02)
+  sweep 1 w_live           0  mean   +7.13  worst   +0.20  smart  +3.26  patient  +0.20  random  +79.3
+  -> best w_live=0 (mean +7.13)
+  sweep 1 w_safe           0  mean   +6.97  worst   -0.19  smart  +3.69  patient  -0.19  random  +77.3
+  -> best w_safe=1 (mean +7.13)
+  sweep 1 w_value          1  mean   +7.01  worst   +0.26  smart  +3.00  patient  +0.26  random  +77.8
+  -> best w_value=0 (mean +7.13)
+  sweep 2 knock_at         5  mean   +3.92  worst   -0.56  smart  +0.77  patient  -0.56  random  +56.8
+  sweep 2 knock_at         3  mean   +5.01  worst   -0.39  smart  +1.05  patient  -0.39  random  +62.5
+  sweep 2 knock_at         2  mean   +5.28  worst   -0.83  smart  +1.81  patient  -0.83  random  +64.8
+  sweep 2 knock_at         1  mean   +5.06  worst   -1.18  smart  +2.39  patient  -1.18  random  +70.9
+  -> best knock_at=0 (mean +7.13)
+  sweep 2 endgame_stock   12  mean   +4.90  worst   -2.48  smart  +2.32  patient  -2.48  random  +72.3
+  sweep 2 endgame_stock    8  mean   +6.30  worst   -1.47  smart  +3.04  patient  -1.47  random  +77.6
+  sweep 2 endgame_stock    2  mean   +7.43  worst   +0.02  smart  +3.90  patient  +0.02  random  +80.6
+  sweep 2 endgame_stock    5  mean   +6.49  worst   -0.12  smart  +2.89  patient  -0.12  random  +79.6
+  -> best endgame_stock=2 (mean +7.43)
+  sweep 2 draw_gain        2  mean   +6.41  worst   -2.37  smart  +3.83  patient  -2.37  random  +76.6
+  sweep 2 draw_gain        3  mean   +5.55  worst   -4.09  smart  +3.08  patient  -4.09  random  +74.3
+  -> best draw_gain=1 (mean +7.43)
+  sweep 2 w_safe           0  mean   +7.15  worst   -0.37  smart  +3.57  patient  -0.37  random  +79.2
+  -> best w_safe=1 (mean +7.43)
+  sweep 2 w_value          1  mean   +6.86  worst   +0.10  smart  +3.59  patient  +0.10  random  +79.4
+  -> best w_value=0 (mean +7.43)
+  sweep 3 knock_at         5  mean   +4.08  worst   -0.60  smart  +0.51  patient  -0.60  random  +58.4
+  sweep 3 knock_at         3  mean   +5.02  worst   -0.51  smart  +1.98  patient  -0.51  random  +62.9
+  sweep 3 knock_at         2  mean   +5.15  worst   -0.99  smart  +2.30  patient  -0.99  random  +64.7
+  sweep 3 knock_at         1  mean   +5.78  worst   -1.35  smart  +2.53  patient  -1.35  random  +71.0
+  -> best knock_at=0 (mean +7.43)
+
+search done in 778s; best config: {'draw_gain': 1, 'endgame_stock': 2, 'knock_at': 0, 'w_live': 0, 'w_safe': 1, 'w_value': 0}
+
+validating 4 finalists on held-out seed 31337, 3000 hands/opponent
+  {'draw_gain': 1, 'endgame_stock': 2, 'knock_at': 0, 'w_live': 0, 'w_safe': 1, 'w_value': 0}
+     mean +6.94  worst -0.16  vs smart +3.04 +/- 0.92  vs patient -0.16 +/- 1.12
+  {'draw_gain': 1, 'endgame_stock': 2, 'knock_at': 0, 'w_live': 0, 'w_safe': 0, 'w_value': 0}
+     mean +6.80  worst -0.27  vs smart +2.93 +/- 0.92  vs patient -0.27 +/- 1.12
+  {'draw_gain': 1, 'endgame_stock': 0, 'knock_at': 0, 'w_live': 0, 'w_safe': 1, 'w_value': 0}
+     mean +6.99  worst +0.02  vs smart +3.29 +/- 0.93  vs patient +0.02 +/- 1.12
+  {'draw_gain': 1, 'knock_at': 0, 'endgame_stock': 0, 'w_live': 1, 'w_safe': 1, 'w_value': 0}  (prototype)
+     mean +6.84  worst +0.00  vs smart +3.26 +/- 0.91  vs patient +0.00 +/- 1.11
+
+WINNER (held out): {'draw_gain': 1, 'endgame_stock': 0, 'knock_at': 0, 'w_live': 0, 'w_safe': 1, 'w_value': 0}  mean +6.99
+wrote results/v2_tuning.csv (34 rows)

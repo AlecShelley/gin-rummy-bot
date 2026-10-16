@@ -1,0 +1,25 @@
+# Example 7 -- EVERY GOOD DISCARD FEEDS THEM (ace game: flip AH ->
+# threshold 1, a pure gin race). Full transcript: turn 1 we drew 8H
+# and shed QS from our dealt QS/KS pair of honors (a coin-flip between
+# equal-value bricks) -- and the opponent SNAPPED IT UP, throwing 2C.
+# That made KS untouchable: turn 2 we drew 2S and, rather than feed
+# the K into their queen picture, shed the 8H instead -- which they
+# ALSO took (throwing 6S). Now we draw 9H. Deadwood logic says shed KS
+# (10) or 9H (9) -- but both walk toward their shown cards (QS and 8H).
+# Which risk to take, or pay deadwood to duck both? (Engine's answer:
+# shed 9H -- the 8H adjacency is the lesser evil; feeding KS into the
+# queen picture is the one real blunder.)
+me: 5C 6C 7C TS TH TD 3D 4D KS 2S 9H
+opp-known: QS 8H
+pile: AH 2C 6S
+event: my-draw 8H
+event: my-discard QS
+event: opp-pickup QS
+event: opp-discard 2C
+event: my-draw 2S
+event: my-discard 8H
+event: opp-pickup 8H
+event: opp-discard 6S
+event: my-draw 9H
+opp-model: 1,1.0
+knock-max: 1

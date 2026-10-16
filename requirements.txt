@@ -1,0 +1,8 @@
+rlcard>=1.2.0
+numpy
+matplotlib
+# torch is only needed for the legacy v1/v2 network bots and the
+# behavior-clone opponent used in belief calibration; the champion
+# bot and evaluator run without it. RTX 50-series cards need the
+# cu128 wheel: pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch

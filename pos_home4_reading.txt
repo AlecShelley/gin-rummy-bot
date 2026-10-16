@@ -1,0 +1,41 @@
+# HOME 4 -- FIVE PICKUPS CHANGE THE DISCARD MAP (7-game). The opponent
+# (a knocker) has taken FIVE cards off the pile; we just drew the 8C.
+# Our melds are locked (555 + 5D-8D). The engine keeps the teacher's
+# safe choice -- ditch the fresh 8C -- and the point of the example is
+# the SPREAD it now shows: the same-deadwood alternatives cost 2.4 to
+# 5.1 points, priced off the particle read of what they collected.
+
+me: 4S 5S 2H 3H 5H 5D 6D 7D 8D 3C 8C
+opp-known: 7S 6H 4D KD
+pile: KC KH TH JH TS 9H 8H QC 8S
+event: my-pickup 7S
+event: my-discard KD
+event: opp-pickup KD
+event: opp-discard KC
+event: my-draw 4D
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard TH
+event: my-draw 7D
+event: my-discard 9H
+event: opp-pickup 9H
+event: opp-discard JH
+event: my-draw 3H
+event: my-discard 7S
+event: opp-pickup 7S
+event: opp-discard TS
+event: my-draw 5S
+event: my-discard 6H
+event: opp-pickup 6H
+event: opp-discard 9H
+event: my-draw 4S
+event: my-discard 4D
+event: opp-pickup 4D
+event: opp-discard 8H
+event: my-draw QC
+event: my-discard QC
+event: opp-decline QC
+event: opp-discard 8S
+event: my-draw 8C
+flip: 7S
+knock-max: 7

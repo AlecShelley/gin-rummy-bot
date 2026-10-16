@@ -1,0 +1,145 @@
+Traceback (most recent call last):
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 127, in main
+    run(args.cfg, parse_cfg(args.cfg))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 122, in run
+    res = {n: score(n, cache, cfg, filters=args.filters)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 63, in score
+    raw, _, unseen, core, ens = pc._pf_marginals(
+                                ~~~~~~~~~~~~~~~~^
+        name, sc, filters=filters, pf_cfg=pf_cfg)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\posterior_check.py", line 226, in _pf_marginals
+    raw, core = ensemble_marginal(pos, game, dict(cfg),
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+                                  filters=filters, seed=seed)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\read_regress.py", line 45, in ensemble_marginal
+    pb, note = build_particle_belief(pos, game, seed + 7919 * r,
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     pf_cfg=pf_cfg)
+                                     ^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\evaluate.py", line 383, in build_particle_belief
+    core.apply_event(*ev)
+    ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 385, in apply_event
+    self._opp_discard(card)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 409, in _opp_discard
+    sub = self.rng.choice(n_avail, size=k,
+                          replace=False)
+  File "numpy/random/_generator.pyx", line 993, in numpy.random._generator.Generator.choice
+TypeError: expected a sequence of integers or a single integer, got '16.0'
+Traceback (most recent call last):
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 127, in main
+    run(args.cfg, parse_cfg(args.cfg))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 122, in run
+    res = {n: score(n, cache, cfg, filters=args.filters)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 63, in score
+    raw, _, unseen, core, ens = pc._pf_marginals(
+                                ~~~~~~~~~~~~~~~~^
+        name, sc, filters=filters, pf_cfg=pf_cfg)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\posterior_check.py", line 226, in _pf_marginals
+    raw, core = ensemble_marginal(pos, game, dict(cfg),
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+                                  filters=filters, seed=seed)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\read_regress.py", line 45, in ensemble_marginal
+    pb, note = build_particle_belief(pos, game, seed + 7919 * r,
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     pf_cfg=pf_cfg)
+                                     ^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\evaluate.py", line 383, in build_particle_belief
+    core.apply_event(*ev)
+    ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 385, in apply_event
+    self._opp_discard(card)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 409, in _opp_discard
+    sub = self.rng.choice(n_avail, size=k,
+                          replace=False)
+  File "numpy/random/_generator.pyx", line 993, in numpy.random._generator.Generator.choice
+TypeError: expected a sequence of integers or a single integer, got '16.0'
+Traceback (most recent call last):
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 127, in main
+    run(args.cfg, parse_cfg(args.cfg))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 122, in run
+    res = {n: score(n, cache, cfg, filters=args.filters)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 63, in score
+    raw, _, unseen, core, ens = pc._pf_marginals(
+                                ~~~~~~~~~~~~~~~~^
+        name, sc, filters=filters, pf_cfg=pf_cfg)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\posterior_check.py", line 226, in _pf_marginals
+    raw, core = ensemble_marginal(pos, game, dict(cfg),
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+                                  filters=filters, seed=seed)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\read_regress.py", line 45, in ensemble_marginal
+    pb, note = build_particle_belief(pos, game, seed + 7919 * r,
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     pf_cfg=pf_cfg)
+                                     ^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\evaluate.py", line 383, in build_particle_belief
+    core.apply_event(*ev)
+    ~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 385, in apply_event
+    self._opp_discard(card)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 409, in _opp_discard
+    sub = self.rng.choice(n_avail, size=k,
+                          replace=False)
+  File "numpy/random/_generator.pyx", line 993, in numpy.random._generator.Generator.choice
+TypeError: expected a sequence of integers or a single integer, got '16.0'
+tau_p=0.0,eps=0.02,tau_d=1.0,kdraw=31        cap[s1: 91.6% s2: 67.7% s3: 42.8%] mean  67.4%  chgap[0.040 0.211 1.035]  dwgap[ -0.0  -8.2  -1.0]
+(2s)
+Traceback (most recent call last):
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 145, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 127, in main
+    run(args.cfg, parse_cfg(args.cfg))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 122, in run
+    res = {n: score(n, cache, cfg, filters=args.filters)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\post_sweep.py", line 63, in score
+    raw, _, unseen, core, ens = pc._pf_marginals(
+                                ~~~~~~~~~~~~~~~~^
+        name, sc, filters=filters, pf_cfg=pf_cfg)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\posterior_check.py", line 226, in _pf_marginals
+    raw, core = ensemble_marginal(pos, game, dict(cfg),
+                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+                                  filters=filters, seed=seed)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\read_regress.py", line 45, in ensemble_marginal
+    pb, note = build_particle_belief(pos, game, seed + 7919 * r,
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     pf_cfg=pf_cfg)
+                                     ^^^^^^^^^^^^^^
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\evaluate.py", line 377, in build_particle_belief
+    core = ParticleCore(hero0, opp_size, rng, model=model,
+                        n_particles=cfg["n_particles"],
+                        kdraw=cfg["kdraw"],
+                        pile0=[flip_id] if flip_id is not None else None,
+                        mh_all_takes=cfg.get("mh_all_takes", False))
+  File "C:\Users\alecs\Downloads\gin_rummy_bot\particle.py", line 251, in __init__
+    for _ in range(self.n):
+             ~~~~~^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer

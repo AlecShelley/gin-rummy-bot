@@ -1,0 +1,9 @@
+# 11-card discard decision: knock available (deadwood 5-8), knock or play on?
+me: AS 2S 3S 4S 5S 7H 8H 9H 5C 2D 3D
+opp-known: KD KC
+pile: 9C QD
+event: opp-pickup KD
+event: opp-pickup KC
+event: opp-discard 9C
+opp-model: 10,1.0
+boost: 2.5

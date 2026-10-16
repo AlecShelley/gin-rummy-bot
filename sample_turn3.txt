@@ -1,0 +1,15 @@
+# Turn 3 -- we just drew and can KNOCK at deadwood 9 (discard 9H,
+# keeping A-3-5 of loose cards). Nearly every human knocks here.
+# ENGINE VERDICT (re-audited 2026-08-29): KNOCK, decisively (+8.6 +/-
+# 1.3 deep engine; +11.1 +/- 2.1 historical flat engine) -- the old
+# library note claiming the engine declines this knock does not
+# reproduce under any engine/opp-model config and was doc rot.
+# NOTE: transcript is partial (pre-history_check file), so the belief
+# falls back to classic weights -- kept as the fallback-path example.
+me: 2C 3C 4C 5C 7S 8S 9S AH 3D 5D 9H
+opp-known: 6H
+pile: QS JC 4H
+event: opp-discard QS
+event: opp-pickup 6H
+event: opp-discard 4H
+opp-model: 10,1.0

@@ -1,0 +1,29 @@
+BC dataset: 462855 samples
+    [bc] epoch  4: loss 0.5903 acc 78.7%
+    [bc] epoch  8: loss 0.3541 acc 86.8%
+    [bc] epoch 12: loss 0.2176 acc 91.9%
+    [bc] epoch 16: loss 0.1568 acc 94.2%
+    [bc] epoch 20: loss 0.1137 acc 95.9%
+  round 0: acc 95.9% | vs smart -2.52 +/- 1.60 | vs strong -6.67 +/- 1.94 (792 hands each)
+    -> new best
+generated 222430 labeled decisions from ~9000 hands in 4477s (50/s) -> results/v3/dagger1_*.npz
+  union dataset now 685285 samples (+4478s roll-in)
+    [r1] epoch  4: loss 0.2777 acc 90.3%
+    [r1] epoch  8: loss 0.1749 acc 93.7%
+    [r1] epoch 12: loss 0.1311 acc 95.3%
+  round 1: acc 95.3% | vs smart -1.67 +/- 1.58 | vs strong -6.40 +/- 1.86 (792 hands each)
+    -> new best
+generated 209849 labeled decisions from ~9000 hands in 4024s (52/s) -> results/v3/dagger2_*.npz
+  union dataset now 895134 samples (+4026s roll-in)
+    [r2] epoch  4: loss 0.2480 acc 91.5%
+    [r2] epoch  8: loss 0.1742 acc 93.7%
+    [r2] epoch 12: loss 0.1416 acc 94.9%
+  round 2: acc 94.9% | vs smart -3.35 +/- 1.63 | vs strong -6.83 +/- 1.96 (792 hands each)
+generated 211035 labeled decisions from ~9000 hands in 4100s (51/s) -> results/v3/dagger3_*.npz
+  union dataset now 1106169 samples (+4103s roll-in)
+    [r3] epoch  4: loss 0.2437 acc 91.7%
+    [r3] epoch  8: loss 0.1836 acc 93.4%
+    [r3] epoch 12: loss 0.1533 acc 94.5%
+  round 3: acc 94.5% | vs smart -1.70 +/- 1.63 | vs strong -7.20 +/- 1.99 (792 hands each)
+
+best vs smart: -1.67 -> results/v3\round1.policy.pt (copied to results/v3/best.policy.pt)

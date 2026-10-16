@@ -1,0 +1,21 @@
+=== v6 default (logistic) ===
+worlds gate: 150 teacher hands, 16 samples/probe, PF cfg 2.0/0.3/0.02/N256
+  uniform    | t0-3  ov 0.257 dwg +12.8 kB 0.014 | t4-7  ov 0.276 dwg +31.1 kB 0.252 | t8-99 ov 0.364 dwg +37.4 kB 0.742
+  bel b=0    | t0-3  ov 0.272 dwg  +8.9 kB 0.014 | t4-7  ov 0.334 dwg +21.5 kB 0.248 | t8-99 ov 0.476 dwg +24.4 kB 0.659
+  bel b=2.5  | t0-3  ov 0.276 dwg -16.8 kB 0.046 | t4-7  ov 0.348 dwg  +3.2 kB 0.232 | t8-99 ov 0.503 dwg +12.8 kB 0.491
+  bel auto   | t0-3  ov 0.273 dwg  -1.3 kB 0.019 | t4-7  ov 0.348 dwg  +3.0 kB 0.222 | t8-99 ov 0.505 dwg +11.9 kB 0.481
+  particle   | t0-3  ov 0.275 dwg  +3.1 kB 0.015 | t4-7  ov 0.370 dwg  +7.1 kB 0.183 | t8-99 ov 0.560 dwg  +5.5 kB 0.239
+=== v7 rule tp=0.05 + mh_all ===
+worlds gate: 150 teacher hands, 16 samples/probe, PF cfg 2.0/0.3/0.02/N256
+  uniform    | t0-3  ov 0.256 dwg +12.9 kB 0.014 | t4-7  ov 0.278 dwg +31.1 kB 0.251 | t8-99 ov 0.365 dwg +37.3 kB 0.739
+  bel b=0    | t0-3  ov 0.271 dwg  +9.2 kB 0.014 | t4-7  ov 0.332 dwg +21.3 kB 0.247 | t8-99 ov 0.476 dwg +24.5 kB 0.656
+  bel b=2.5  | t0-3  ov 0.277 dwg -16.6 kB 0.047 | t4-7  ov 0.347 dwg  +3.2 kB 0.235 | t8-99 ov 0.504 dwg +12.8 kB 0.491
+  bel auto   | t0-3  ov 0.274 dwg  -1.5 kB 0.019 | t4-7  ov 0.347 dwg  +3.1 kB 0.227 | t8-99 ov 0.505 dwg +11.9 kB 0.483
+  particle   | t0-3  ov 0.277 dwg  +3.1 kB 0.013 | t4-7  ov 0.365 dwg  +8.1 kB 0.178 | t8-99 ov 0.565 dwg  +6.3 kB 0.243
+=== v7 rule tp=0.1 + mh_all ===
+worlds gate: 150 teacher hands, 16 samples/probe, PF cfg 2.0/0.3/0.02/N256
+  uniform    | t0-3  ov 0.257 dwg +13.1 kB 0.014 | t4-7  ov 0.278 dwg +31.1 kB 0.251 | t8-99 ov 0.364 dwg +37.4 kB 0.742
+  bel b=0    | t0-3  ov 0.270 dwg  +9.1 kB 0.014 | t4-7  ov 0.334 dwg +21.4 kB 0.249 | t8-99 ov 0.476 dwg +24.3 kB 0.655
+  bel b=2.5  | t0-3  ov 0.275 dwg -16.7 kB 0.048 | t4-7  ov 0.346 dwg  +3.3 kB 0.230 | t8-99 ov 0.505 dwg +12.7 kB 0.488
+  bel auto   | t0-3  ov 0.275 dwg  -1.4 kB 0.018 | t4-7  ov 0.344 dwg  +3.5 kB 0.227 | t8-99 ov 0.504 dwg +12.0 kB 0.475
+  particle   | t0-3  ov 0.273 dwg  +3.3 kB 0.016 | t4-7  ov 0.370 dwg  +7.6 kB 0.165 | t8-99 ov 0.580 dwg  +5.6 kB 0.224

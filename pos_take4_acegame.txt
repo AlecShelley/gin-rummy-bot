@@ -1,0 +1,13 @@
+# Close call 4 -- the SAME two-way speculation as close call 1, but in
+# an ACE game (flip AS -> knock threshold 1): knocking is effectively
+# off the table for both sides, the hand will run long, and the whole
+# question is which option serves the gin race better.
+me: 3S 4S 5S KH KS KC 7D 8H AC 2D
+opp-known:
+pile: AS JS 7H
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard 7H
+opp-model: 1,1.0
+knock-max: 1

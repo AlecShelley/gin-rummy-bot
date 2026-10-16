@@ -1,0 +1,4 @@
+pf-v6[veto=True,champ] vs ad_self [full]: +3.65 +/- 1.62 over 1488 hands (0.537 s/searched-move, 1435s wall)
+pf-v6[veto=True,cand] vs ad_self [full]: +3.05 +/- 1.62 over 1488 hands (0.536 s/searched-move, 1419s wall)
+pf-v6[veto=True,champ] vs ad_jam [full]: +4.18 +/- 1.64 over 1488 hands (0.535 s/searched-move, 1359s wall)
+pf-v6[veto=True,cand] vs ad_jam [full]: +3.89 +/- 1.61 over 1488 hands (0.543 s/searched-move, 1399s wall)

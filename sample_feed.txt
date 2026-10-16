@@ -1,0 +1,16 @@
+# A: danger discard. The opponent took our 6H and 8H -- they are building
+# around 7H, and we hold the bridge card. We just drew; what goes?
+me: 4S 5S 6S 9C 9S 9H JD JH 7H 2C 3C
+opp-known: 6H 8H
+pile: 4D TC 2H
+event: opp-discard 4D
+event: my-draw
+event: my-discard 6H
+event: opp-pickup 6H
+event: opp-discard TC
+event: my-draw
+event: my-discard 8H
+event: opp-pickup 8H
+event: opp-discard 2H
+event: my-draw
+opp-model: 10,1.0

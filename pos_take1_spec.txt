@@ -1,0 +1,16 @@
+# Close call 1 -- TWO-WAY SPECULATION (ten game). The opponent lets go
+# of 7H. We hold 7D (pair combo) and 8H (run combo): the 7H connects
+# twice but completes nothing, costs 7 deadwood while unmelded, and is
+# revealed if taken. Measured near EV-neutral in the ladder study.
+# (Flip is TD -- unconnected to our hand, so declining it on turn 1
+# was reasonable. An earlier draft flipped KD, which we would never
+# have declined holding three kings.)
+me: 3S 4S 5S KH KS KC 7D 8H AC 2D
+opp-known:
+pile: TD JS 7H
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard 7H
+opp-model: 10,1.0
+knock-max: 10

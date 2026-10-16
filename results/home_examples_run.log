@@ -1,0 +1,182 @@
+##### pos_home1_fliptake
+Hero hand : 3♠ 4♥ 10♥ 3♦ 4♦ 7♦ 10♦ Q♦ 4♣ 6♣
+            deadwood: 49
+Opp known : (none)
+Pile top  : 3♥    pile size: 1    stock: 31
+Knock max : 3 (home variant; flip = 3♥)
+Opp model : knocks at deadwood<=3 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 8♥ 1.1x, J♦ 1.1x, 9♦ 1.1x, 2♠ 1.1x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * take 3♥ from pile            EV  +13.14  (prior)
+   draw from stock              EV   +6.93  vs prior  -6.21 +/- 1.44
+RECOMMENDATION: take 3♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+  then: discard 7♦
+Hand EV: hero +13.14 points, opponent -13.14 points
+visual report -> pos_home1_fliptake.html
+##### pos_home2_timing
+Hero hand : 5♠ 7♠ 6♥ 7♥ K♥ 3♦ 6♦ 7♦ 9♦ Q♦ 4♣
+            deadwood after best discard: 43
+Opp known : (none)
+Pile top  : K♣    pile size: 1    stock: 30
+Knock max : 10 (home variant; flip = K♣)
+Opp model : knocks at deadwood<=10 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 9♥ 1.1x, J♦ 1.1x, 10♦ 1.1x, 2♠ 1.1x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 6♥                   EV   +9.82  vs prior  +3.17 +/- 1.16  significant
+   discard 9♦                   EV   +8.01  vs prior  +1.35 +/- 1.18
+   discard K♥                   EV   +6.66  (prior)
+   discard Q♦                   EV   +6.52  vs prior  -0.14 +/- 0.68
+RECOMMENDATION: discard 6♥   [search deviates from the prior (paired evidence significant at z=1.5)]
+Hand EV: hero +9.82 points, opponent -9.82 points
+visual report -> pos_home2_timing.html
+##### pos_home3_bridge
+Hero hand : 5♠ 8♠ 4♥ 6♥ 7♥ 9♥ 10♥ J♥ A♦ 3♣
+            deadwood: 34
+Opp known : 9♦
+Pile top  : 8♥    pile size: 4    stock: 28
+Knock max : 10 (home variant; flip = K♥)
+Opp model : knocks at deadwood<=10 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 4♦ 1.4x, 7♠ 1.3x, 9♣ 1.3x, 3♠ 1.3x, 6♦ 1.2x, J♦ 1.2x, A♣ 1.2x, 6♣ 1.2x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * take 8♥ from pile            EV  +16.80  (prior)
+   draw from stock              EV  +10.58  vs prior  -6.22 +/- 1.00
+RECOMMENDATION: take 8♥ from pile   [search keeps the teacher prior (no significant improvement found)]
+  then: discard 8♠
+Hand EV: hero +16.80 points, opponent -16.80 points
+visual report -> pos_home3_bridge.html
+##### pos_home4_reading
+Hero hand : 4♠ 5♠ 2♥ 3♥ 5♥ 5♦ 6♦ 7♦ 8♦ 3♣ 8♣
+            deadwood after best discard: 12
+Opp known : 7♠ 6♥ 4♦ K♦
+Pile top  : 8♠    pile size: 9    stock: 22
+Knock max : 7 (home variant; flip = 7♠, no longer in the pile)
+Opp model : knocks at deadwood<=7 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): Q♦ 2.2x, J♦ 2.2x, 4♥ 2.1x, 2♦ 1.5x, 3♦ 1.4x, 4♣ 1.4x, 6♣ 1.3x, 2♠ 1.3x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 8♣                   EV  +16.58  (prior)
+   discard 3♣                   EV  +14.23  vs prior  -2.35 +/- 1.30
+   discard 4♠                   EV  +13.57  vs prior  -3.01 +/- 1.14
+   discard 3♥                   EV  +11.50  vs prior  -5.08 +/- 1.23
+RECOMMENDATION: discard 8♣   [search keeps the teacher prior (no significant improvement found)]
+Hand EV: hero +16.58 points, opponent -16.58 points
+visual report -> pos_home4_reading.html
+##### pos_home5_losing
+Hero hand : A♠ 3♠ 5♠ 7♠ 8♠ 9♠ 2♥ 4♥ 5♥ A♦ 3♦
+            deadwood after best discard: 19
+Opp known : 6♥ 6♦ 2♣ 6♣
+Pile top  : 8♥    pile size: 20    stock: 11
+Knock max : 2 (home variant; flip = 2♣, no longer in the pile)
+Opp model : knocks at deadwood<=2 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 6♠ 2.3x, 4♣ 1.6x, 4♦ 1.5x, 5♦ 1.4x, 3♣ 1.4x, 2♦ 1.4x, 2♠ 1.2x, 3♥ 1.2x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 5♥                   EV   -2.04  (prior)
+   discard 5♠                   EV   -2.98  vs prior  -0.94 +/- 0.73
+   discard 4♥                   EV   -3.93  vs prior  -1.89 +/- 1.34
+   discard 3♠                   EV   -5.13  vs prior  -3.08 +/- 1.50
+RECOMMENDATION: discard 5♥   [search keeps the teacher prior (no significant improvement found)]
+Hand EV: hero -2.04 points, opponent +2.04 points
+visual report -> pos_home5_losing.html
+##### pos_home6_gintake
+Hero hand : A♠ 2♠ 8♠ 3♥ 8♥ A♦ 3♦ 8♦ 3♣ 8♣
+            deadwood: 4
+Opp known : 4♠ 4♣
+Pile top  : 3♠    pile size: 27    stock: 5
+Knock max : 1 (home variant; flip = A♠, no longer in the pile)
+Opp model : knocks at deadwood<=1 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 4♦ 1.6x, A♣ 1.6x, A♥ 1.5x, 4♥ 1.4x, 2♦ 1.1x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * take 3♠ from pile            EV  +30.29  (prior)
+   draw from stock              EV   +5.19  vs prior -25.10 +/- 0.80
+RECOMMENDATION: take 3♠ from pile   [search keeps the teacher prior (no significant improvement found)]
+  then: GIN
+Hand EV: hero +30.29 points, opponent -30.29 points
+visual report -> pos_home6_gintake.html
+##### pos_home7_undercut
+Hero hand : A♠ 10♠ A♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ A♦ 2♦
+            deadwood after best discard: 2
+Opp known : 5♦ 6♦ 8♦ 9♦ 10♦
+Pile top  : 2♣    pile size: 27    stock: 4
+Knock max : 10 (home variant; flip = J♥)
+Opp model : knocks at deadwood<=10 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 4♦ 1.7x, 7♦ 1.7x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (34 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 10♠                  EV  +18.94  (prior)
+   discard 2♦                   EV  +13.50  vs prior  -5.44 +/- 4.11
+   KNOCK (discarding 10♠)       EV   +8.06  vs prior -10.88 +/- 2.80
+   discard 10♥                  EV   -4.71  vs prior -23.65 +/- 2.14
+   discard 5♥                   EV   -4.82  vs prior -23.76 +/- 3.26
+  NOTE: only 34 of 192 requested worlds survived the opponent-knock veto -- the opp-model assumption is heavily constraining here; 'opp-model: none' shows the unvetoed read
+RECOMMENDATION: discard 10♠   [search keeps the teacher prior (no significant improvement found)]
+Hand EV: hero +18.94 points, opponent -18.94 points
+visual report -> pos_home7_undercut.html
+##### pos_home8_acegrind
+Hero hand : A♠ 8♠ J♠ 4♥ 7♥ A♦ 5♦ 7♦ J♦ 6♣ J♣
+            deadwood after best discard: 31
+Opp known : A♥ 9♦
+Pile top  : 10♦    pile size: 3    stock: 28
+Knock max : 1 (home variant; flip = A♥, no longer in the pile)
+Opp model : knocks at deadwood<=1 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 8♥ 1.6x, A♣ 1.4x, 9♠ 1.4x, 7♠ 1.4x, 4♠ 1.3x, 6♦ 1.2x, 7♣ 1.2x, 3♠ 1.2x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 6♣                   EV   +9.98  vs prior  +1.81 +/- 0.76  significant
+   discard 8♠                   EV   +8.17  (prior)
+   discard 7♦                   EV   +7.32  vs prior  -0.85 +/- 0.60
+   discard 7♥                   EV   +7.22  vs prior  -0.95 +/- 0.66
+RECOMMENDATION: discard 6♣   [search deviates from the prior (paired evidence significant at z=1.5)]
+  (borderline deviation, z=2.4: the in-game rule fires at z=1.5, but at this margin the verdict is seed-sensitive -- treat as a close call and confirm with --worlds 384 / other --seed values before trusting it over the prior)
+Hand EV: hero +9.98 points, opponent -9.98 points
+visual report -> pos_home8_acegrind.html
+##### pos_home9_knock
+Hero hand : 4♠ 8♠ A♥ 8♥ J♥ 2♦ 8♦ J♦ 2♣ 4♣ J♣
+            deadwood after best discard: 9
+Opp known : 7♥
+Pile top  : 9♠    pile size: 5    stock: 26
+Knock max : 10 (home variant; flip = J♥, no longer in the pile)
+Opp model : knocks at deadwood<=10 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): 7♦ 1.5x, 3♣ 1.5x, A♣ 1.5x, 6♠ 1.5x, 5♥ 1.4x, 7♠ 1.3x, 5♣ 1.3x, 5♠ 1.3x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * KNOCK (discarding 4♠)        EV  +29.28  vs prior  +7.12 +/- 1.15  significant
+   discard 4♠                   EV  +22.74  vs prior  +0.58 +/- 0.60
+   discard 4♣                   EV  +22.16  (prior)
+   discard 2♦                   EV  +21.45  vs prior  -0.70 +/- 1.24
+   discard 2♣                   EV  +19.35  vs prior  -2.80 +/- 1.20
+RECOMMENDATION: KNOCK (discarding 4♠)   [search deviates from the prior (paired evidence significant at z=1.5)]
+Hand EV: hero +29.28 points, opponent -29.28 points
+visual report -> pos_home9_knock.html
+##### pos_home10_noknock
+Hero hand : A♠ 3♠ 4♠ 3♥ 4♥ 2♦ 3♦ 4♦ 2♣ 3♣ 4♣
+            deadwood after best discard: 1
+Opp known : 7♠ K♠
+Pile top  : 9♥    pile size: 18    stock: 13
+Knock max : 8 (home variant; flip = 8♣, no longer in the pile)
+Opp model : knocks at deadwood<=8 with p=1.0 (default -- matches the promoted bot; 'opp-model: none' to disable)
+Belief    : particle filter x4 independent replications (v6 posterior, 256 particles from the full transcript)
+            likely holdings (vs uniform): K♥ 1.9x, K♣ 1.9x, A♥ 1.7x, K♦ 1.7x, A♦ 1.7x, 6♠ 1.5x, A♣ 1.3x, 2♥ 1.3x
+History   : COMPLETE (event replay reproduces the pile)
+Candidates (192 worlds, T=16, z=1.5; EV = expected final points of the hand, hero view):
+ * discard 2♣                   EV  +30.31  vs prior  +1.92 +/- 0.52  significant
+   discard 2♦                   EV  +28.39  (prior)
+   discard A♠                   EV  +26.72  vs prior  -1.67 +/- 0.93
+   discard 3♠                   EV  +24.73  vs prior  -3.66 +/- 0.66
+   KNOCK (discarding 2♦)        EV  +15.64  vs prior -12.75 +/- 0.86
+RECOMMENDATION: discard 2♣   [search deviates from the prior (paired evidence significant at z=1.5)]
+Hand EV: hero +30.31 points, opponent -30.31 points
+visual report -> pos_home10_noknock.html

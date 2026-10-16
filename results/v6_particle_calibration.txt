@@ -1,0 +1,5 @@
+v6 particle calibration (400 teacher hands, grid of 18; train Brier 0.17753)
+chosen: tau_d=1.0 mu=0.0 tau_p=1.0 p_knock=0.0 eps=0.05 N=256
+held-out vs teacher: particle 0.17773  belief 0.18010  uniform 0.20589  pf-vs-uniform +13.68%  pf-vs-belief +1.32%
+held-out vs clone  : particle 0.17570  belief 0.17949  uniform 0.20380  pf-vs-uniform +13.79%  pf-vs-belief +2.11%
+held-out vs random : particle 0.20410  belief 0.20274  uniform 0.18749  pf-vs-uniform -8.86%  pf-vs-belief -0.67%

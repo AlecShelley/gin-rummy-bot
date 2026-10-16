@@ -1,0 +1,27 @@
+# HARD 5 -- THE TEMPTING TWO-WAY TAKE, REFUSED (5-game, early). The
+# pile offers the 8C next to our 6C and 9C -- a classic "connects
+# twice" speculation (7C fills either way) most players grab. The
+# engine refuses it at every seed (+2.1 to +2.8 for the blind draw):
+# the 8C completes nothing now, burns the draw, tells the opponent
+# what we collect, and this hand needs live cards, not another
+# half-combo. The margin is small and labeled borderline -- which is
+# itself the honest answer: the take is not a blunder, just wrong.
+
+me: AS 5S 9S 3H 6H AD 4D 5C 6C 9C
+opp-known: 
+pile: QD QS TC TH TD 8C
+my-known: 5S
+event: my-pickup 5S
+event: my-discard QD
+event: opp-decline QD
+event: opp-discard QS
+event: my-draw 9C
+event: my-discard TC
+event: opp-decline TC
+event: opp-discard TH
+event: my-draw 5C
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard 8C
+flip: 5S
+knock-max: 5

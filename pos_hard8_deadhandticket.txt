@@ -1,0 +1,86 @@
+# RETIRED (2026-08-30). This example depended on the old rlcard
+# dead-hand variant, where a player facing a dead stock could still
+# take the discard and knock ("the dead-hand ticket"). Under the
+# standard rule now in force, the hand is already over at this point
+# and the position cannot arise. Kept for the record; do not analyze.
+
+me: AS 2S 7S 3H 4H 5H 7H 7D AC 7C
+opp-known: 
+pile: QS QD 8C TH KD 6H 6D TC 5C QC 5S 8S 8H TD 4D JC JS 3C 4C 6C TS 4S KH JH 3D 5D JD 8D QH 6S
+my-known: 7S 4H 5H 7D 7C
+event: opp-pickup 6D
+event: opp-discard 7S
+event: my-pickup 7S
+event: my-discard QS
+event: opp-decline QS
+event: opp-discard 7C
+event: my-pickup 7C
+event: my-discard QD
+event: opp-decline QD
+event: opp-discard 6D
+event: my-pickup 6D
+event: my-discard 8C
+event: opp-decline 8C
+event: opp-discard TH
+event: my-draw KD
+event: my-discard KD
+event: opp-decline KD
+event: opp-discard 4H
+event: my-pickup 4H
+event: my-discard 6H
+event: opp-decline 6H
+event: opp-discard 5C
+event: my-pickup 5C
+event: my-discard 6D
+event: opp-decline 6D
+event: opp-discard TC
+event: my-draw 3D
+event: my-discard 5C
+event: opp-decline 5C
+event: opp-discard QC
+event: my-draw AC
+event: my-discard 5S
+event: opp-decline 5S
+event: opp-discard 8S
+event: my-draw 8H
+event: my-discard 8H
+event: opp-decline 8H
+event: opp-discard TD
+event: my-draw AS
+event: my-discard 4D
+event: opp-decline 4D
+event: opp-discard JC
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard 5H
+event: my-pickup 5H
+event: my-discard 3C
+event: opp-decline 3C
+event: opp-discard 4C
+event: my-draw 6C
+event: my-discard 6C
+event: opp-decline 6C
+event: opp-discard TS
+event: my-draw 4S
+event: my-discard 4S
+event: opp-decline 4S
+event: opp-discard KH
+event: my-draw JH
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard 7D
+event: my-pickup 7D
+event: my-discard 3D
+event: opp-decline 3D
+event: opp-discard 5D
+event: my-draw JD
+event: my-discard JD
+event: opp-decline JD
+event: opp-discard 8D
+event: my-draw QH
+event: my-discard QH
+event: opp-decline QH
+event: opp-discard 6S
+flip: 6D
+knock-max: 6

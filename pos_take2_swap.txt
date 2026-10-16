@@ -1,0 +1,13 @@
+# Close call 2 -- SMALL VALUE SWAP (ten game). The 6C connects to
+# nothing we hold; taking it only upgrades the 9S brick (deadwood 16 ->
+# 13). Worth it? The costs: the take is public, and it forfeits a blind
+# draw that could hit any of our real combos.
+me: 3S 4S 5S KH KS KC 9S AC 2D 4H
+opp-known:
+pile: TD JS 6C
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard 6C
+opp-model: 10,1.0
+knock-max: 10

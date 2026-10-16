@@ -1,0 +1,16 @@
+# HOME VARIANT showcase -- ten game. The flip was TD (bottom of the
+# pile), so this hand's knock threshold is 10 and the opponent is
+# modeled as knocking the moment they legally can. We hold seven melded
+# cards (4S-5S-6S + 9H-9S-9C-9D) and three scattered bricks (2H 3D 5C,
+# exactly 10 deadwood), just drew a QS brick, and must discard -- or
+# knock. Gin is remote; the clock is loud.
+me: 4S 5S 6S 9H 9S 9C 9D 2H 3D 5C QS
+opp-known:
+pile: TD JS 7C
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard 7C
+event: my-draw QS
+opp-model: 10,1.0
+knock-max: 10

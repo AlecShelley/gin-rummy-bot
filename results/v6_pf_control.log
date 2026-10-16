@@ -1,0 +1,1 @@
+adaptive[stages=16,48,256,deep] vs v5 [full]: +0.50 +/- 0.94 over 3984 hands  (0.378 s/searched-move, 4459s wall)

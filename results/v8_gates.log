@@ -1,0 +1,393 @@
+================================================================
+V8 CAMPAIGN -- opponent-action likelihood redesign (2026-08-31)
+HANDOFF_V7 "NEXT MAJOR IMPROVEMENT" items 1-4. Candidate change:
+  particle.SoftOpponent.pickup_prob "rule" mode -- the teacher's
+    actual BINARY take rule (take iff gain >= draw_gain=1) with
+    tau_p reinterpreted as the rule-MISMATCH rate, plus a meld
+    tier: a card that slots into the hand's melds is taken
+    near-certainly and can never score below a junk-dump take
+    (the hidden-5S incident's inverted-likelihood fix).
+  ParticleCore mh_all_takes=True -- rejuvenation re-scores ALL
+    pickup/decline events (rare, information-dense); the MH
+    window now applies to discards only (evidence-forgetting
+    fix, HANDOFF_V7 item 3).
+  tau_p enters the --calibrate grid for the first time (item 2).
+Both changes are flag-gated; DEFAULT_PF still the promoted v6
+config until every gate below is green.
+================================================================
+
+GATE 0 -- first-session checklist (2026-08-31): ALL GREEN.
+  sim.py --verify: 12339 checks, teacher agreement 100.0000%,
+    13 strict-dead-hand diffs (expected), dw+payoff parity.
+  fullrules.py --test: pass. adaptive.py --parity: 199 decisions
+    IDENTICAL. ladder.py --parity: 143 decisions IDENTICAL.
+
+GATE 1 -- sanity anchors (particle.py --anchors): PASS.
+  On the incident's own cards (top = 4S):
+    v6 logistic: meld take (5S6S7S) 0.802 < junk-dump 0.971
+      -- the inversion CONFIRMED in unit form.
+    v7 rule/tp=0.1: meld 0.947 >= junk-dump 0.880, no-use 0.073.
+  Anchors: P(take|meld) > 0.9, P(take|no use) < 0.15,
+  meld >= junk-dump: all hold.
+
+GATE 2 -- cost (20-hand replay, N=256, same streams):
+  v6 default 1463 ms/hand Brier 0.17261; rule+mh_all 2236 ms/hand
+  Brier 0.17087 (uniform 0.20120). Filter replay ~1.5x; note the
+  in-match cost driver is the search, not the replay -- s/searched-
+  move to be read off the selection match.
+
+GATE 3 -- read-position regression (read_regress.py, truth key
+  results/home_examples_truth.txt, raw 4-filter-ensemble marginal
+  on true hidden cards): PASS (hold-or-sharpen on all three).
+    pos_hard3_minus1: mean 0.798 -> 0.806; 5S 0.948->0.963,
+      6S 0.862->0.912 (the incident cards sharpen).
+    pos_home10_noknock: 0.663 -> 0.663 (hold).
+    pos_hard1_blocker: 0.521 -> 0.554.
+
+GATE 4 -- Brier calibration grid (72 configs: tau_d x p_knock x
+  mu x {logistic/1.0, rule/0.05, rule/0.1, rule/0.2}), 400+200+200
+  hands: results/v7_calibrate_pickup.log. [RUNNING]
+
+GATE 4 -- Brier calibration: COMPLETE (results/v7_calibrate_pickup.log,
+  results/v7_particle_calibration.txt). Grid winner overall:
+  tau_d=2.0 mu=0.0 p_knock=0.0 rule/tp=0.2 (train 0.17769; held-out
+  chosen-vs-v6 +0.65% teacher, +1.20% clone, -0.33% random). Per the
+  v6 lesson (Brier winners transfer badly to matches -- the promoted
+  base stays tau_d=2.0/mu=0.3/p_knock=0.5), the MATCH CANDIDATE holds
+  the promoted base and changes only the pickup model. Held-out at the
+  promoted base (same streams, seed 61507):
+    logistic (v6)  teacher 0.18001  clone 0.17791
+    rule tp=0.05   teacher 0.17934  clone 0.17622
+    rule tp=0.1    teacher 0.17967  clone 0.17663
+    rule tp=0.2    teacher 0.17725  clone 0.17771
+  Every rule config >= the logistic on both model-following streams.
+
+GATE 5 -- worlds gate (results/v7_worlds_pickup.log, 150 teacher
+  hands, particle sampler rows; the statistics the search consumes):
+    v6 logistic : t4-7 ov 0.370 kB 0.183 | t8-99 ov 0.560 kB 0.239
+    rule tp=0.05: t4-7 ov 0.365 kB 0.178 | t8-99 ov 0.565 kB 0.243
+    rule tp=0.1 : t4-7 ov 0.370 kB 0.165 | t8-99 ov 0.580 kB 0.224
+  rule/tp=0.1 improves late-game truth overlap AND knock-Brier.
+
+CHOSEN CANDIDATE: pickup_mode=rule, tau_p=0.1, mh_all_takes=True on
+  the promoted base (tau_d=2.0, mu=0.3, p_knock=0.5, lik_floor=0.02,
+  N=256). Rationale: worlds-gate winner; held-out >= logistic on both
+  streams; the config the anchors + read-regression gates passed.
+
+GATE 6 -- selection match: candidate vs registry v6, 1500 hands,
+  seed 74100 (fresh; selection seed != confirmation seed). [RUNNING]
+
+GATE 6 -- selection match: COMPLETE. candidate vs v6, seed 74100:
+  +0.80 +/- 1.62 over 1488 hands (results/v8_selection.log);
+  0.519 s/searched-move vs the champion's ~0.44 (1.18x). A tie
+  leaning positive -- exactly the expected shape (symmetric belief
+  realism cancels in paired candidate differences; the payoff is
+  the concentrated posterior). Protocol: promote on >= tie with
+  all gates green -> proceed to fresh confirm + probe.
+
+GATE 7 -- fresh-seed confirmation: candidate vs v6, 4000 hands,
+  seed 74500. [RUNNING]
+
+GATE 7 -- fresh-seed confirmation: COMPLETE. candidate vs v6,
+  seed 74500: -0.30 +/- 0.99 over 3984 hands (results/
+  v8_confirm.log; 0.558 s/searched-move). Pooled with selection
+  (+0.80 +/- 1.62, 1488): ~0.00 -- a confirmed TIE, the expected
+  outcome (symmetric belief realism cancels in the paired design;
+  lesson #9). Promotion rides on the offline gains + clean probe.
+
+GATE 8 -- probe: candidate vs ad_self / ad_jam / ad_self_k10 /
+  teacher, 1488 hands each, seeds 74800.. [RUNNING]
+
+GATE 8 -- probe: COMPLETE (results/v8_probe.log, seed 74800):
+  ad_self +4.55 +/- 1.59 | ad_jam +4.54 +/- 1.61 |
+  ad_self_k10 +7.69 +/- 1.30 | teacher +1.98 +/- 1.61.
+  All adversaries lose; comparable-or-better than the v6 record
+  (+3.58 / +3.15 / +8.37 / +2.04). CLEAN.
+
+VERDICT: ALL GATES GREEN. Match tie + offline posterior gains
+  (held-out Brier, worlds overlap/knockB, read regressions, the
+  inverted-likelihood fix) => PROMOTE per protocol. The promoted
+  bot is registered as v7; v6 stays in the registry FROZEN at its
+  gated config (pickup_mode=logistic, tau_p=1.0, mh window-only)
+  for reproducibility. DEFAULT_PF flips to the v7 config; the
+  evaluator inherits it through make_model/DEFAULT_PF.
+
+GATE 9 -- example library re-verified under the promoted evaluator
+  (results/v8_library_check.log, 26 positions, particle x4 v7
+  posterior active on every one). All load-bearing verdicts HOLD:
+  home9 KNOCK (z-large) | home10 refuses the knock | take2 DRAW
+  significant (flagship) | take3 draw | ex6 KNOCK | hard1 A-club
+  blocker deviation | hard3_lastdiscard KNOCK-or-nothing |
+  hard3_minus1 refuses the knock (the incident verdict, now from
+  the corrected likelihood) | hard5 refuses the bait take |
+  hard6 anti-greed KNOCK.
+  Two near-tie positions moved WITHIN their documented seed
+  sensitivity (isolated to the likelihood change by re-running
+  with the pinned v6 belief, then seed-swept 0/1/2 under v7):
+    ex7: was a stable 9H deviation; now 2/3 seeds keep the K-spade
+      prior, 1/3 deviates to 9H -- an honest close call under the
+      sharper posterior. Library doc claim updated.
+    take1: the audited ~+1 near-tie still swings (draw at seeds
+      0/1 WITH the borderline z=2.0-2.3 label correctly printed;
+      take at seed 2) -- exactly the E3 behavior, working as
+      designed.
+
+GATE 10 -- oracle compass re-run vs v7 (results/v8_oracle_v7.log,
+  seed 75200): +14.43 +/- 1.52 over 1488 hands. Statistically the
+  same headroom as vs v6 (+13.47 +/- 1.50, seed 72500) --
+  consistent with the match tie: the likelihood fix sharpens the
+  posterior where the reads were provably wrong but does not yet
+  cash the oracle gap in-search. The gap remains the campaign's
+  direction-finder (~14 pts/hand still open).
+
+================================================================
+CAMPAIGN CLOSED 2026-08-31 -- v7 PROMOTED.
+  Champion: registry v7 (pf_expert.PFPolicy on DEFAULT_PF =
+  pickup_mode=rule, tau_p=0.1, mh_all_takes=True, promoted base
+  tau_d=2.0/mu=0.3/p_knock=0.5/lik_floor=0.02/N=256).
+  v6 FROZEN at its gated config in meta.py + play_vs_bot.py.
+  Evaluator inherits v7 (make_model/DEFAULT_PF; belief note "v7
+  posterior"); library re-verified; docs (CLAUDE.md, HANDOFF_V7.md)
+  and memory updated. Post-promotion kernel/parity gates re-run
+  green (sim --verify, fullrules --test, adaptive/ladder --parity,
+  particle --anchors, read_regress).
+  Next per HANDOFF_V7: Track B (match-style scoring + human eval),
+  adaptive (t,p) opponent-knock estimation, Track A (subgame CFR).
+================================================================
+
+================================================================
+ACE-FLIP TAKE LEAK -- CONFIRMED (2026-09-01). User hypothesis: in
+ace-threshold games the winner gins, so melds matter, not deadwood
+-- taking a NON-melding ace flip is a tempo-losing deadwood swap.
+  Selection (ace_probe.py, 1200 paired deals, seed 76100):
+    non-melding subgroup decline-vs-take +3.00 +/- 2.80 (z=2.1).
+  CONFIRMATION (2400 fresh paired deals, seed 76900):
+    meldonly - default +4.24 +/- 1.80 overall,
+    +4.79 +/- 1.92 on non-melding deals (z=4.9). CONFIRMED.
+  v7 takes the non-melding ace 97% of the time (ace melds at deal
+  only ~12%); mechanism: the teacher prior prices the take by
+  deadwood gain and the 16-step truncated rollouts cannot see the
+  tempo cost in a 40+step gin race, so the prior survives.
+  Side finding: the -5.85 "hero loses ace games" from the 4800-hand
+  MC did NOT replicate (+0.31 +/- 2.00 selection, -1.47 +/- 1.40
+  confirm at n=2400... note confirm's default arm slightly negative
+  but compatible with ~-1; the -5.85 was subgroup noise).
+  FIX DEFERRED until the new home OPENING RULE (below) is in: the
+  pass mechanic changes the flip decision's EV structure, and the
+  opening study will measure the optimal policy directly.
+  Records: results/ace_probe_report.log, ace_probe_confirm.log,
+  rows in results/ace_probe_rows.json / ace_probe_confirm_rows.json.
+================================================================
+
+================================================================
+HOME OPENING RULE -- IMPLEMENTED ENGINE-WIDE (2026-09-01, user
+rules decision; closes the "dealer's second option" fidelity gap).
+Rule: P1 may take the flip; else P2 may take it (out of turn, play
+returns to P1); else P1 MUST draw from stock. Passes move no cards
+and are public decline evidence on the flip.
+  sim.py: _home_opening state machine in step_fast /
+    fast_legal_actions (opening node has the familiar [draw,pickup]
+    shape; DrawCardAction there = PASS); HomePassMove (move_sheet) /
+    HomePassAction (phase marker); Snap/restore carry the state.
+  belief.py: opp pass -> decline evidence. particle.py: new
+    opp_pass/hero_pass events (decline term, no _pending).
+  pf_expert._resolve maps HomePassMove. evaluate.py: my-pass/
+    opp-pass events, history_check rules, legacy-transcript pass
+    inference (first-move my-draw with flip on pile => implied
+    opp-pass), build_state arms _home_opening (1 = hero first
+    option, 2 = hero second after opp-pass), action labels
+    "take the flip"/"PASS on the flip". viz.py history labels.
+  GATES: home_variant.py --test-opening PASS (scripted sequences,
+    snapshot/restore, 300 teacher hands w/ all 3 opening kinds,
+    searched v7 self-play hand, belief desyncs 0). sim --verify /
+    fullrules / adaptive+ladder parity / anchors ALL GREEN
+    (standard game untouched). Evaluator smoke: pos_home1 opening
+    reads "take the flip (3H)"; synthetic P2-option position
+    (opp-pass event) prices take vs PASS correctly.
+  NOTE: home match/MC results gated BEFORE this change (v6home,
+    home_mc, ace_probe) were measured without the P2 flip option;
+    the opening study below re-measures opening EVs under the
+    real rule.
+================================================================
+
+================================================================
+OPENING-THEORY STUDY -- COMPLETE (2026-09-01/02, 6000 deals x 3
+forced arms on the NATIVE opening rule, v7 self-play, seed 77300;
+results/opening_report.log, rows results/opening_rows.json).
+THE THEORY (both seats, all thresholds):
+  TAKE IFF IT MELDS. Melding takes: P1 +11.2/+10.2/+9.6 (A-3/4-7/
+  8-10), P2 +19.4/+11.7/+11.6. NON-melding takes: every band a tie
+  or negative -- A-3 P1 -2.45+/-2.58, P2 -4.03+/-2.55; 8-10 P1
+  -1.03, P2 -1.26; and the big junk swaps (gain 7-10) trend WORST:
+  P1 -2.35+/-2.60, P2 -3.87+/-2.54. The teacher's take-iff-gain>=1
+  rule gets NO support in any non-melding gain band.
+  TEMPO IS WORTH NOTHING: P2 taking a non-melding flip to "go
+  first" = -1.29 +/- 1.16 over 5068 deals.
+  V7'S GAP: takes 72.7% as P1 / would take 54.5% as P2, vs ~15.5%
+  of flips melding -- massive over-taking, consistent with the
+  CONFIRMED ace leak (+4.79 for meld-only in A-band) and the same
+  16-step-truncation mechanism (the tempo cost is beyond the
+  rollout horizon; the deadwood gain is immediate).
+  NEXT (bot fix candidate, gate per discipline): meld-only opening
+  policy at flip-option nodes (prior override), re-gate v7home.
+================================================================
+
+================================================================
+OPENING BOOK -- IMPLEMENTED + GATED, PROMOTED (2026-09-02).
+Take the flip IFF it melds, both seats (the 6000-deal theory).
+  Implementation: FastTeacher opening branch (prior + in-rollout
+  opponents; standard game untouched, --verify 100.0000%);
+  HomeV6Policy(book=True) plays it directly (the search's opening
+  evidence is the measured bias; openings now cost zero search);
+  particle filter reads opponents' opening takes/passes with
+  meld-only likelihoods (pickup_prob(opening=True), evlog
+  pickup_open/decline_open); evaluator recommends the book at
+  opening nodes with the reason, EV table still shown.
+  Gates: --test-opening PASS (teacher opening now book-exact; mix
+  233->55 takes/300), verify/parity/anchors green, evaluator smoke
+  green. MATCH GATE (results/book_gate.log, 2500 paired deals,
+  seed 78500, sharded incremental harness): book -0.35 +/- 1.53 vs
+  no-book (disagreeing openings -0.12 +/- 2.45) -- TIE, promoted
+  on the theory + the DIRECT ace-band match evidence (+4.24 +/-
+  1.80, z=4.6) + cheaper openings, per the v7 tie-promotion
+  precedent.
+  QUEUED NEXT: P2 speculative-take experiment (p2adj_gate.py,
+  user hypothesis: P2 takes with adj>=2 even non-melding -- the
+  extra-turn logic; study cell read +1.98 +/- 2.40).
+================================================================
+
+================================================================
+P2 SPECULATIVE-TAKE CLAUSE -- CONFIRMED + ADOPTED (2026-09-02).
+User hypothesis: the second player's flip take is effectively an
+EXTRA TURN, so P2 should take with adjacency >= 2 even non-melding.
+  p2adj_gate.py, 3000 paired cell-deals (P1 forced pass, P2
+  take-vs-pass on identical deals, seed 79100, sharded):
+  dEV(P2 take) +3.05 +/- 1.50 (z=4.0, CI excludes 0);
+  by flip band: A-3 +9.11 +/- 3.48 | 4-7 +1.77 +/- 2.54 |
+  8-10 +1.42 +/- 2.18 (strongest exactly where games are longest,
+  as the extra-turn logic predicts); adj==2 +2.91, adj>=3 +3.96.
+  Caveat noted: cell sampled with P1 FORCED to pass (includes ~15%
+  P1-melding deals that book-P1 would take in real play).
+  BOOK IS NOW: P1 takes iff melds; P2 takes iff melds OR adj >= 2
+  (sim.flip_book_take, single source; FastTeacher / HomeV6Policy /
+  evaluator / PF option-aware likelihoods 1 vs 2 all follow).
+  Gates: --test-opening PASS (both seats book-exact; P2-take
+  41->96/300), verify 100.0000%, parity x2, anchors -- ALL GREEN.
+  Seat asymmetry now fully measured: the same non-melding adj>=2
+  take in A-3 games is -5.47 for P1 and +9.11 for P2.
+================================================================
+
+================================================================
+OPENING SOLVER -- BUILT, VALIDATED, GATED: NOT ADOPTED (2026-09-02).
+User directive: calculate the opening per-hand instead of the book.
+  opening_solver.py: full-length paired playouts (K=160, take vs
+  pass in identical sampled worlds, teacher/MixedKnock continuation)
+  with the book as z=1.5 prior. ~0.6 CPU-s per opening node.
+  VALIDATION (300 deals vs the 6000-deal ground truth): every cell
+  matches in sign and ordering, mild attenuation at the extremes
+  (P2 melding +8.8 vs +13.4; adj0 A-3 -5.9 vs -11.3) -- the
+  teacher-playout model compresses effects (results/
+  solver_validate.log).
+  GATE (2000 paired deals, seed 80900, results/solver_gate.log):
+  paired solver - book = -0.53 +/- 0.62 -- the per-hand calculator
+  is slightly WORSE than the book. Mechanism: the book IS a
+  calculation -- the pooled 6000-deal ground-truth estimator; a
+  K=160 per-hand solve with an attenuated playout model adds
+  variance (and model error) on top of cells the pooled data
+  already measured tightly, and its z=1.5 deviations select noise
+  (lesson #3's shape, mild form). The available headroom is tiny:
+  the book is provably within ~0.3 pts/hand of optimal opening
+  play. NOT ADOPTED; solver kept (HomeV6Policy(solver=True),
+  --validate/--gate harnesses) for future retries with a truer
+  continuation model or K>=400 + z>=2.5.
+  BOOK STANDS: P1 iff melds; P2 iff melds or adj>=2.
+================================================================
+
+================================================================
+NAMING (2026-09-02, user decision): the home-variant champion is
+**v8home** -- v7's search+filter + the opening rule + the
+seat-asymmetric opening book + option-aware opening likelihoods.
+home_variant.HomeV8Policy (HomeV6Policy kept as backward-compat
+alias); `home_variant.py --bot v8home` (default). The STANDARD-game
+champion remains v7 (unchanged by the opening work -- no flip).
+================================================================
+
+================================================================
+TURN-2 CLAUSE -- CONFIRMED + ADOPTED (2026-09-02/03).
+User direction: extend the opening methodology to turn 2/3.
+  Study (turn2_study.py, 2000 paired deals, seed 81500): melding
+  takes at the first free draw decision already perfect (bot 100%,
+  +9.53 +/- 4.67); over-taking shrunk vs turn 1 (31.7% take vs
+  14.8% melding); leak cell (bot takes, no meld, 17% of deals)
+  -3.41 +/- 4.04 -- suggestive.
+  CONFIRMATION (2400 forced-arm cell-deals, seed 82100,
+  results/turn2_confirm.log): -2.06 +/- 1.64 per non-melding take
+  (z=2.5, CI excludes 0), uniform across bands/adjacency.
+  CLAUSE: HomeV8Policy t2book (default True) -- at the hand's first
+  free draw decision, take iff the card melds (suppresses exactly
+  the confirmed-bad takes; per lesson #12 the rollout interior is
+  NOT patched). Evaluator override added (conservative transcript
+  check). MATCH GATE (t2_gate.py, 1500 paired deals, seed 83100):
+  +1.84 +/- 1.78 -- CI excludes 0, POSITIVE. ADOPTED.
+  TURN-3 VERDICT: not pursued -- the bias series decays fast
+  (turn 1 ~4-5 pts on 85% of hands; turn 2 ~2 pts on 17%; turn 3
+  necessarily smaller on fewer) and falls below measurement
+  resolution. The early-game program is COMPLETE. Remaining oracle
+  gap (~14 pts) lives in mid-game hand-reading + endgame.
+================================================================
+
+CORRECTION + SUBSET AUDIT (2026-09-03): the turn-2 confirmation file
+had been double-written by an orphaned concurrent launch (same seed;
+also explains that run's slow ETA) -- deduped 4800 -> 2376 unique.
+Corrected headline: -1.92 +/- 1.65 per non-melding take (still
+excludes 0; adoption unchanged). USER QUESTION -- do the BEST
+non-melding turn-2 takes stay positive? NO subset does (deduped,
+bot-chosen takes): adj0-1 -2.32+/-2.12 | adj2 -1.23+/-2.84 |
+adj3+ -1.94+/-6.55 | adj>=2 A-3 -1.56+/-5.89 | adj>=2 8-10
+-2.86+/-3.66. Theory: no extra-turn bonus at turn 2 (the P2-opening
+exception's mechanism is absent). Residual limit: adj3+ cell thin --
+worst plausible case ~0.1 pts/hand left on the table; refinement
+would cost ~10h for a tenth of a point -- NOT pursued.
+
+T2 EXCEPTION -- USER CELL REAL, RULE NOT ADOPTED (2026-09-03).
+User counterexample: best-case non-melding t2 take (adj-2 ace +
+dead-K shed, 10-game). CONSTRUCTED-STATE MEASUREMENT (scenario_
+probe.py, 8000 + 6000x14 paired worlds): the cell is genuinely
+POSITIVE (+1.12 +/- 0.62 / +1.16 +/- 0.51 base; factor map: needs
+adj>=2 AND a dead-10 shed jointly -- threshold and card rank do NOT
+matter; adj<=1 or small dump kill it). The pooled slices had hidden
+this corner. BUT the operationalized rule (sim.t2_book_take
+exception: adj>=2 + best-drop value >= 10) GATED AT A TIE in
+natural play: -0.19 +/- 0.87 over 2000 paired deals; fired on 20%
+of hands; per-fired-game -0.94 +/- 4.32 (results/t2x_gate.log).
+Transfer failure understood: (a) natural triggers are SELECTED --
+an opponent discarding your adjacency card is informative in ways
+the uniform constructed worlds are not; (b) the operational rule
+fires ~40x more often than the pure corner, diluting it. t2x stays
+default False; machinery kept (HomeV8Policy(t2x=True),
+scenario_probe --map, t2x_gate). The t2 book remains take-iff-
+melds. Lesson: constructed-cell EV does not equal natural-play EV
+-- gate every rule in situ.
+
+NATURALLY-CONDITIONED T2 STUDY -- USER METHODOLOGY VINDICATES THE
+LOW-CARD EXCEPTION; ADOPTED (2026-09-03, nat2_study.py,
+results/nat2_study.log, rows nat2_rows.jsonl).
+User's methodological correction: rejection-sample fresh deals and
+keep only states where the OPPONENT CHOSE to discard the low card
+on v8's own line (two-tier: teacher-line screen ~5ms + v8 verify;
+natural frequency ~1 in 15,000 hands). 430 accepted paired states:
+  ALL (opp-discarded card <=3, adj>=2, non-melding):
+    dEV(take) +3.58 +/- 2.41 -- POSITIVE, CI excludes 0.
+  scenario 1 (t>=8 & dead-10 shed): +2.87 +/- 3.07
+  scenario 2 (t<=3 & top<=2): n=34, unresolved alone
+  OUTS strata (user hand-strength measure): weak hands (outs 0-2)
+    gain most, +10.96 +/- 7.81 -- the user's "weak hand upgrades
+    all future draws" argument CONFIRMED at the low end; middle
+    +2-3; strong cell noisy.
+RECONCILIATION: the earlier t2x rule tied because it fired on ANY
+card value (20% of hands, mostly mid/high where take ~ 0); the
+value is specific to LOW cards (<=3). ADOPTED: t2_book_take
+exception = value<=3 AND adj>=2 (t2x default True; evaluator
+updated). No match gate possible or needed at 1/15000 frequency --
+adopted on the causal evidence; it is the theory, at zero cost.
+Gates: unit checks, --test-opening, verify -- green.

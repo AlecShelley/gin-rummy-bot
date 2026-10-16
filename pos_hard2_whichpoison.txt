@@ -1,0 +1,71 @@
+# HARD 2 -- WHICH POISON? (K-game, stock 9). Late hand, opponent has
+# shown QD QH 6D 2D from the pile. Deadwood says shed 3D or the ace.
+# Every remaining discard helps them somewhere -- the question is
+# which poison is cheapest. The engine throws the ACE (+7 to +12 over
+# the 3D at every seed): the 3D completes the 2D-6D run they have
+# been building in the open, worth far more to them than an ace, and
+# ace-dogma ("aces are always safe to hold, never to throw") is
+# exactly backwards here. It also refuses the deadwood-3 knock (-7
+# to -13): their board is too developed to knock into.
+
+me: 5S AH 2H 3H 5H AD 3D 2C 3C 4C 5C
+opp-known: QH 2D 6D QD
+pile: KS TD TC TS JS JC TH 9S 8D 8H 8S 7S 7H JH KC 7D 6C KD 9D 3S 2S KH
+my-known: 4C
+event: opp-pickup QD
+event: opp-discard KS
+event: my-draw QH
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard TC
+event: my-draw 2D
+event: my-discard TS
+event: opp-decline TS
+event: opp-discard JS
+event: my-draw 5S
+event: my-discard JC
+event: opp-decline JC
+event: opp-discard TH
+event: my-draw 6D
+event: my-discard QH
+event: opp-pickup QH
+event: opp-discard 9S
+event: my-draw 3C
+event: my-discard 8D
+event: opp-decline 8D
+event: opp-discard 7D
+event: my-pickup 7D
+event: my-discard 8H
+event: opp-decline 8H
+event: opp-discard 8S
+event: my-draw 2C
+event: my-discard 7S
+event: opp-decline 7S
+event: opp-discard 7H
+event: my-draw JH
+event: my-discard JH
+event: opp-decline JH
+event: opp-discard KC
+event: my-draw 5H
+event: my-discard 7D
+event: opp-decline 7D
+event: opp-discard 6C
+event: my-draw KD
+event: my-discard KD
+event: opp-decline KD
+event: opp-discard 9D
+event: my-draw 2H
+event: my-discard 6D
+event: opp-pickup 6D
+event: opp-discard 4C
+event: my-pickup 4C
+event: my-discard 2D
+event: opp-pickup 2D
+event: opp-discard 3S
+event: my-draw 2S
+event: my-discard 2S
+event: opp-decline 2S
+event: opp-discard KH
+event: my-draw 3D
+flip: QD
+knock-max: 10

@@ -1,0 +1,6 @@
+﻿# We drew 10D from stock; now the 11-card discard decision.
+me: 5S 6S 7S 2H 2C 9H 9D TD QD 4D KC
+opp-known:
+pile: JD
+event: opp-discard JD
+opp-model: 10,1.0

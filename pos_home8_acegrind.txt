@@ -1,0 +1,23 @@
+# HOME 8 -- ACE-GAME GRIND (threshold 1: nobody will knock; deadwood
+# is nearly irrelevant and only meld OUTS matter). Early discard from
+# a rough hand holding a JJJ set. Teacher sheds 8S; the engine mildly
+# prefers shedding 6C (+1.8, z=2.4) -- and the report labels it
+# BORDERLINE, which is the honest call for a near-tie.
+
+me: AS 8S JS 4H 7H AD 5D 7D JD 6C JC
+opp-known: AH 9D
+pile: KC KH TD
+my-known: JC
+event: opp-pickup AH
+event: opp-discard KC
+event: my-draw 7D
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard JC
+event: my-pickup JC
+event: my-discard 9D
+event: opp-pickup 9D
+event: opp-discard TD
+event: my-draw 6C
+flip: AH
+knock-max: 1

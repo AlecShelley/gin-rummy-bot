@@ -1,0 +1,9 @@
+﻿# Gin rummy position -- edit and run: python evaluate.py position.txt
+me: AS 2S 3S 7H 8H 9H KD KC 5C 2D
+opp-known: 5H 6H
+pile: 4C 7C QD
+event: opp-discard 7C
+event: opp-decline 4C
+event: opp-pickup 5H
+# picked: QD          # uncomment for an 11-card hand you just picked into
+# opp-model: 10,1.0   # opponent knocks whenever deadwood <= 10

@@ -1,0 +1,8 @@
+--> Running on the GPU
+init=results/pretrained.pth lr=0.0001 entropy=0.01 kl=0.1 batch=32
+      0 vs_random  +44.43 | vs_rule   -6.09 *BEST* | knock 87.0% gin 3.8% dead 3.5% | init
+   2016 vs_random  +14.45 | vs_rule   -6.64        | knock 91.2% gin 1.8% dead 3.0% | loss -0.0025
+   4000 vs_random  +16.68 | vs_rule   -7.10        | knock 92.2% gin 2.2% dead 2.8% | loss +0.0265
+   6016 vs_random  +12.71 | vs_rule   -5.69 *BEST* | knock 89.2% gin 5.0% dead 2.5% | loss +0.0496
+   8000 vs_random  +18.31 | vs_rule   -7.80        | knock 91.8% gin 3.0% dead 2.8% | loss +0.0189
+  10016 vs_random  +10.81 | vs_rule   -7.23        | knock 92.8% gin 2.5% dead 1.2% | loss +0.0222

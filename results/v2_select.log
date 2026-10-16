@@ -1,0 +1,32 @@
+selecting against 'smart' over 2000 hands, seed 4242
+
+candidate                          mode            points/hand   dead
+--> Running on the GPU
+round1.policy.pt                   sampled     +2.50 +/- 1.10   0.1%
+--> Running on the GPU
+round1.policy.pt                   greedy      +3.44 +/- 1.10   0.2%
+--> Running on the GPU
+round2.policy.pt                   sampled     +2.38 +/- 1.11   0.1%
+--> Running on the GPU
+round2.policy.pt                   greedy      +2.52 +/- 1.09   0.2%
+--> Running on the GPU
+round3.policy.pt                   sampled     +2.17 +/- 1.10   0.1%
+--> Running on the GPU
+round3.policy.pt                   greedy      +3.19 +/- 1.10   0.1%
+--> Running on the GPU
+round4.policy.pt                   sampled     +2.46 +/- 1.09   0.1%
+--> Running on the GPU
+round4.policy.pt                   greedy      +1.83 +/- 1.08   0.2%
+--> Running on the GPU
+round5.policy.pt                   sampled     +2.15 +/- 1.09   0.1%
+--> Running on the GPU
+round5.policy.pt                   greedy      +2.40 +/- 1.09   0.1%
+--> Running on the GPU
+v2_bc.policy.pt                    sampled     +0.66 +/- 1.09   0.1%
+--> Running on the GPU
+v2_bc.policy.pt                    greedy      +1.25 +/- 1.08   0.1%
+
+SELECTED: results/v2_dagger\round1.policy.pt (greedy) +3.44 +/- 1.10 on the selection seed
+--> Running on the GPU
+HELD OUT (seed 99991, 2000 hands): +2.52 +/- 1.12
+The held-out number is the honest one; the gap is the winner's curse.

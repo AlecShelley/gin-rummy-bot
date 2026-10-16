@@ -1,0 +1,15 @@
+dEV(take) per scenario, 6000 paired worlds each:
+  base: AH, adj2, dump K, t10    [champ]:  +0.62 +/- 0.72
+  base: AH, adj2, dump K, t10    [sym]:  +0.98 +/- 0.59
+  t5 game (flip 5C)              [champ]:  +3.03 +/- 0.77
+  t5 game (flip 5C)              [sym]:  +0.87 +/- 0.58
+  t1 game (flip AC)              [champ]:  +2.34 +/- 0.94
+  t1 game (flip AC)              [sym]:  +0.71 +/- 0.81
+  adj1 (AS only, no 2H)          [champ]:  -0.22 +/- 0.73
+  adj1 (AS only, no 2H)          [sym]:  +0.58 +/- 0.58
+  adj0 (no helpers)              [champ]:  -1.55 +/- 0.73
+  adj0 (no helpers)              [sym]:  -0.97 +/- 0.58
+  small dump (6D dead, no K)     [champ]:  +0.20 +/- 0.69
+  small dump (6D dead, no K)     [sym]:  +0.35 +/- 0.56
+  mid card (5H w/ 5S+6H)         [champ]:  +2.09 +/- 0.75
+  mid card (5H w/ 5S+6H)         [sym]:  +1.36 +/- 0.59

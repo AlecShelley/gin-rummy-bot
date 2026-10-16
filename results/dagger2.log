@@ -1,0 +1,32 @@
+--> Running on the GPU
+  round 0 (initial clone): vs_rule   -6.67 pts/hand (win 33.0%, knock 89.8%, gin 3.8%) | vs_random  +42.03
+seeded D_expert with 391404 teacher states in 49s
+round 1: +261892 states (teacher_mix=0.2), dataset 653296, rollout 117s
+    [r1] epoch  5: loss 0.8089 acc 55.8%
+    [r1] epoch 10: loss 0.7188 acc 59.7%
+    [r1] epoch 15: loss 0.6569 acc 63.2%
+  round 1: vs_rule   -3.47 pts/hand (win 39.2%, knock 94.5%, gin 4.0%) | vs_random  +50.84
+  -> new best, saved
+round 2: +257890 states (teacher_mix=0.1), dataset 911186, rollout 124s
+    [r2] epoch  5: loss 0.6968 acc 61.5%
+    [r2] epoch 10: loss 0.6559 acc 63.5%
+    [r2] epoch 15: loss 0.6260 acc 65.0%
+  round 2: vs_rule   -3.78 pts/hand (win 40.5%, knock 92.8%, gin 3.2%) | vs_random  +48.75
+round 3: +262389 states (teacher_mix=0.0), dataset 1173575, rollout 135s
+    [r3] epoch  5: loss 0.6845 acc 62.5%
+    [r3] epoch 10: loss 0.6570 acc 63.6%
+    [r3] epoch 15: loss 0.6377 acc 64.5%
+  round 3: vs_rule   -6.27 pts/hand (win 31.2%, knock 96.5%, gin 1.0%) | vs_random  +48.06
+round 4: +263557 states (teacher_mix=0.0), dataset 1437132, rollout 132s
+    [r4] epoch  5: loss 0.6864 acc 62.2%
+    [r4] epoch 10: loss 0.6670 acc 62.9%
+    [r4] epoch 15: loss 0.6532 acc 63.6%
+  round 4: vs_rule   -0.88 pts/hand (win 42.5%, knock 91.5%, gin 2.8%) | vs_random  +48.97
+  -> new best, saved
+round 5: +257581 states (teacher_mix=0.0), dataset 1500000, rollout 128s
+    [r5] epoch  5: loss 0.6823 acc 62.2%
+    [r5] epoch 10: loss 0.6646 acc 63.0%
+    [r5] epoch 15: loss 0.6516 acc 63.6%
+  round 5: vs_rule   -3.96 pts/hand (win 37.8%, knock 94.8%, gin 2.8%) | vs_random  +49.95
+
+best vs rule: -0.88 pts/hand -> results/dagger2\best.policy.pt

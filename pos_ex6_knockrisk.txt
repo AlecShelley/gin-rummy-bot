@@ -1,0 +1,21 @@
+# Example 6 -- KNOCK NOW OR PRESS ON (seven game: flip 7D -> threshold
+# 7). Full transcript: turn 1 we drew 6C (a brick against our hand --
+# our loose cards are all aces and low cards) and shed it; the opponent
+# TOOK it and threw 9S -- they are visibly building clubs. Turn 2 we
+# passed the JS brick (also safe against their clubs); they declined it
+# and threw QH. Now we draw QD: discarding it knocks with exactly 7
+# deadwood (A-A-2-3). Knock into a visible run-builder, or press on?
+me: 3H 4H 5H 8S 8D 8C AS AH 2D 3C QD
+opp-known: 6C
+pile: 7D 9S JS QH
+event: my-draw 6C
+event: my-discard 6C
+event: opp-pickup 6C
+event: opp-discard 9S
+event: my-draw JS
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard QH
+event: my-draw QD
+opp-model: 7,1.0
+knock-max: 7

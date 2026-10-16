@@ -1,0 +1,17 @@
+--- take/decline calibration (186253 free-draw decisions) ---
+  gain <= 0  n=115447  P(take) 0.013
+  gain == 1  n= 13803  P(take) 0.611
+  gain 2-3   n= 19018  P(take) 0.605
+  gain >= 4  n= 37985  P(take) 0.870
+  rule-mismatch: speculative-take rate 0.013 (model 0.5*tau_p -> tau_p 0.026); decline-despite-gain rate 0.252 (model tau_p -> tau_p 0.252)
+--- discard fit (186395 decisions) ---
+ctx pickup  n=54626 (train 27037, held-out 27589)
+  held-out logloss: fit 1.1238  energy-baseline 1.2198  uniform 2.3979  [G1 PASS]
+  weights: dwcost -0.886  live -0.284  value -0.315  inhand -0.635  isdrawn +0.000
+  weights-json: [-0.886, -0.2845, -0.3153, -0.6354, 0.0]
+ctx draw    n=131769 (train 65496, held-out 66273)
+  held-out logloss: fit 0.9399  energy-baseline 1.0436  uniform 2.3979  [G1 PASS]
+  weights: dwcost -0.919  live -0.472  value -0.375  inhand -0.726  isdrawn +0.138
+  P(discard == drawn): empirical 0.386
+  weights-json: [-0.9189, -0.4722, -0.375, -0.7256, 0.1375]
+(66s)

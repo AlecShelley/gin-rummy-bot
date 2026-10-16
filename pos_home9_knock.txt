@@ -1,0 +1,25 @@
+# HOME 9 -- KNOCK: GET IN FIRST (J-game, our 4th turn). We hit JJJ +
+# 888 early; knocking at 9 is legal. The opponent has taken one card
+# and is still unformed -- no lay-off wall, no undercut threat, and
+# every turn we wait lets them develop (they knock at 10 too).
+# ENGINE: KNOCK, +7.1 +/- 1.2 over playing on (z~6, decisive).
+
+me: 4S 8S AH 8H JH 2D 8D JD 2C 4C JC
+opp-known: 7H
+pile: QH KD KS TD 9S
+my-known: JH
+event: my-pickup JH
+event: my-discard QH
+event: opp-decline QH
+event: opp-discard KD
+event: my-draw 7H
+event: my-discard 7H
+event: opp-pickup 7H
+event: opp-discard KS
+event: my-draw TD
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard 9S
+event: my-draw AH
+flip: JH
+knock-max: 10

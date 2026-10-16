@@ -1,0 +1,58 @@
+# HOME 10 -- DON'T KNOCK: THE HAND IS TOO GOOD (8-game). Deadwood 1
+# after the best discard -- the cheapest knock of all time -- and the
+# engine REFUSES it (-12.8 vs playing on). Why: with A-2-3-4 shapes in
+# three suits the hand is one draw from GIN many ways (worth ~+25
+# more), our tiny knock invites lay-offs onto those very runs, and
+# the patient opponent poses no fast threat. Play on, shedding 2C or 2D (a documented statistical tie).
+
+me: AS 3S 4S 3H 4H 2D 3D 4D 2C 3C 4C
+opp-known: 7S KS
+pile: JS JH TD TS 8C 8S 7C 8H 9S 9D 6H TC 8D JD 5H QC 5C 9H
+my-known: 2C
+event: my-pickup 8C
+event: my-discard JS
+event: opp-decline JS
+event: opp-discard JH
+event: my-draw 4C
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard TS
+event: my-draw 7S
+event: my-discard 8C
+event: opp-decline 8C
+event: opp-discard 8S
+event: my-draw 3H
+event: my-discard 7C
+event: opp-decline 7C
+event: opp-discard 8H
+event: my-draw 9S
+event: my-discard 9S
+event: opp-decline 9S
+event: opp-discard 9D
+event: my-draw 3S
+event: my-discard 7S
+event: opp-pickup 7S
+event: opp-discard 5H
+event: my-pickup 5H
+event: my-discard 6H
+event: opp-decline 6H
+event: opp-discard TC
+event: my-draw 8D
+event: my-discard 8D
+event: opp-decline 8D
+event: opp-discard JD
+event: my-draw KS
+event: my-discard KS
+event: opp-pickup KS
+event: opp-discard 2C
+event: my-pickup 2C
+event: my-discard 5H
+event: opp-decline 5H
+event: opp-discard QC
+event: my-draw 4H
+event: my-discard 5C
+event: opp-decline 5C
+event: opp-discard 9H
+event: my-draw 4S
+flip: 8C
+knock-max: 8

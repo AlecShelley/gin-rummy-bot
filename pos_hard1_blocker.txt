@@ -1,0 +1,61 @@
+# HARD 1 -- THE BLOCKER (6-game, mid). Nine cards melded (9-10-J
+# spades, 6-J hearts) and two loose: AC and QC. Every human instinct
+# says pitch the 10-point queen, keep the 1-point ace -- and with
+# deadwood 1 you could even knock. The engine throws the ACE (+4.5 to
+# +12.3 over the queen-drop at every seed, z up to 10) and refuses the
+# knock (-16): the opponent took QH off the pile, the belief puts the
+# remaining queens in their hand, and our QC is a BLOCKER -- dropping
+# it hands a 50% knocker the fourth queen; holding it starves them.
+# The gin outs are identical either way, so the ace is the cheap card.
+
+me: 9S TS JS 6H 7H 8H 9H TH JH AC QC
+opp-known: QH 2D
+pile: KS KH 9D 9C KD 7S 6C JD 6D 7C KC 5D 4C TD 3C 3H 8D
+my-known: 6H JH
+event: my-pickup 6D
+event: my-discard QH
+event: opp-pickup QH
+event: opp-discard KS
+event: my-draw 9S
+event: my-discard KH
+event: opp-decline KH
+event: opp-discard JH
+event: my-pickup JH
+event: my-discard 6D
+event: opp-pickup 6D
+event: opp-discard 9D
+event: my-draw 9C
+event: my-discard 9C
+event: opp-decline 9C
+event: opp-discard KD
+event: my-draw 7S
+event: my-discard 7S
+event: opp-decline 7S
+event: opp-discard 6C
+event: my-draw JD
+event: my-discard JD
+event: opp-decline JD
+event: opp-discard 6D
+event: my-draw 7C
+event: my-discard 7C
+event: opp-decline 7C
+event: opp-discard KC
+event: my-draw AC
+event: my-discard 5D
+event: opp-decline 5D
+event: opp-discard 6H
+event: my-pickup 6H
+event: my-discard 2D
+event: opp-pickup 2D
+event: opp-discard 4C
+event: my-draw TD
+event: my-discard TD
+event: opp-decline TD
+event: opp-discard 3C
+event: my-draw 3H
+event: my-discard 3H
+event: opp-decline 3H
+event: opp-discard 8D
+event: my-draw QC
+flip: 6D
+knock-max: 6

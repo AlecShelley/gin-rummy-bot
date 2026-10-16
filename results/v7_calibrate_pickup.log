@@ -1,0 +1,81 @@
+logging 400 teacher + 200 clone + 200 random hands...
+logged in 6s
+grid: 72 configs on 300 train hands (12 workers)
+  tau_d=1.0 p_knock=0.0 mu=0.0 logistic/tp=1.0             train Brier 0.17804
+  tau_d=1.0 p_knock=0.0 mu=0.0 rule/tp=0.05                train Brier 0.17803
+  tau_d=1.0 p_knock=0.0 mu=0.0 rule/tp=0.1                 train Brier 0.17797
+  tau_d=1.0 p_knock=0.0 mu=0.0 rule/tp=0.2                 train Brier 0.17869
+  tau_d=1.0 p_knock=0.0 mu=0.3 logistic/tp=1.0             train Brier 0.17865
+  tau_d=1.0 p_knock=0.0 mu=0.3 rule/tp=0.05                train Brier 0.17837
+  tau_d=1.0 p_knock=0.0 mu=0.3 rule/tp=0.1                 train Brier 0.17870
+  tau_d=1.0 p_knock=0.0 mu=0.3 rule/tp=0.2                 train Brier 0.17841
+  tau_d=1.0 p_knock=0.5 mu=0.0 logistic/tp=1.0             train Brier 0.17812
+  tau_d=1.0 p_knock=0.5 mu=0.0 rule/tp=0.05                train Brier 0.17939
+  tau_d=1.0 p_knock=0.5 mu=0.0 rule/tp=0.1                 train Brier 0.17865
+  tau_d=1.0 p_knock=0.5 mu=0.0 rule/tp=0.2                 train Brier 0.17895
+  tau_d=1.0 p_knock=0.5 mu=0.3 logistic/tp=1.0             train Brier 0.17813
+  tau_d=1.0 p_knock=0.5 mu=0.3 rule/tp=0.05                train Brier 0.17935
+  tau_d=1.0 p_knock=0.5 mu=0.3 rule/tp=0.1                 train Brier 0.17900
+  tau_d=1.0 p_knock=0.5 mu=0.3 rule/tp=0.2                 train Brier 0.17935
+  tau_d=1.0 p_knock=0.9 mu=0.0 logistic/tp=1.0             train Brier 0.17865
+  tau_d=1.0 p_knock=0.9 mu=0.0 rule/tp=0.05                train Brier 0.17947
+  tau_d=1.0 p_knock=0.9 mu=0.0 rule/tp=0.1                 train Brier 0.17916
+  tau_d=1.0 p_knock=0.9 mu=0.0 rule/tp=0.2                 train Brier 0.17991
+  tau_d=1.0 p_knock=0.9 mu=0.3 logistic/tp=1.0             train Brier 0.17944
+  tau_d=1.0 p_knock=0.9 mu=0.3 rule/tp=0.05                train Brier 0.18077
+  tau_d=1.0 p_knock=0.9 mu=0.3 rule/tp=0.1                 train Brier 0.18010
+  tau_d=1.0 p_knock=0.9 mu=0.3 rule/tp=0.2                 train Brier 0.17937
+  tau_d=2.0 p_knock=0.0 mu=0.0 logistic/tp=1.0             train Brier 0.17830
+  tau_d=2.0 p_knock=0.0 mu=0.0 rule/tp=0.05                train Brier 0.17831
+  tau_d=2.0 p_knock=0.0 mu=0.0 rule/tp=0.1                 train Brier 0.17808
+  tau_d=2.0 p_knock=0.0 mu=0.0 rule/tp=0.2                 train Brier 0.17769
+  tau_d=2.0 p_knock=0.0 mu=0.3 logistic/tp=1.0             train Brier 0.17888
+  tau_d=2.0 p_knock=0.0 mu=0.3 rule/tp=0.05                train Brier 0.17922
+  tau_d=2.0 p_knock=0.0 mu=0.3 rule/tp=0.1                 train Brier 0.17822
+  tau_d=2.0 p_knock=0.0 mu=0.3 rule/tp=0.2                 train Brier 0.17854
+  tau_d=2.0 p_knock=0.5 mu=0.0 logistic/tp=1.0             train Brier 0.17837
+  tau_d=2.0 p_knock=0.5 mu=0.0 rule/tp=0.05                train Brier 0.17989
+  tau_d=2.0 p_knock=0.5 mu=0.0 rule/tp=0.1                 train Brier 0.18008
+  tau_d=2.0 p_knock=0.5 mu=0.0 rule/tp=0.2                 train Brier 0.17980
+  tau_d=2.0 p_knock=0.5 mu=0.3 logistic/tp=1.0             train Brier 0.17876
+  tau_d=2.0 p_knock=0.5 mu=0.3 rule/tp=0.05                train Brier 0.17830
+  tau_d=2.0 p_knock=0.5 mu=0.3 rule/tp=0.1                 train Brier 0.17943
+  tau_d=2.0 p_knock=0.5 mu=0.3 rule/tp=0.2                 train Brier 0.17884
+  tau_d=2.0 p_knock=0.9 mu=0.0 logistic/tp=1.0             train Brier 0.18022
+  tau_d=2.0 p_knock=0.9 mu=0.0 rule/tp=0.05                train Brier 0.18107
+  tau_d=2.0 p_knock=0.9 mu=0.0 rule/tp=0.1                 train Brier 0.18063
+  tau_d=2.0 p_knock=0.9 mu=0.0 rule/tp=0.2                 train Brier 0.17926
+  tau_d=2.0 p_knock=0.9 mu=0.3 logistic/tp=1.0             train Brier 0.17917
+  tau_d=2.0 p_knock=0.9 mu=0.3 rule/tp=0.05                train Brier 0.18071
+  tau_d=2.0 p_knock=0.9 mu=0.3 rule/tp=0.1                 train Brier 0.18013
+  tau_d=2.0 p_knock=0.9 mu=0.3 rule/tp=0.2                 train Brier 0.18072
+  tau_d=4.0 p_knock=0.0 mu=0.0 logistic/tp=1.0             train Brier 0.18028
+  tau_d=4.0 p_knock=0.0 mu=0.0 rule/tp=0.05                train Brier 0.17924
+  tau_d=4.0 p_knock=0.0 mu=0.0 rule/tp=0.1                 train Brier 0.17934
+  tau_d=4.0 p_knock=0.0 mu=0.0 rule/tp=0.2                 train Brier 0.18007
+  tau_d=4.0 p_knock=0.0 mu=0.3 logistic/tp=1.0             train Brier 0.18032
+  tau_d=4.0 p_knock=0.0 mu=0.3 rule/tp=0.05                train Brier 0.17979
+  tau_d=4.0 p_knock=0.0 mu=0.3 rule/tp=0.1                 train Brier 0.18046
+  tau_d=4.0 p_knock=0.0 mu=0.3 rule/tp=0.2                 train Brier 0.18043
+  tau_d=4.0 p_knock=0.5 mu=0.0 logistic/tp=1.0             train Brier 0.17909
+  tau_d=4.0 p_knock=0.5 mu=0.0 rule/tp=0.05                train Brier 0.18115
+  tau_d=4.0 p_knock=0.5 mu=0.0 rule/tp=0.1                 train Brier 0.18059
+  tau_d=4.0 p_knock=0.5 mu=0.0 rule/tp=0.2                 train Brier 0.18089
+  tau_d=4.0 p_knock=0.5 mu=0.3 logistic/tp=1.0             train Brier 0.18008
+  tau_d=4.0 p_knock=0.5 mu=0.3 rule/tp=0.05                train Brier 0.18081
+  tau_d=4.0 p_knock=0.5 mu=0.3 rule/tp=0.1                 train Brier 0.18048
+  tau_d=4.0 p_knock=0.5 mu=0.3 rule/tp=0.2                 train Brier 0.18087
+  tau_d=4.0 p_knock=0.9 mu=0.0 logistic/tp=1.0             train Brier 0.18085
+  tau_d=4.0 p_knock=0.9 mu=0.0 rule/tp=0.05                train Brier 0.18152
+  tau_d=4.0 p_knock=0.9 mu=0.0 rule/tp=0.1                 train Brier 0.18190
+  tau_d=4.0 p_knock=0.9 mu=0.0 rule/tp=0.2                 train Brier 0.18249
+  tau_d=4.0 p_knock=0.9 mu=0.3 logistic/tp=1.0             train Brier 0.18082
+  tau_d=4.0 p_knock=0.9 mu=0.3 rule/tp=0.05                train Brier 0.18084
+  tau_d=4.0 p_knock=0.9 mu=0.3 rule/tp=0.1                 train Brier 0.18134
+  tau_d=4.0 p_knock=0.9 mu=0.3 rule/tp=0.2                 train Brier 0.18170
+grid done in 3460s
+v7 particle calibration (400 teacher hands, grid of 72; train Brier 0.17769)
+chosen: tau_d=2.0 mu=0.0 tau_p=0.2 p_knock=0.0 pickup_mode=rule mh_all_takes=True eps=0.05 N=256
+held-out vs teacher: chosen 0.17884  v6-default 0.18001  belief 0.18012  uniform 0.20591  chosen-vs-uniform +13.14%  chosen-vs-v6 +0.65%
+held-out vs clone  : chosen 0.17578  v6-default 0.17791  belief 0.17960  uniform 0.20388  chosen-vs-uniform +13.78%  chosen-vs-v6 +1.20%
+held-out vs random : chosen 0.20359  v6-default 0.20291  belief 0.20269  uniform 0.18643  chosen-vs-uniform -9.20%  chosen-vs-v6 -0.33%
